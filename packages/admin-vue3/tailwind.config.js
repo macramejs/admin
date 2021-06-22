@@ -1,4 +1,4 @@
-const tailwindConfig = require('@macramejs/theme-admin-config');
+const tailwindConfig = require('@macramejs/admin-config');
 
 module.exports = {
     ...tailwindConfig,
