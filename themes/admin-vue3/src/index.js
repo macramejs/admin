@@ -1,3 +1,4 @@
+import Button from './ui/Button.vue';
 import Checkbox from './ui/Checkbox.vue';
 import Form from './ui/Form.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
@@ -8,10 +9,11 @@ import Input from './ui/Input.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
-export { default as tailwindConfig } from './tailwind.config';
+import BasePage from './pages/BasePage';
 
 const plugin = {
     install(app) {
+        app.component('UiButton', Button);
         app.component('UiCheckbox', Checkbox);
         app.component('UiForm', Form);
         app.component('UiFormCheckboxes', FormCheckboxes);
@@ -25,4 +27,8 @@ const plugin = {
     },
 };
 
-export { plugin };
+const pages = {
+    BasePage,
+};
+
+export { plugin, pages };

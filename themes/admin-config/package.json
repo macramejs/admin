@@ -1,8 +1,8 @@
 {
-    "name": "@macramejs/theme-empty-react",
-    "version": "1.0.0",
+    "name": "@macramejs/theme-admin-config",
+    "version": "0.0.1",
     "description": "",
-    "main": "src/index.js",
+    "main": "tailwind.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -10,8 +10,8 @@
     "license": "MIT",
     "devDependencies": {
         "@macramejs/macrame": "^0.0.1",
-        "@macramejs/macrame-react": "^0.0.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "@macramejs/macrame-vue3": "^0.0.1",
+        "@vue/compiler-sfc": "^3.1.0",
+        "vue": "^3.0.0"
     }
 }
