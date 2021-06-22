@@ -1,17 +1,25 @@
 <template>
     <component
         :is="tag"
-        class="text-center inline-flex items-center focus:outline-none"
+        class="inline-flex justify-center items-center focus:outline-none"
         :class="{
             'focus:ring': !text && !disabled,
 
+            'text-lg': size == 'lg',
+            'text-base': size == 'md',
+            'text-xs': size == 'sm',
+
             'w-12': square && size == 'lg',
             'w-10': square && size == 'md',
-            'w-13': square && size == 'sm',
+            'w-7': square && size == 'sm',
 
-            'h-12 px-6 rounded-lg': size == 'lg' && !text,
-            'h-10 px-5 rounded-md': size == 'md' && !text,
-            'h-13 px-4 rounded-sm': size == 'sm' && !text,
+            'h-12  rounded-lg': size == 'lg' && !text,
+            'h-10  rounded-md': size == 'md' && !text,
+            'h-7  rounded-sm': size == 'sm' && !text,
+
+            'px-6': size == 'lg' && !square && !text,
+            'px-5': size == 'md' && !square && !text,
+            'px-4': size == 'sm' && !square && !text,
 
             'bg-gray-300 text-gray-600 cursor-default':
                 disabled && !outline && !text,
