@@ -1,4 +1,5 @@
-import Button from './ui/Button.vue';
+// import Button from './ui/Button.vue';
+import Badge from './ui/Badge.vue';
 import Checkbox from './ui/Checkbox.vue';
 import Form from './ui/Form.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
@@ -13,7 +14,8 @@ import BasePage from './pages/BasePage';
 
 const plugin = {
     install(app) {
-        app.component('UiButton', Button);
+        // app.component('UiButton', Button);
+        app.component('UiBadge', Badge);
         app.component('UiCheckbox', Checkbox);
         app.component('UiForm', Form);
         app.component('UiFormCheckboxes', FormCheckboxes);
