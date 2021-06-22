@@ -1,8 +1,11 @@
 {
-    "name": "@macramejs/theme-empty-vue3",
+    "name": "@macramejs/admin-vue3",
     "version": "0.0.1",
     "description": "",
     "main": "src/index.js",
+    "files": [
+        "tailwind.config.js"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -13,5 +16,8 @@
         "@macramejs/macrame-vue3": "^0.0.1",
         "@vue/compiler-sfc": "^3.1.0",
         "vue": "^3.0.0"
+    },
+    "dependencies": {
+        "@macramejs/admin-config": "^0.0.1"
     }
 }
