@@ -1,5 +1,11 @@
 module.exports = {
     theme: {
+        borderRadius: {
+            lg: '19px', // TODO:
+            md: '15px',
+            sm: '11px',
+            xs: '6px',
+        },
         colors: {
             white: 'white',
             blue: {
@@ -12,8 +18,9 @@ module.exports = {
                 700: '#252C9F',
                 800: '#1E216D',
                 900: '#0C122D',
+                DEFAULT: '#4951F2',
             },
-            grey: {
+            gray: {
                 100: '#F5F8FB',
                 200: '#EEF2F7',
                 300: '#E5EAEF',
@@ -23,6 +30,7 @@ module.exports = {
                 700: '#6C8199',
                 800: '#5A6776',
                 900: '#404A56',
+                DEFAULT: '#6C8199',
             },
             green: {
                 100: '#E7FFF3',
