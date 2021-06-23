@@ -1,7 +1,7 @@
 import { computed } from 'vue';
 
 export function getVariant(props) {
-    const comp_variant = computed(() => {
+    return computed(() => {
         if (props.variant) {
             return props.variant;
         }
@@ -24,10 +24,6 @@ export function getVariant(props) {
 
         return 'blue';
     });
-
-    return {
-        comp_variant,
-    };
 }
 
 export const variants = {

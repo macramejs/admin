@@ -1,7 +1,7 @@
 import { computed } from 'vue';
 
 export function getSize(props) {
-    const comp_size = computed(() => {
+    return computed(() => {
         if (props.size) {
             return props.size;
         }
@@ -18,10 +18,6 @@ export function getSize(props) {
 
         return 'md';
     });
-
-    return {
-        comp_variant,
-    };
 }
 
 export const sizes = {
