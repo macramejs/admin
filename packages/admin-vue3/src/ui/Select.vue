@@ -1,5 +1,5 @@
 <template>
-    <Listbox as="div" v-bind="$attrs">
+    <Listbox as="div" v-bind="$attrs" :modelValue="modelValue">
         <div class="mt-1 relative">
             <ListboxButton
                 class="

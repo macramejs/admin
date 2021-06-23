@@ -18,6 +18,7 @@
         "react-dom": "^17.0.2"
     },
     "dependencies": {
+        "@headlessui/react": "^1.3.0",
         "@macramejs/admin-config": "^0.0.1",
         "classnames": "^2.3.1"
     }
