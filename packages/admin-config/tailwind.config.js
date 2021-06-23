@@ -1,4 +1,10 @@
 module.exports = {
+    variants: {
+        extend: {
+            backgroundColor: ['active'],
+            textColor: ['active'],
+        },
+    },
     theme: {
         borderRadius: {
             lg: '19px', // TODO:
