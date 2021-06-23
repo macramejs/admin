@@ -1,4 +1,3 @@
-import { Checkbox as BaseCheckbox } from '@macramejs/macrame-react';
 import classNames from 'classnames';
 import getVariant from './props/variant';
 
