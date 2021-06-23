@@ -42,7 +42,7 @@ module.exports = {
                 700: '#238155',
                 800: '#145436',
                 900: '#0F4029',
-                DEFAULT: '#40FFA4',
+                DEFAULT: '#78FFBF',
             },
             red: {
                 100: '#FFE3E6',
@@ -54,7 +54,7 @@ module.exports = {
                 700: '#7A001A',
                 800: '#4E0011',
                 900: '#3D000D',
-                DEFAULT: '#D4002E',
+                DEFAULT: '#FF8A96',
             },
             yellow: {
                 100: '#FFF6D8',
@@ -66,11 +66,18 @@ module.exports = {
                 700: '#A76F00',
                 800: '#684500',
                 900: '#513600',
-                DEFAULT: '#FFCB18',
+                DEFAULT: '#FFDC65',
             },
         },
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
+        },
+        fontSize: {
+            xs: ['10px', '17px'],
+            sm: ['12px', '21px'],
+            base: ['14px', '24px'],
+            lg: ['16px', '24px'],
+            xl: ['25px', '33px'],
         },
         boxShadow: {
             DEFAULT: '0px 0px 19px 0px rgba(0,0,0,0.08)',
