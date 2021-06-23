@@ -5,21 +5,21 @@
         :class="{
             'focus:ring': !text && !disabled,
 
-            'text-lg': size == 'lg',
-            'text-base': size == 'md',
-            'text-xs': size == 'sm',
+            'text-lg': comp_size == 'lg',
+            'text-base': comp_size == 'md',
+            'text-xs': comp_size == 'sm',
 
-            'w-12': square && size == 'lg',
-            'w-10': square && size == 'md',
-            'w-7': square && size == 'sm',
+            'w-12': square && comp_size == 'lg',
+            'w-10': square && comp_size == 'md',
+            'w-7': square && comp_size == 'sm',
 
-            'h-12  rounded-lg': size == 'lg' && !text,
-            'h-10  rounded-md': size == 'md' && !text,
-            'h-7  rounded-sm': size == 'sm' && !text,
+            'h-12  rounded-lg': comp_size == 'lg' && !text,
+            'h-10  rounded-md': comp_size == 'md' && !text,
+            'h-7  rounded-sm': comp_size == 'sm' && !text,
 
-            'px-6': size == 'lg' && !square && !text,
-            'px-5': size == 'md' && !square && !text,
-            'px-4': size == 'sm' && !square && !text,
+            'px-6': comp_size == 'lg' && !square && !text,
+            'px-5': comp_size == 'md' && !square && !text,
+            'px-4': comp_size == 'sm' && !square && !text,
 
             'bg-gray-300 text-gray-600 cursor-default':
                 disabled && !outline && !text,
@@ -110,8 +110,20 @@ export default defineComponent({
             default: false,
         },
         size: {
-            default: 'md',
+            default: null,
             type: String,
+        },
+        sm: {
+            type: Boolean,
+            default: false,
+        },
+        md: {
+            type: Boolean,
+            default: false,
+        },
+        lg: {
+            type: Boolean,
+            default: false,
         },
     },
     setup(props, { attrs }) {
@@ -141,7 +153,25 @@ export default defineComponent({
             return 'blue';
         });
 
-        return { tag, comp_variant };
+        const comp_size = computed(() => {
+            if (props.size) {
+                return props.size;
+            }
+
+            if (props.sm) {
+                return 'sm';
+            }
+            if (props.md) {
+                return 'md';
+            }
+            if (props.lg) {
+                return 'lg';
+            }
+
+            return 'lg';
+        });
+
+        return { tag, comp_variant, comp_size };
     },
 });
 </script>
