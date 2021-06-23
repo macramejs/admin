@@ -33,8 +33,6 @@ const plugin = {
     },
 };
 
-const pages = {
-    BasePage,
-};
+const pages = { BasePage };
 
 export { plugin, pages };

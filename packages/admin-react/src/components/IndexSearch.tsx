@@ -1,5 +1,5 @@
 import Input from './Input';
-import { Index } from '@litstackjs/litstack-react'
+import { Index } from '@macramejs/macrame-react'
 
 type IndexSearchProps = {
     table: Index

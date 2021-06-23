@@ -1,5 +1,5 @@
-import { FieldTitle } from '@litstackjs/litstack-react';
-import { FormTextarea as BaseFormTextarea } from '@litstackjs/litstack-react';
+import { FieldTitle } from '@macramejs/macrame-react';
+import { FormTextarea as BaseFormTextarea } from '@macramejs/macrame-react';
 
 const FormTextarea = function (props) {
     return (

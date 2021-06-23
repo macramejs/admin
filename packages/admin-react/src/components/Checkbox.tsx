@@ -1,4 +1,4 @@
-import { Checkbox as BaseCheckbox } from '@litstackjs/litstack-react';
+import { Checkbox as BaseCheckbox } from '@macramejs/macrame-react';
 
 const Checkbox = function (props) {
     return <BaseCheckbox {...props} />;

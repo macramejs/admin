@@ -3,7 +3,7 @@ import {
     IndexSearch,
     IndexTable,
     IndexPagination,
-} from '@litstackjs/litstack-react';
+} from '@macramejs/macrame-react';
 
 function Index(props) {
     const table = useIndex(props);

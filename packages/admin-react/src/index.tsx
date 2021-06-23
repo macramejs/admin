@@ -1,3 +1,4 @@
+import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Form from './components/Form';
 import FormCheckboxes from './components/FormCheckboxes';
@@ -7,6 +8,7 @@ import Index from './components/Index';
 import IndexSearch from './components/IndexSearch';
 import Input from './components/Input';
 import Textarea from './components/Textarea';
+import BasePage from './pages/BasePage';
 
 const plugin = {
     install(addComponent) {
@@ -22,4 +24,10 @@ const plugin = {
     },
 };
 
-export { plugin };
+const pages = { BasePage };
+
+export { 
+    plugin, 
+    pages, 
+    Button
+};
