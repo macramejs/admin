@@ -65,7 +65,9 @@
 </template>
 
 <script>
-import { computed, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
+import { getVariant, variants } from './variant';
+import { getSize, sizes } from './size';
 
 export default defineComponent({
     props: {
@@ -85,91 +87,14 @@ export default defineComponent({
             default: false,
             type: Boolean,
         },
-        variant: {
-            type: String,
-            default: null,
-        },
-        blue: {
-            type: Boolean,
-            default: false,
-        },
-        gray: {
-            type: Boolean,
-            default: false,
-        },
-        green: {
-            type: Boolean,
-            default: false,
-        },
-        yellow: {
-            type: Boolean,
-            default: false,
-        },
-        red: {
-            type: Boolean,
-            default: false,
-        },
-        size: {
-            default: null,
-            type: String,
-        },
-        sm: {
-            type: Boolean,
-            default: false,
-        },
-        md: {
-            type: Boolean,
-            default: false,
-        },
-        lg: {
-            type: Boolean,
-            default: false,
-        },
+        ...variants,
+        ...sizes,
     },
     setup(props, { attrs }) {
         const tag = 'href' in attrs ? 'a' : 'button';
 
-        const comp_variant = computed(() => {
-            if (props.variant) {
-                return props.variant;
-            }
-
-            if (props.blue) {
-                return 'blue';
-            }
-            if (props.gray) {
-                return 'gray';
-            }
-            if (props.green) {
-                return 'green';
-            }
-            if (props.yellow) {
-                return 'yellow';
-            }
-            if (props.red) {
-                return 'red';
-            }
-
-            return 'blue';
-        });
-
-        const comp_size = computed(() => {
-            if (props.size) {
-                return props.size;
-            }
-
-            if (props.sm) {
-                return 'sm';
-            }
-            if (props.md) {
-                return 'md';
-            }
-            if (props.lg) {
-                return 'lg';
-            }
-
-            return 'lg';
-        });
+        const { comp_variant } = getVariant(props);
+        const { comp_size } = getSize(props);
 
         return { tag, comp_variant, comp_size };
     },
