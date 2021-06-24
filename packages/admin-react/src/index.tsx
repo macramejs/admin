@@ -1,4 +1,5 @@
 import Button from './ui/Button';
+import Card from './ui/Card';
 import Checkbox from './ui/Checkbox';
 import Form from './ui/Form';
 import FormCheckboxes from './ui/FormCheckboxes';
@@ -15,6 +16,7 @@ import BasePage from './pages/BasePage';
 const plugin = {
     install(addComponent) {
         addComponent('ui-checkbox', Checkbox);
+        addComponent('ui-card', Card);
         addComponent('ui-form', Form);
         addComponent('ui-form-checkboxes', FormCheckboxes);
         addComponent('ui-form-input', FormInput);
@@ -33,5 +35,6 @@ const pages = { BasePage };
 export { 
     plugin, 
     pages, 
-    Button
+    Button,
+    Card
 };

@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-export function getSize(props, { only = ['sm', 'md', 'lg'] }) {
+export function getSize(props, { DEFAULT = 'md', only = ['sm', 'md', 'lg'] }) {
     return computed(() => {
         if (props.size) {
             return props.size;
@@ -16,7 +16,7 @@ export function getSize(props, { only = ['sm', 'md', 'lg'] }) {
             return 'lg';
         }
 
-        return 'md';
+        return DEFAULT;
     });
 }
 
