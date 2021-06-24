@@ -1,5 +1,5 @@
-import { FieldTitle } from '@litstackjs/litstack-react';
-import { FormCheckboxes as BaseFormCheckboxes } from '@litstackjs/litstack-react';
+import { FieldTitle } from '@macramejs/macrame-react';
+import { FormCheckboxes as BaseFormCheckboxes } from '@macramejs/macrame-react';
 
 export default function FormCheckbox(props) {
     return (
