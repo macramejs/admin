@@ -4,10 +4,10 @@
         class="inline-flex items-center justify-center px-2 text-sm rounded-xs"
         :class="{
             'bg-blue text-white ': getVariant == 'blue',
-            'bg-gray-700  text-white': getVariant == 'gray',
-            'bg-green  text-green-700': getVariant == 'green',
-            'bg-red  text-red-700': getVariant == 'red',
-            'bg-yellow  text-yellow-700': getVariant == 'yellow',
+            'bg-gray-700 text-white': getVariant == 'gray',
+            'bg-green text-green-700': getVariant == 'green',
+            'bg-red text-red-700': getVariant == 'red',
+            'bg-yellow text-yellow-700': getVariant == 'yellow',
         }"
     >
         <slot />
