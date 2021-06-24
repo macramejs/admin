@@ -1,18 +1,18 @@
 import { computed } from 'vue';
 
-export function getSize(props) {
+export function getSize(props, { only = ['sm', 'md', 'lg'] }) {
     return computed(() => {
         if (props.size) {
             return props.size;
         }
 
-        if (props.sm) {
+        if (props.sm && only.includes('sm')) {
             return 'sm';
         }
-        if (props.md) {
+        if (props.md && only.includes('md')) {
             return 'md';
         }
-        if (props.lg) {
+        if (props.lg && only.includes('lg')) {
             return 'lg';
         }
 

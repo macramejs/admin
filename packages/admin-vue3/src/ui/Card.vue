@@ -1,30 +1,26 @@
 <template>
     <component
-        :is="tag"
-        class="w-full rounded-sm"
+        :is="as"
+        class="rounded-sm p-6"
         :class="{
-            'bg-white py-14 shadow': !info,
-            'bg-gray-300 pb-9 pt-7': info,
-
-            'px-14': !disableContainer && !info,
-            'px-8': !disableContainer && info,
+            'bg-white shadow': variant_ == 'white',
+            'bg-gray-300': variant_ == 'gray',
+            'p-12': size_ == 'md',
+            'p-8': size_ == 'sm',
         }"
     >
-        <slot name="header" />
-        <div class="mb-3 font-semibold text-md">{{ title }}</div>
-        <div class="text-xs">
-            <slot />
-        </div>
-        <slot name="footer" />
+        <slot />
     </component>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script lang="ts">
+import { defineComponent, computed } from 'vue';
+import { getVariant, variants } from './props/variant';
+import { getSize, sizes } from './props/size';
 
 export default defineComponent({
     props: {
-        tag: {
+        as: {
             type: String,
             default: 'div',
         },
@@ -40,6 +36,21 @@ export default defineComponent({
             type: String,
             default: '',
         },
+        variant: variants.variant,
+        white: {
+            type: Boolean,
+            default: false,
+        },
+        gray: variants.gray,
+        size: sizes.size,
+        sm: sizes.sm,
+        md: sizes.md,
+    },
+    setup(props, { attrs }) {
+        let variant_ = getVariant(props, { DEFAULT: 'white' });
+        let size_ = getSize(props, { only: ['sm', 'md'] });
+
+        return { variant_, size_ };
     },
 });
 </script>
