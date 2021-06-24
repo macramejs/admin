@@ -2,7 +2,7 @@
 
 ```js
 const merge = require('lodash.merge');
-const tailwindConfig = require('@macramejs/theme-admin-vue3/tailwind.config.js');
+const tailwindConfig = require('@macramejs/theme-admin-vue3/tailwind.config.js';
 
 module.exports = merge(tailwindConfig, {
     purge: [
@@ -10,7 +10,6 @@ module.exports = merge(tailwindConfig, {
     ],
     theme: {
         // ...
-    }
+    },
 });
-
 ```

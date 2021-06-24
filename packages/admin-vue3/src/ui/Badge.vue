@@ -1,22 +1,13 @@
 <template>
     <component
         :is="tag"
-        class="inline-flex justify-center items-center px-2 rounded-xs text-sm"
+        class="inline-flex items-center justify-center px-2 text-sm rounded-xs"
         :class="{
-            'bg-blue text-white ':
-                variant == 'blue' && !outline && !text && !disabled,
-
-            'bg-gray-700  text-white':
-                variant == 'gray' && !outline && !text && !disabled,
-
-            'bg-green  text-green-700':
-                variant == 'green' && !outline && !text && !disabled,
-
-            'bg-red  text-red-700':
-                variant == 'red' && !outline && !text && !disabled,
-
-            'bg-yellow  text-yellow-700':
-                variant == 'yellow' && !outline && !text && !disabled,
+            'bg-blue text-white ': getVariant == 'blue',
+            'bg-gray-700 text-white': getVariant == 'gray',
+            'bg-green text-green-700': getVariant == 'green',
+            'bg-red text-red-700': getVariant == 'red',
+            'bg-yellow text-yellow-700': getVariant == 'yellow',
         }"
     >
         <slot />
@@ -25,18 +16,17 @@
 
 <script>
 import { defineComponent } from 'vue';
+import { getVariant, variants } from './props/variant';
 
 export default defineComponent({
     props: {
-        variant: {
-            default: 'blue',
-            type: String,
-        },
+        ...variants,
     },
     setup(props, { attrs }) {
         const tag = 'href' in attrs ? 'a' : 'div';
+        const getVariant = getVariant(props);
 
-        return { tag };
+        return { tag, getVariant };
     },
 });
 </script>
