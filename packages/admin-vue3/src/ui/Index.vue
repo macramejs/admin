@@ -1,8 +1,12 @@
 <template>
     <div>
-        <index-search v-bind="{ ...$attrs }" :table="table" />
-        <index-table v-bind="{ ...$attrs }" :table="table" />
-        <index-pagination v-bind="{ ...$attrs }" :table="table" />
+        <index-search as="ui-input" v-bind="{ ...$attrs }" :table="table" />
+        <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
+        <index-pagination
+            as="ui-pagination"
+            v-bind="{ ...$attrs }"
+            :table="table"
+        />
     </div>
 </template>
 
