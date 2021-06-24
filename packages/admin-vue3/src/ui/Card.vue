@@ -24,18 +24,6 @@ export default defineComponent({
             type: String,
             default: 'div',
         },
-        info: {
-            type: Boolean,
-            default: false,
-        },
-        disableContainer: {
-            type: Boolean,
-            default: false,
-        },
-        title: {
-            type: String,
-            default: '',
-        },
         variant: variants.variant,
         white: {
             type: Boolean,
