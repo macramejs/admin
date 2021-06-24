@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
-export default function getVariant(props) {
+type VariantOptions = {
+    DEFAULT?: string
+}
+
+export default function getVariant(props, options?: VariantOptions) {
+    let { DEFAULT = 'blue' } = options;
     let [variant, setVariant] = useState('blue');
 
     useEffect(() => {
@@ -17,7 +22,7 @@ export default function getVariant(props) {
         } else if (props.red) {
             setVariant('red');
         } else {
-            setVariant('blue');
+            setVariant(DEFAULT);
         }
     }, [props]);
 
