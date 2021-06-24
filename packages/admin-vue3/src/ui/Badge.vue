@@ -3,11 +3,11 @@
         :is="tag"
         class="inline-flex items-center justify-center px-2 text-sm rounded-xs"
         :class="{
-            'bg-blue text-white ': getVariant == 'blue',
-            'bg-gray-700 text-white': getVariant == 'gray',
-            'bg-green text-green-700': getVariant == 'green',
-            'bg-red text-red-700': getVariant == 'red',
-            'bg-yellow text-yellow-700': getVariant == 'yellow',
+            'bg-blue text-white ': variant_ == 'blue',
+            'bg-gray-700 text-white': variant_ == 'gray',
+            'bg-green text-green-700': variant_ == 'green',
+            'bg-red text-red-700': variant_ == 'red',
+            'bg-yellow text-yellow-700': variant_ == 'yellow',
         }"
     >
         <slot />
@@ -24,9 +24,9 @@ export default defineComponent({
     },
     setup(props, { attrs }) {
         const tag = 'href' in attrs ? 'a' : 'div';
-        const getVariant = getVariant(props);
+        const variant_ = getVariant(props, {});
 
-        return { tag, getVariant };
+        return { tag, variant_ };
     },
 });
 </script>
