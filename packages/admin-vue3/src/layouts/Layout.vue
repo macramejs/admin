@@ -1,17 +1,9 @@
 <template>
     <div class="flex w-screen">
         <aside
-            class="
-                z-10
-                w-64
-                h-screen
-                p-4
-                overflow-y-scroll
-                text-white
-                bg-blue-900
-            "
+            class="z-10 w-64 h-screen overflow-y-scroll text-white bg-blue-900"
         >
-            <header>Admin</header>
+            <header class="p-4">Admin</header>
             <nav>
                 <slot name="sidebar" :sidebar="sidebar" />
             </nav>

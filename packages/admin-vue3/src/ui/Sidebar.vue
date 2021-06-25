@@ -43,7 +43,6 @@
                                 inline-block
                                 w-full
                                 max-w-md
-                                px-4
                                 overflow-y-scroll
                                 text-left
                                 transition-all

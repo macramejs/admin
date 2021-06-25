@@ -1,15 +1,19 @@
 <template>
     <layout>
         <template v-slot:sidebar="{ sidebar }">
-            <ul>
-                <li>
-                    <a href="">Link 1</a>
-                </li>
-                <li>
-                    <a href="">Link 1</a>
-                </li>
-            </ul>
-            <button @click="sidebar.toggle()">Toggle Secondary Sidebar</button>
+            <div class="p-4">
+                <ul>
+                    <li>
+                        <a href="">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="">Link 1</a>
+                    </li>
+                </ul>
+                <button @click="sidebar.toggle()">
+                    Toggle Secondary Sidebar
+                </button>
+            </div>
         </template>
         <template v-slot:header>
             <div>foo</div>
