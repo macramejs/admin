@@ -7,6 +7,7 @@ module.exports = {
     },
     theme: {
         borderRadius: {
+            full: '9999px',
             lg: '19px', // TODO:
             md: '15px',
             sm: '11px',
