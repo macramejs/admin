@@ -50,15 +50,15 @@ import { RadioGroup, RadioGroupLabel, RadioGroupOption } from '@headlessui/vue';
 export default defineComponent({
     components: { RadioGroup, RadioGroupLabel, RadioGroupOption },
     props: {
-        label_key: {
+        labelKey: {
             type: String,
             default: null,
         },
-        value_key: {
+        valueKey: {
             type: String,
             default: null,
         },
-        disabled_key: {
+        disabledKey: {
             type: String,
             default: null,
         },
@@ -72,27 +72,27 @@ export default defineComponent({
         const val = ref();
 
         const optionValue = (option) => {
-            if (props.value_key === null) {
+            if (props.valueKey === null) {
                 return option;
             }
 
-            return option[props.value_key];
+            return option[props.valueKey];
         };
 
         const optionLabel = (option) => {
-            if (props.label_key === null) {
+            if (props.labelKey === null) {
                 return option;
             }
 
-            return option[props.label_key];
+            return option[props.labelKey];
         };
 
         const isDisabled = (option) => {
-            if (props.disabled_key === null) {
+            if (props.disabledKey === null) {
                 return false;
             }
 
-            return option[props.disabled_key] == true;
+            return option[props.disabledKey] == true;
         };
 
         return { val, optionValue, optionLabel, isDisabled };
