@@ -1,5 +1,14 @@
 <template>
-    <TransitionRoot appear :show="open" as="template">
+    <TransitionRoot
+        :show="open"
+        as="template"
+        enter="transition-all duration-75"
+        enter-to="opacity-100"
+        leave="transition-all duration-150"
+        enter-from="transform translate-x-full"
+        leave-from="transformtranslate-x-full"
+        leave-to="transform translate-x-full"
+    >
         <Dialog as="div" v-bind="$attrs" :open="open">
             <div
                 class="
