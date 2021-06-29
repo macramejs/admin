@@ -5,8 +5,9 @@
             as="template"
             v-for="option in options"
             :key="optionValue(option)"
-            v-slot="{ checked }"
+            v-slot="{ checked, disabled }"
             :value="optionValue(option)"
+            :disabled="isDisabled(option)"
         >
             <div class="flex">
                 <div class="flex items-center w-6 h-6">
@@ -17,17 +18,24 @@
                             justify-center
                             w-3.5
                             h-3.5
-                            border border-gray-700
+                            border
                             rounded-lg
                         "
                         :class="{
-                            'bg-blue': checked,
+                            'bg-blue': checked && !disabled,
+                            'bg-gray-700': checked && disabled,
+                            'border-gray-700': !disabled,
+                            'border-gray-600': disabled,
                         }"
                     >
                         <div class="w-1 h-1 bg-white rounded-lg"></div>
                     </div>
                 </div>
-                <RadioGroupLabel as="p" class="flex-1 cursor-pointer">
+                <RadioGroupLabel
+                    as="p"
+                    class="flex-1 cursor-pointer"
+                    :class="{ 'text-gray-600': disabled }"
+                >
                     {{ optionLabel(option) }}
                 </RadioGroupLabel>
             </div>
@@ -47,6 +55,10 @@ export default defineComponent({
             default: null,
         },
         value_key: {
+            type: String,
+            default: null,
+        },
+        disabled_key: {
             type: String,
             default: null,
         },
@@ -75,7 +87,15 @@ export default defineComponent({
             return option[props.label_key];
         };
 
-        return { val, optionValue, optionLabel };
+        const isDisabled = (option) => {
+            if (props.disabled_key === null) {
+                return false;
+            }
+
+            return option[props.disabled_key] == true;
+        };
+
+        return { val, optionValue, optionLabel, isDisabled };
     },
 });
 </script>
