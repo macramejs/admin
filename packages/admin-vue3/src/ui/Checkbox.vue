@@ -5,7 +5,7 @@
         as="template"
         v-slot="{ checked }"
     >
-        <div class="inline-flex items-center cursor-pointer">
+        <div class="inline-flex cursor-pointer">
             <div
                 :class="{
                     'bg-blue-500':
@@ -18,17 +18,10 @@
                     'bg-white': !checked,
 
                     'w-6 h-6': size_ == 'lg',
-                    'w-5 h-5': size_ == 'md',
-                    'w-4 h-4': size_ == 'sm',
+                    'w-5 h-5 mt-0.5': size_ == 'md',
+                    'w-4 h-4 mt-1': size_ == 'sm',
                 }"
-                class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    text-white
-                    border border-gray-700
-                    rounded-xs
-                "
+                class="inline-flex items-center justify-center text-white border border-gray-700  rounded-xs"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +39,7 @@
                     />
                 </svg>
             </div>
-            <label class="pt-1 pl-2">
+            <label class="flex-1 pl-2">
                 <slot>
                     {{ label }}
                 </slot>

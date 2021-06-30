@@ -4,7 +4,7 @@ import Toggle from './ui/Toggle.vue';
 import Badge from './ui/Badge.vue';
 import Form from './ui/Form.vue';
 import Checkbox from './ui/Checkbox.vue';
-import FormCheckboxes from './ui/FormCheckboxes.vue';
+import CheckboxGroup from './ui/CheckboxGroup.vue';
 import FormInput from './ui/FormInput.vue';
 import FormSelect from './ui/FormSelect.vue';
 import FormTextarea from './ui/FormTextarea.vue';
@@ -26,7 +26,7 @@ const plugin = {
         app.component('UiBadge', Badge);
         app.component('UiForm', Form);
         app.component('UiCheckbox', Checkbox);
-        app.component('UiFormCheckboxes', FormCheckboxes);
+        app.component('UiCheckboxGroup', CheckboxGroup);
         app.component('UiFormInput', FormInput);
         app.component('UiFormSelect', FormSelect);
         app.component('UiFormTextarea', FormTextarea);
