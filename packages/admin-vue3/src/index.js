@@ -16,6 +16,11 @@ import Sidebar from './ui/Sidebar.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
+import Dropdown from './ui/Dropdown.vue';
+import DropdownItem from './ui/DropdownItem.vue';
+import DropdownGroup from './ui/DropdownGroup.vue';
+import DropdownDevider from './ui/DropdownDevider.vue';
+
 import BasePage from './pages/BasePage';
 
 const plugin = {
@@ -38,6 +43,10 @@ const plugin = {
         app.component('UiPagination', Pagination);
         app.component('UiTable', Table);
         app.component('UiTextarea', Textarea);
+        app.component('UiDropdown', Dropdown);
+        app.component('UiDropdownItem', DropdownItem);
+        app.component('UiDropdownGroup', DropdownGroup);
+        app.component('UiDropdownDevider', DropdownDevider);
     },
 };
 
