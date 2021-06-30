@@ -29,7 +29,6 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { getVariant, variants } from './props/variant';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 
 export default defineComponent({
@@ -52,12 +51,6 @@ export default defineComponent({
             type: Boolean,
             default: false,
         },
-        ...variants,
-    },
-    setup(props, { attrs }) {
-        const variant_ = getVariant(props, {});
-
-        return { variant_ };
     },
 });
 </script>
