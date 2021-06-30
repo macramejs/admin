@@ -1,5 +1,5 @@
 module.exports = {
-    mode: 'jit',
+    // mode: 'jit',
     variants: {
         extend: {
             backgroundColor: ['active'],
