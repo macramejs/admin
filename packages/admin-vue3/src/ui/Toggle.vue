@@ -2,23 +2,22 @@
     <SwitchGroup>
         <div class="inline-flex flex-col">
             <SwitchLabel class="mr-4">
-                <slot>
-                    {{ label }}
-                </slot>
+                <slot> {{ label }} </slot>
             </SwitchLabel>
             <Switch
-                v-model="enabled"
+                :modelValue="modelValue"
+                @update:modelValue="update"
                 :class="{
-                    'bg-gray-500': !enabled,
+                    'bg-gray-500': !modelValue,
                     'bg-blue-500':
-                        (variant_ == null && enabled) ||
-                        (variant_ == 'blue' && enabled),
+                        (variant_ == null && modelValue) ||
+                        (variant_ == 'blue' && modelValue),
 
-                    'bg-green-500': variant_ == 'green' && enabled,
+                    'bg-green-500': variant_ == 'green' && modelValue,
 
-                    'bg-red-500': variant_ == 'red' && enabled,
+                    'bg-red-500': variant_ == 'red' && modelValue,
 
-                    'bg-yellow-500': variant_ == 'yellow' && enabled,
+                    'bg-yellow-500': variant_ == 'yellow' && modelValue,
 
                     'text-lg': size_ == 'lg',
                     'text-base': size_ == 'md' || size_ == null,
@@ -41,23 +40,23 @@
                         'w-4 h-4': size_ == 'sm',
 
                         'border-blue-500':
-                            (variant_ == 'blue' && enabled) ||
-                            (variant_ == null && enabled),
-                        'border-green-500': variant_ == 'green' && enabled,
-                        'border-yellow-500': variant_ == 'yellow' && enabled,
-                        'border-red-500': variant_ == 'red' && enabled,
-                        'border-gray-500': !enabled,
+                            (variant_ == 'blue' && modelValue) ||
+                            (variant_ == null && modelValue),
+                        'border-green-500': variant_ == 'green' && modelValue,
+                        'border-yellow-500': variant_ == 'yellow' && modelValue,
+                        'border-red-500': variant_ == 'red' && modelValue,
+                        'border-gray-500': !modelValue,
 
                         'translate-x-0':
-                            (size_ == 'lg' && !enabled) ||
-                            (size_ == 'md' && !enabled) ||
-                            (size_ == 'sm' && !enabled),
+                            (size_ == 'lg' && !modelValue) ||
+                            (size_ == 'md' && !modelValue) ||
+                            (size_ == 'sm' && !modelValue),
 
-                        'translate-x-[32px]': size_ == 'lg' && enabled,
-                        'translate-x-[20px]': size_ == 'md' && enabled,
-                        'translate-x-[16px]': size_ == 'sm' && enabled,
+                        'translate-x-[32px]': size_ == 'lg' && modelValue,
+                        'translate-x-[20px]': size_ == 'md' && modelValue,
+                        'translate-x-[16px]': size_ == 'sm' && modelValue,
                     }"
-                    class="inline-block transition-all transform bg-white border rounded-full "
+                    class="inline-block transition-all transform bg-white border-2 rounded-full "
                 />
             </Switch>
         </div>
@@ -81,16 +80,30 @@ export default {
             type: Boolean,
             default: false,
         },
+        disabled: {
+            type: Boolean,
+            default: false,
+        },
+        modelValue: {
+            type: Boolean,
+            default: false,
+        },
         ...sizes,
         ...variants,
     },
 
-    setup(props) {
-        const enabled = ref(false);
+    setup({ disabled, ...props }, { emit }) {
         const size_ = getSize(props, {});
         const variant_ = getVariant(props, {});
 
-        return { enabled, size_, variant_ };
+        const update = (value) => {
+            if (disabled) {
+                return;
+            }
+            emit('update:modelValue', value);
+        };
+
+        return { update, size_, variant_ };
     },
 };
 </script>
