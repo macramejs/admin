@@ -35,12 +35,12 @@
                         'w-4 h-4': size_ == 'md',
                         'w-3 h-3': size_ == 'sm',
 
-                        'translate-x-[2px]': size_ == 'lg' && !enabled,
+                        'translate-x-[1px]': size_ == 'lg' && !enabled,
                         'translate-x-px':
                             (size_ == 'md' && !enabled) ||
                             (size_ == 'sm' && !enabled),
 
-                        'translate-x-8': size_ == 'lg' && enabled,
+                        'translate-x-[33px]': size_ == 'lg' && enabled,
                         'translate-x-[21px]': size_ == 'md' && enabled,
                         'translate-x-[17px]': size_ == 'sm' && enabled,
                     }"
