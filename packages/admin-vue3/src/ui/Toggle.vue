@@ -9,49 +9,55 @@
             <Switch
                 v-model="enabled"
                 :class="{
-                    'bg-gray-500 border-gray-500': !enabled,
-                    'bg-blue-500 border-blue-500':
+                    'bg-gray-500': !enabled,
+                    'bg-blue-500':
                         (variant_ == null && enabled) ||
                         (variant_ == 'blue' && enabled),
 
-                    'bg-green-500 border-green-500':
-                        variant_ == 'green' && enabled,
+                    'bg-green-500': variant_ == 'green' && enabled,
 
-                    'bg-red-500 border-red-500': variant_ == 'red' && enabled,
+                    'bg-red-500': variant_ == 'red' && enabled,
 
-                    'bg-yellow-500 border-yellow-500':
-                        variant_ == 'yellow' && enabled,
+                    'bg-yellow-500': variant_ == 'yellow' && enabled,
 
                     'text-lg': size_ == 'lg',
-                    'text-base': size_ == 'md',
+                    'text-base': size_ == 'md' || size_ == null,
                     'text-xs': size_ == 'sm',
 
                     'w-16': size_ == 'lg',
-                    'w-10': size_ == 'md',
+                    'w-10': size_ == 'md' || size_ == null,
                     'w-8': size_ == 'sm',
 
                     'h-8 rounded-lg': size_ == 'lg',
-                    'h-5 rounded-md': size_ == 'md',
+                    'h-5 rounded-md': size_ == 'md' || size_ == null,
                     'h-4 rounded-sm': size_ == 'sm',
                 }"
-                class="relative inline-flex items-center transition-all border rounded-full  focus:outline-none focus:ring-4 focus:ring-blue-300"
+                class="relative inline-flex items-center transition-all rounded-full  focus:outline-none focus:ring-4 focus:ring-blue-300"
             >
                 <span
                     :class="{
-                        'w-7 h-7': size_ == 'lg',
-                        'w-4 h-4': size_ == 'md',
-                        'w-3 h-3': size_ == 'sm',
+                        'w-8 h-8': size_ == 'lg',
+                        'w-5 h-5': size_ == 'md',
+                        'w-4 h-4': size_ == 'sm',
 
-                        'translate-x-px':
+                        'border-blue-500':
+                            (variant_ == 'blue' && enabled) ||
+                            (variant_ == null && enabled),
+                        'border-green-500': variant_ == 'green' && enabled,
+                        'border-yellow-500': variant_ == 'yellow' && enabled,
+                        'border-red-500': variant_ == 'red' && enabled,
+                        'border-gray-500': !enabled,
+
+                        'translate-x-0':
                             (size_ == 'lg' && !enabled) ||
                             (size_ == 'md' && !enabled) ||
                             (size_ == 'sm' && !enabled),
 
-                        'translate-x-[33px]': size_ == 'lg' && enabled,
-                        'translate-x-[21px]': size_ == 'md' && enabled,
-                        'translate-x-[17px]': size_ == 'sm' && enabled,
+                        'translate-x-[32px]': size_ == 'lg' && enabled,
+                        'translate-x-[20px]': size_ == 'md' && enabled,
+                        'translate-x-[16px]': size_ == 'sm' && enabled,
                     }"
-                    class="inline-block transition-all transform bg-white rounded-full "
+                    class="inline-block transition-all transform bg-white border rounded-full "
                 />
             </Switch>
         </div>
@@ -88,20 +94,3 @@ export default {
     },
 };
 </script>
-
-<style>
-.switch-bg-enabled {
-    background-color: #4951f2;
-    border-color: #4951f2;
-}
-.switch-bg-disabled {
-    background-color: #cfd9e2;
-    border-color: #cfd9e2;
-}
-.switch-dot-enabled {
-    background-color: #fff;
-}
-.switch-dot-disabled {
-    background-color: #fff;
-}
-</style>
