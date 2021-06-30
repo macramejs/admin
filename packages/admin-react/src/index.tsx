@@ -9,6 +9,7 @@ import FormTextarea from './ui/FormTextarea';
 import Index from './ui/Index';
 import IndexSearch from './ui/IndexSearch';
 import Input from './ui/Input';
+import RadioGroup from './ui/RadioGroup';
 import Select from './ui/Select';
 import Toggle from './ui/Toggle';
 import Textarea from './ui/Textarea';
@@ -26,6 +27,7 @@ const plugin = {
         addComponent('ui-index', Index);
         addComponent('ui-index-search', IndexSearch);
         addComponent('ui-input', Input);
+        addComponent('ui-radio-group', RadioGroup);
         addComponent('ui-select', Select);
         addComponent('ui-textarea', Textarea);
         addComponent('ui-toggle', Toggle);
@@ -39,5 +41,6 @@ export {
     pages, 
     Button,
     Card,
+    RadioGroup,
     Toggle
 };
