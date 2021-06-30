@@ -42,5 +42,6 @@ export {
     Button,
     Card,
     RadioGroup,
+    Checkbox,
     Toggle
 };
