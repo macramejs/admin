@@ -21,7 +21,14 @@
                     'w-5 h-5': size_ == 'md',
                     'w-4 h-4': size_ == 'sm',
                 }"
-                class="inline-flex items-center justify-center text-white border border-gray-700  rounded-xs"
+                class="
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-white
+                    border border-gray-700
+                    rounded-xs
+                "
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +88,7 @@ export default defineComponent({
             if (disabled) {
                 return;
             }
+
             emit('update:modelValue', value);
         };
 
