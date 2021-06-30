@@ -39,5 +39,6 @@ export {
     pages, 
     Button,
     Card,
+    Checkbox,
     Toggle
 };
