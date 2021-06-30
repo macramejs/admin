@@ -9,8 +9,18 @@
             <Switch
                 v-model="enabled"
                 :class="{
-                    'switch-bg-enabled': enabled,
-                    'switch-bg-disabled': !enabled,
+                    'bg-gray-500 border-gray-500': !enabled,
+                    'bg-blue-500 border-blue-500':
+                        (variant_ == null && enabled) ||
+                        (variant_ == 'blue' && enabled),
+
+                    'bg-green-500 border-green-500':
+                        variant_ == 'green' && enabled,
+
+                    'bg-red-500 border-red-500': variant_ == 'red' && enabled,
+
+                    'bg-yellow-500 border-yellow-500':
+                        variant_ == 'yellow' && enabled,
 
                     'text-lg': size_ == 'lg',
                     'text-base': size_ == 'md',
@@ -28,15 +38,12 @@
             >
                 <span
                     :class="{
-                        'switch-dot-enabled': enabled,
-                        'switch-dot-disabled': !enabled,
-
                         'w-7 h-7': size_ == 'lg',
                         'w-4 h-4': size_ == 'md',
                         'w-3 h-3': size_ == 'sm',
 
-                        'translate-x-[1px]': size_ == 'lg' && !enabled,
                         'translate-x-px':
+                            (size_ == 'lg' && !enabled) ||
                             (size_ == 'md' && !enabled) ||
                             (size_ == 'sm' && !enabled),
 
@@ -55,6 +62,7 @@
 import { ref } from 'vue';
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 import { getSize, sizes } from './props/size';
+import { getVariant, variants } from './props/variant';
 
 export default {
     components: { Switch, SwitchGroup, SwitchLabel },
@@ -68,13 +76,15 @@ export default {
             default: false,
         },
         ...sizes,
+        ...variants,
     },
 
     setup(props) {
         const enabled = ref(false);
         const size_ = getSize(props, {});
+        const variant_ = getVariant(props, {});
 
-        return { enabled, size_ };
+        return { enabled, size_, variant_ };
     },
 };
 </script>
