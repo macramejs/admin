@@ -5,15 +5,15 @@ type SizeOptions = {
     only?: string[],
 }
 
-export default function getSize(props, options?:SizeOptions) {
+export default function getSize(props, options?: SizeOptions) {
     let { 
         DEFAULT = 'md', 
         only = ['sm', 'md', 'lg'], 
-    } = options;
+    } = options || {};
     let [size, setSize] = useState(DEFAULT);
 
     useEffect(() => {
-        if (props.variant) {
+        if (props.size) {
             setSize(props.size);
         } else if (props.sm && only.includes('sm')) {
             setSize('sm');

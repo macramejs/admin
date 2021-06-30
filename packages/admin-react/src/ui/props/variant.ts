@@ -5,7 +5,7 @@ type VariantOptions = {
 }
 
 export default function getVariant(props, options?: VariantOptions) {
-    let { DEFAULT = 'blue' } = options;
+    let { DEFAULT = 'blue' } = options || {};
     let [variant, setVariant] = useState('blue');
 
     useEffect(() => {
