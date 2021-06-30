@@ -19,6 +19,7 @@ import { options, optionValue, optionLabel, isDisabled } from './props/options';
 import { getSize, sizes } from './props/size';
 import { getVariant, variants } from './props/variant';
 import Checkbox from './Checkbox.vue';
+const xor = require('lodash.xor');
 
 export default defineComponent({
     components: { Checkbox },
@@ -45,24 +46,7 @@ export default defineComponent({
         const disabled = (option) => isDisabled(props, option);
 
         const handleUpdate = (option) => {
-            emit(
-                'update:modelValue',
-                toggleValueInArray(props.modelValue, value(option))
-            );
-        };
-
-        // TODO: this COULD be replaces with lodash xor ¯\_(ツ)_/¯
-        const toggleValueInArray = (array, el) => {
-            if (array.includes(el)) {
-                const index = array.indexOf(el);
-                if (index > -1) {
-                    array.splice(index, 1);
-                }
-            } else {
-                array.push(el);
-            }
-
-            return array;
+            emit('update:modelValue', xor(props.modelValue, [value(option)]));
         };
 
         return {
