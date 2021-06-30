@@ -1,5 +1,8 @@
 <template>
-    <RadioGroup v-model="val">
+    <RadioGroup
+        :modelValue="modelValue"
+        @update:modelValue="$emit('update:modelValue', $event)"
+    >
         <!-- <RadioGroupLabel>Plan</RadioGroupLabel> -->
         <RadioGroupOption
             as="template"
@@ -66,11 +69,13 @@ export default defineComponent({
             type: Array,
             default: () => [],
         },
+        modelValue: {
+            type: [String, Number],
+            default: null,
+        },
     },
 
     setup(props, { attrs }) {
-        const val = ref();
-
         const optionValue = (option) => {
             if (props.valueKey === null) {
                 return option;
@@ -95,7 +100,7 @@ export default defineComponent({
             return option[props.disabledKey] == true;
         };
 
-        return { val, optionValue, optionLabel, isDisabled };
+        return { optionValue, optionLabel, isDisabled };
     },
 });
 </script>
