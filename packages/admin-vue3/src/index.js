@@ -1,8 +1,8 @@
 import Button from './ui/Button.vue';
 import Card from './ui/Card.vue';
 import Badge from './ui/Badge.vue';
-import Checkbox from './ui/Checkbox.vue';
 import Form from './ui/Form.vue';
+import Checkbox from './ui/Checkbox.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
 import FormInput from './ui/FormInput.vue';
 import FormSelect from './ui/FormSelect.vue';
@@ -21,8 +21,8 @@ const plugin = {
         app.component('UiCard', Card);
         app.component('UiButton', Button);
         app.component('UiBadge', Badge);
-        app.component('UiCheckbox', Checkbox);
         app.component('UiForm', Form);
+        app.component('UiCheckbox', Checkbox);
         app.component('UiFormCheckboxes', FormCheckboxes);
         app.component('UiFormInput', FormInput);
         app.component('UiFormSelect', FormSelect);
