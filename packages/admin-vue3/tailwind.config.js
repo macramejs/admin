@@ -1,6 +1,4 @@
-const tailwindConfig = require('@macramejs/admin-config');
-
 module.exports = {
-    ...tailwindConfig,
-    // purge: [__dirname + '/ui/**/*.vue'],
+    presets: [require('@macramejs/admin-config')],
+    purge: [__dirname + '/ui/**/*.vue'],
 };

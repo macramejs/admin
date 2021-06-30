@@ -11,6 +11,7 @@ import FormTextarea from './ui/FormTextarea.vue';
 import Index from './ui/Index.vue';
 import Input from './ui/Input.vue';
 import Select from './ui/Select.vue';
+import Sidebar from './ui/Sidebar.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
@@ -31,6 +32,7 @@ const plugin = {
         app.component('UiIndex', Index);
         app.component('UiInput', Input);
         app.component('UiSelect', Select);
+        app.component('UiSidebar', Sidebar);
         app.component('UiPagination', Pagination);
         app.component('UiTable', Table);
         app.component('UiTextarea', Textarea);

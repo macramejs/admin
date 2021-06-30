@@ -52,9 +52,9 @@
                             (size_ == 'md' && !modelValue) ||
                             (size_ == 'sm' && !modelValue),
 
-                        'translate-x-[32px]': size_ == 'lg' && modelValue,
-                        'translate-x-[20px]': size_ == 'md' && modelValue,
-                        'translate-x-[16px]': size_ == 'sm' && modelValue,
+                        'translate-x-8': size_ == 'lg' && modelValue,
+                        'translate-x-5': size_ == 'md' && modelValue,
+                        'translate-x-4': size_ == 'sm' && modelValue,
                     }"
                     class="inline-block transition-all transform bg-white border-2 rounded-full "
                 />
@@ -75,10 +75,6 @@ export default {
         label: {
             type: String,
             default: null,
-        },
-        square: {
-            type: Boolean,
-            default: false,
         },
         disabled: {
             type: Boolean,

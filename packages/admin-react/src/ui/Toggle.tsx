@@ -1,90 +1,90 @@
 import classNames from 'classnames';
 import getVariant from './props/variant';
 import getSize from './props/size';
+import { useState } from 'react'
+import { Switch } from '@headlessui/react';
 
-type ButtonProps = {
-    text?: boolean,
-    square?: boolean,
-    outline?: boolean,
+type ToggleProps = {
+    label?: String,
     disabled?: boolean,
     [k: string]: any
 }
 
-const Button = function ({ 
-    text = false, 
-    square = false, 
-    outline = false, 
+const Toggle = function ({ 
+    label = '', 
     disabled = false, 
     ...props
-}: ButtonProps, context) {
-    const Tag = 'href' in props ? 'a' : 'button';
+}: ToggleProps, context) {
     const variant = getVariant(props);
     const size = getSize(props);
+    const [modelValue, setModelValue] = useState(false);
 
     return (
-        <Tag className={classNames({
-            'inline-flex items-center justify-center focus:outline-none': true,
+        <Switch.Group>
+            <div className="inline-flex flex-col">
+            <Switch.Label className="mr-4">
+                <slot> {{ label }} </slot>
+            </Switch.Label>
+            <Switch
+                checked={modelValue}
+                onChange={setModelValue}
+                className={classNames({
+                    'relative inline-flex items-center transition-all rounded-full  focus:outline-none focus:ring-4 focus:ring-blue-300': true,
+                    'bg-gray-500': !modelValue,
+                    'bg-blue-500':
+                        (variant == null && modelValue) ||
+                        (variant == 'blue' && modelValue),
 
-            'focus:ring': !text && !disabled,
+                    'bg-green-500': variant == 'green' && modelValue,
 
-            'text-lg': size == 'lg',
-            'text-base': size == 'md',
-            'text-xs': size == 'sm',
+                    'bg-red-500': variant == 'red' && modelValue,
 
-            'w-12': square && size == 'lg',
-            'w-10': square && size == 'md',
-            'w-7': square && size == 'sm',
+                    'bg-yellow-500': variant == 'yellow' && modelValue,
 
-            'h-12 rounded-lg': size == 'lg' && !text,
-            'h-10 rounded-md': size == 'md' && !text,
-            'h-7 rounded-sm': size == 'sm' && !text,
+                    'text-lg': size == 'lg',
+                    'text-base': size == 'md' || size == null,
+                    'text-xs': size == 'sm',
 
-            'px-6': size == 'lg' && !square && !text,
-            'px-5': size == 'md' && !square && !text,
-            'px-4': size == 'sm' && !square && !text,
+                    'w-16': size == 'lg',
+                    'w-10': size == 'md' || size == null,
+                    'w-8': size == 'sm',
 
-            'bg-gray-300 text-gray-600 cursor-default':
-                disabled && !outline && !text,
+                    'h-8 rounded-lg': size == 'lg',
+                    'h-5 rounded-md': size == 'md' || size == null,
+                    'h-4 rounded-sm': size == 'sm',
+                    [props.className]: true
+                })}
+            >
+                <span
+                    className={classNames({
+                        'inline-block transition-all transform bg-white border-2 rounded-full': true,
+                        'w-8 h-8': size == 'lg',
+                        'w-5 h-5': size == 'md',
+                        'w-4 h-4': size == 'sm',
 
-            'bg-blue hover:bg-blue-700 active:bg-blue-800 text-white focus:ring-blue-400 shadow':
-                variant == 'blue' && !outline && !text && !disabled,
-            'bg-white hover:bg-blue-100 active:bg-blue-300 text-blue hover:text-blue-600 active:text-blue-700 border border-blue focus:ring-blue-400':
-                variant == 'blue' && outline && !text && !disabled,
-            'text-blue hover:text-blue-700 active:text-blue-900 border-b border-blue':
-                variant == 'blue' && text && !disabled,
+                        'border-blue-500':
+                            (variant == 'blue' && modelValue) ||
+                            (variant == null && modelValue),
+                        'border-green-500': variant == 'green' && modelValue,
+                        'border-yellow-500': variant == 'yellow' && modelValue,
+                        'border-red-500': variant == 'red' && modelValue,
+                        'border-gray-500': !modelValue,
 
-            'bg-gray-700 hover:bg-gray-800 active:bg-gray-900 focus:ring-gray-400 text-white':
-                variant == 'gray' && !outline && !text && !disabled,
-            'bg-white hover:bg-gray-300 active:bg-gray-500 border border-gray-700 text-gray-700 focus:ring-gray-400':
-                variant == 'gray' && outline && !text && !disabled,
-            'text-gray hover:text-gray-700 active:text-gray-900 border-b border-gray':
-                variant == 'gray' && text && !disabled,
+                        'translate-x-0':
+                            (size == 'lg' && !modelValue) ||
+                            (size == 'md' && !modelValue) ||
+                            (size == 'sm' && !modelValue),
 
-            'bg-green hover:bg-green-700 active:bg-green-800 focus:ring-green-400 text-white':
-                variant == 'green' && !outline && !text && !disabled,
-            'bg-white hover:bg-green-100 active:bg-green-300 text-green hover:text-green-600 active:text-green-700 border border-green focus:ring-green-400':
-                variant == 'green' && outline && !text && !disabled,
-            'text-green hover:text-green-700 active:text-green-900 border-b border-green':
-                variant == 'green' && text && !disabled,
-
-            'bg-red hover:bg-red-500 active:bg-red-600 focus:ring-red-400 text-white':
-                variant == 'red' && !outline && !text && !disabled,
-            'bg-white hover:bg-red-100 active:bg-red-300 text-red hover:text-red-600 active:text-red-700 border border-red focus:ring-red-400':
-                variant == 'red' && outline && !text && !disabled,
-            'text-red hover:text-red-700 active:text-red-900 border-b border-red':
-                variant == 'red' && text && !disabled,
-
-            'bg-yellow hover:bg-yellow-700 active:bg-yellow-800 focus:ring-yellow-400 text-white':
-                variant == 'yellow' && !outline && !text && !disabled,
-            'bg-white hover:bg-yellow-100 active:bg-yellow-300 text-yellow hover:text-yellow-600 active:text-yellow-700 border border-yellow focus:ring-yellow-400':
-                variant == 'yellow' && outline && !text && !disabled,
-            'text-yellow hover:text-yellow-700 active:text-yellow-900 border-b border-yellow':
-                variant == 'yellow' && text && !disabled,
-            [props.className]: true
-        })}>
-            {props.children}
-        </Tag>
+                        'translate-x-8': size == 'lg' && modelValue,
+                        'translate-x-5': size == 'md' && modelValue,
+                        'translate-x-4': size == 'sm' && modelValue,
+                        [props.className]: true
+                    })}
+                />
+            </Switch>
+        </div>
+        </Switch.Group>
     );
 };
 
-export default Button;
+export default Toggle;
