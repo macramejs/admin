@@ -1,5 +1,6 @@
 import Button from './ui/Button.vue';
 import Card from './ui/Card.vue';
+import Toggle from './ui/Toggle.vue';
 import Badge from './ui/Badge.vue';
 import Form from './ui/Form.vue';
 import Checkbox from './ui/Checkbox.vue';
@@ -19,6 +20,7 @@ import BasePage from './pages/BasePage';
 const plugin = {
     install(app) {
         app.component('UiCard', Card);
+        app.component('UiToggle', Toggle);
         app.component('UiButton', Button);
         app.component('UiBadge', Badge);
         app.component('UiForm', Form);
