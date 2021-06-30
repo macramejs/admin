@@ -8,6 +8,7 @@ import FormCheckboxes from './ui/FormCheckboxes.vue';
 import FormInput from './ui/FormInput.vue';
 import FormSelect from './ui/FormSelect.vue';
 import FormTextarea from './ui/FormTextarea.vue';
+import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
 import Input from './ui/Input.vue';
 import Select from './ui/Select.vue';
@@ -29,6 +30,7 @@ const plugin = {
         app.component('UiFormInput', FormInput);
         app.component('UiFormSelect', FormSelect);
         app.component('UiFormTextarea', FormTextarea);
+        app.component('UiRadioGroup', RadioGroup);
         app.component('UiIndex', Index);
         app.component('UiInput', Input);
         app.component('UiSelect', Select);
