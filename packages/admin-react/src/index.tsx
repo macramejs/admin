@@ -10,6 +10,7 @@ import Index from './ui/Index';
 import IndexSearch from './ui/IndexSearch';
 import Input from './ui/Input';
 import Select from './ui/Select';
+import Toggle from './ui/Toggle';
 import Textarea from './ui/Textarea';
 import BasePage from './pages/BasePage';
 
@@ -27,6 +28,7 @@ const plugin = {
         addComponent('ui-input', Input);
         addComponent('ui-select', Select);
         addComponent('ui-textarea', Textarea);
+        addComponent('ui-toggle', Toggle);
     },
 };
 
@@ -36,5 +38,6 @@ export {
     plugin, 
     pages, 
     Button,
-    Card
+    Card,
+    Toggle
 };

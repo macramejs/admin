@@ -1,4 +1,5 @@
 module.exports = {
+    // mode: 'jit',
     variants: {
         extend: {
             backgroundColor: ['active'],
@@ -7,6 +8,7 @@ module.exports = {
     },
     theme: {
         borderRadius: {
+            full: '9999px',
             lg: '19px', // TODO:
             md: '15px',
             sm: '11px',
