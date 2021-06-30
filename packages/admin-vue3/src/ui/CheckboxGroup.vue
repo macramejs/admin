@@ -7,6 +7,7 @@
             @update:modelValue="handleUpdate(option)"
             :size="size_"
             :variant="variant_"
+            :disabled="disabled(option)"
         >
             {{ label(option) }}
         </Checkbox>
