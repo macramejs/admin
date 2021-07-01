@@ -1,6 +1,6 @@
 <template>
     <TransitionRoot appear :show="modelValue" as="template">
-        <Dialog as="div" @close="$emit('update:modelValue', false)">
+        <Dialog as="div" @close="closeModal()">
             <div class="fixed inset-0 z-50 overflow-y-auto">
                 <div class="min-h-screen px-4 text-center">
                     <TransitionChild
@@ -13,7 +13,7 @@
                         leave-to="opacity-0"
                     >
                         <DialogOverlay
-                            class="fixed inset-0 bg-gray-900 bg-opacity-50"
+                            class="fixed inset-0 bg-gray-900 bg-opacity-70"
                         />
                     </TransitionChild>
 
@@ -71,6 +71,12 @@ export default {
         },
     },
 
+    methods: {
+        closeModal() {
+            this.$emit('update:modelValue', false);
+        },
+    },
+
     setup({ modelValue, ...props }, { emit }) {
         // const opened = ref(true);
 
@@ -78,10 +84,6 @@ export default {
 
         return {
             opened,
-            closeModal() {
-                console.log('close Modal');
-                emit('update:modelValue', false);
-            },
             // openModal() {
             //     isOpen.value = true;
             // },
