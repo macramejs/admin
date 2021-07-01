@@ -1,15 +1,6 @@
 <template>
-    <div class="">
-        <button
-            type="button"
-            @click="openModal"
-            class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-md  focus:outline-none focus:ring-4 focus:ring-blue-300"
-        >
-            Open modal
-        </button>
-    </div>
-    <TransitionRoot appear :show="isOpen" as="template">
-        <Dialog as="div" @close="closeModal">
+    <TransitionRoot appear :show="modelValue" as="template">
+        <Dialog as="div" @close="$emit('update:modelValue', false)">
             <div class="fixed inset-0 z-50 overflow-y-auto">
                 <div class="min-h-screen px-4 text-center">
                     <TransitionChild
@@ -43,31 +34,9 @@
                         leave-to="opacity-0 scale-95"
                     >
                         <div
-                            class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl  rounded-2xl"
+                            class="inline-block w-full max-w-full p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl  md:max-w-xl lg:max-w-2xl rounded-xs"
                         >
-                            <DialogTitle
-                                as="h3"
-                                class="text-lg font-medium leading-6 text-gray-900 "
-                            >
-                                Payment successful
-                            </DialogTitle>
-                            <div class="mt-2">
-                                <p class="text-sm text-gray-500">
-                                    Your payment has been successfully
-                                    submitted. We’ve sent your an email with all
-                                    of the details of your order.
-                                </p>
-                            </div>
-
-                            <div class="mt-4">
-                                <button
-                                    type="button"
-                                    class="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md  hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                                    @click="closeModal"
-                                >
-                                    Got it, thanks!
-                                </button>
-                            </div>
+                            <slot />
                         </div>
                     </TransitionChild>
                 </div>
@@ -77,7 +46,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import {
     TransitionRoot,
     TransitionChild,
@@ -95,17 +64,27 @@ export default {
         DialogTitle,
     },
 
-    setup() {
-        const isOpen = ref(true);
+    props: {
+        modelValue: {
+            type: Boolean,
+            default: false,
+        },
+    },
+
+    setup({ modelValue, ...props }, { emit }) {
+        // const opened = ref(true);
+
+        const opened = computed(() => isOpen);
 
         return {
-            isOpen,
+            opened,
             closeModal() {
-                isOpen.value = false;
+                console.log('close Modal');
+                emit('update:modelValue', false);
             },
-            openModal() {
-                isOpen.value = true;
-            },
+            // openModal() {
+            //     isOpen.value = true;
+            // },
         };
     },
 };
