@@ -81,7 +81,7 @@ const Button = function ({
             'text-yellow hover:text-yellow-700 active:text-yellow-900 border-b border-yellow':
                 variant == 'yellow' && text && !disabled,
             [props.className]: true
-        })}>
+        })} {...props}>
             {props.children}
         </Tag>
     );
