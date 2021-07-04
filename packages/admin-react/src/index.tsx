@@ -1,6 +1,7 @@
 import Button from './ui/Button';
 import Card from './ui/Card';
 import Checkbox from './ui/Checkbox';
+import Dropdown from './ui/Dropdown';
 import Form from './ui/Form';
 import FormCheckboxes from './ui/FormCheckboxes';
 import FormInput from './ui/FormInput';
@@ -43,5 +44,6 @@ export {
     Card,
     RadioGroup,
     Checkbox,
-    Toggle
+    Toggle,
+    Dropdown
 };
