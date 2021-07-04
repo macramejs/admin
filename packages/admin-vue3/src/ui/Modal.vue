@@ -1,6 +1,6 @@
 <template>
-    <TransitionRoot appear :show="modelValue" as="template">
-        <Dialog as="div" @close="closeModal()">
+    <TransitionRoot appear :show="open" as="template">
+        <Dialog as="div" :open="open" @close="close">
             <div class="fixed inset-0 z-50 overflow-y-auto">
                 <div class="min-h-screen px-4 text-center">
                     <TransitionChild
@@ -13,7 +13,12 @@
                         leave-to="opacity-0"
                     >
                         <DialogOverlay
-                            class="fixed inset-0 bg-gray-900 bg-opacity-50  backdrop-filter backdrop-blur-sm"
+                            class="
+                                fixed
+                                inset-0
+                                bg-gray-900 bg-opacity-50
+                                backdrop-filter backdrop-blur-sm
+                            "
                         />
                     </TransitionChild>
 
@@ -34,7 +39,23 @@
                         leave-to="opacity-0 scale-95"
                     >
                         <div
-                            class="inline-block w-full max-w-full p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl  md:max-w-xl lg:max-w-2xl rounded-xs"
+                            class="
+                                inline-block
+                                w-full
+                                max-w-full
+                                p-6
+                                my-8
+                                overflow-hidden
+                                text-left
+                                align-middle
+                                transition-all
+                                transform
+                                bg-white
+                                shadow-xl
+                                md:max-w-xl
+                                lg:max-w-2xl
+                                rounded-xs
+                            "
                         >
                             <slot />
                         </div>
@@ -46,7 +67,6 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue';
 import {
     TransitionRoot,
     TransitionChild,
@@ -56,6 +76,7 @@ import {
 } from '@headlessui/vue';
 
 export default {
+    emits: ['close'],
     components: {
         TransitionRoot,
         TransitionChild,
@@ -65,29 +86,19 @@ export default {
     },
 
     props: {
-        modelValue: {
+        open: {
             type: Boolean,
             default: false,
         },
     },
 
-    methods: {
-        closeModal() {
-            this.$emit('update:modelValue', false);
-        },
-    },
+    setup({}, { emit }) {
+        function close(val) {
+            emit('close', val);
+            emit('update:open', val);
+        }
 
-    setup({ modelValue, ...props }, { emit }) {
-        // const opened = ref(true);
-
-        const opened = computed(() => isOpen);
-
-        return {
-            opened,
-            // openModal() {
-            //     isOpen.value = true;
-            // },
-        };
+        return { close };
     },
 };
 </script>
