@@ -19,7 +19,7 @@ import Textarea from './ui/Textarea.vue';
 import Dropdown from './ui/Dropdown.vue';
 import DropdownItem from './ui/DropdownItem.vue';
 import DropdownGroup from './ui/DropdownGroup.vue';
-import DropdownDevider from './ui/DropdownDevider.vue';
+import DropdownDivider from './ui/DropdownDivider.vue';
 
 import BasePage from './pages/BasePage';
 
@@ -46,7 +46,7 @@ const plugin = {
         app.component('UiDropdown', Dropdown);
         app.component('UiDropdownItem', DropdownItem);
         app.component('UiDropdownGroup', DropdownGroup);
-        app.component('UiDropdownDevider', DropdownDevider);
+        app.component('UiDropdownDivider', DropdownDivider);
     },
 };
 
