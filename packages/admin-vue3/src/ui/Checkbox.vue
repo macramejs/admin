@@ -8,21 +8,21 @@
         <div class="inline-flex">
             <div
                 :class="{
-                    'bg-blue-500':
+                    'bg-blue border-blue':
                         (variant_ == null && checked) ||
                         (variant_ == 'blue' && checked),
-                    'bg-green-500': variant_ == 'green' && checked,
-                    'bg-red-400': variant_ == 'red' && checked,
+                    'bg-green border-green': variant_ == 'green' && checked,
+                    'bg-red border-red': variant_ == 'red' && checked,
                     'bg-yellow-400': variant_ == 'yellow' && checked,
-                    'bg-gray-700': variant_ == 'gray' && checked,
+                    'bg-gray-700 border-gray': variant_ == 'gray' && checked,
                     'bg-white': !checked,
 
-                    'w-6 h-6': size_ == 'lg',
-                    'w-5 h-5 mt-0.5': size_ == 'md',
-                    'w-4 h-4 mt-1': size_ == 'sm',
+                    'w-5 h-5 mt-px': size_ == 'lg',
+                    'w-4 h-4 mt-1': size_ == 'md',
+                    'w-3 h-3 mt-1': size_ == 'sm',
 
                     'border-gray-600': disabled,
-                    'border-gray-700 ': !disabled,
+                    'border-gray-700 ': !disabled && !checked,
                 }"
                 class="inline-flex items-center justify-center text-white border  rounded-xs"
             >
@@ -47,6 +47,7 @@
                 :class="{
                     'cursor-pointer': !disabled,
                     'text-gray-600 cursor-not-allowed': disabled,
+                    'text-sm': size_ == 'sm',
                 }"
             >
                 <slot>

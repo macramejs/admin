@@ -8,11 +8,12 @@ module.exports = {
     },
     theme: {
         borderRadius: {
+            xs: '4px', // checkbox
+            sm: '7px', // badge
+            md: '10px', // card
+            lg: '15px', // button + input
+            xl: '19px', //
             full: '9999px',
-            lg: '19px', // TODO:
-            md: '15px',
-            sm: '11px',
-            xs: '6px',
         },
         colors: {
             white: 'white',
