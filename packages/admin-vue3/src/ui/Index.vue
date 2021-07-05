@@ -1,5 +1,10 @@
 <template>
-    <div>
+    <div
+        class="w-full bg-white"
+        :class="{
+            'py-6 rounded-md shadow': rounded,
+        }"
+    >
         <index-search as="ui-input" v-bind="{ ...$attrs }" :table="table" />
         <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
         <index-pagination
@@ -25,6 +30,12 @@ export default defineComponent({
         IndexSearch,
         IndexTable,
         IndexPagination,
+    },
+    props: {
+        rounded: {
+            type: Boolean,
+            default: true,
+        },
     },
     setup(props, { attrs }) {
         const table = useIndex(<UseIndexAttrs>attrs);
