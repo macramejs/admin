@@ -1,3 +1,4 @@
+import Block from './ui/Block.vue';
 import Button from './ui/Button.vue';
 import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
@@ -22,6 +23,7 @@ const plugin = {
     install(app) {
         app.component('UiCard', Card);
         app.component('UiToggle', Toggle);
+        app.component('UiBlock', Block);
         app.component('UiButton', Button);
         app.component('UiBadge', Badge);
         app.component('UiForm', Form);

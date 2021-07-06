@@ -7,6 +7,15 @@ module.exports = {
         },
     },
     theme: {
+        cursor: {
+            auto: 'auto',
+            default: 'default',
+            pointer: 'pointer',
+            text: 'text',
+            move: 'move',
+            grab: 'grab',
+            'not-allowed': 'not-allowed',
+        },
         borderRadius: {
             full: '9999px',
             lg: '19px', // TODO:

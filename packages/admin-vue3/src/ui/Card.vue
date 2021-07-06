@@ -1,7 +1,7 @@
 <template>
     <component
         :is="as"
-        class="rounded-sm p-6"
+        class="rounded-sm"
         :class="{
             'bg-white shadow': variant_ == 'white',
             'bg-gray-300': variant_ == 'gray',
