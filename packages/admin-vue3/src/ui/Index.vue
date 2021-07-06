@@ -5,7 +5,13 @@
             'py-6 rounded-md shadow': rounded,
         }"
     >
-        <index-search as="ui-input" v-bind="{ ...$attrs }" :table="table" />
+        <index-search
+            as="ui-input"
+            v-bind="{ ...$attrs }"
+            :table="table"
+            class="hidden"
+        />
+
         <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
         <index-pagination
             as="ui-pagination"
@@ -16,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref, watch, watchEffect } from 'vue';
 import { UseIndexAttrs } from '@macramejs/macrame';
 import {
     useIndex,
@@ -24,7 +30,8 @@ import {
     IndexSearch,
     IndexPagination,
 } from '@macramejs/macrame-vue3';
-
+import { indexsearch } from './index.search';
+const debounce = require('lodash.debounce');
 export default defineComponent({
     components: {
         IndexSearch,
@@ -42,7 +49,15 @@ export default defineComponent({
 
         table.loadItems();
 
-        return { table };
+        watch(indexsearch, (indexsearch, old) => {
+            search(indexsearch);
+        });
+
+        const search = debounce((indexsearch) => {
+            table.updateSearch(indexsearch);
+        }, 200);
+
+        return { table, indexsearch };
     },
 });
 </script>

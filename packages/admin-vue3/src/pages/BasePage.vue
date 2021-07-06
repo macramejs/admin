@@ -31,6 +31,7 @@
                         />
                     </svg>
                     <input
+                        v-model="indexsearch"
                         type="text"
                         class="h-full pl-6 text-gray-900 outline-none"
                         placeholder="Search Posts"
@@ -131,9 +132,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue';
+import { computed, defineComponent, PropType, ref } from 'vue';
 import { Component } from '@macramejs/macrame';
 import Layout from '../layouts/Layout.vue';
+import { indexsearch } from '../ui/index.search';
 export default defineComponent({
     components: { Layout },
     name: 'BasePage',
@@ -147,6 +149,7 @@ export default defineComponent({
         let isOpen = ref<boolean>(false);
 
         return {
+            indexsearch,
             isOpen,
             setIsOpen(value) {
                 isOpen.value = value;
