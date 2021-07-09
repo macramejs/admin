@@ -12,6 +12,7 @@ import Input from './ui/Input';
 import RadioGroup from './ui/RadioGroup';
 import Select from './ui/Select';
 import Toggle from './ui/Toggle';
+import Modal from './ui/Modal';
 import Textarea from './ui/Textarea';
 import BasePage from './pages/BasePage';
 
@@ -29,6 +30,7 @@ const plugin = {
         addComponent('ui-input', Input);
         addComponent('ui-radio-group', RadioGroup);
         addComponent('ui-select', Select);
+        addComponent('ui-modal', Modal);
         addComponent('ui-textarea', Textarea);
         addComponent('ui-toggle', Toggle);
     },
@@ -43,5 +45,6 @@ export {
     Card,
     RadioGroup,
     Checkbox,
-    Toggle
+    Toggle,
+    Modal,
 };
