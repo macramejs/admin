@@ -14,33 +14,20 @@
         <template v-slot:header>
             <div class="flex items-center h-full space-x-2">
                 <div>Posts</div>
-
-                <div
-                    class="flex items-center h-full pl-6 text-gray-700  focus-within:text-blue"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                        class="absolute w-4 h-4 pointer-events-none fill-current "
-                    >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path
-                            d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
-                        />
-                    </svg>
-                    <input
-                        v-model="indexsearch"
-                        type="text"
-                        class="h-full pl-6 text-gray-900 outline-none"
-                        placeholder="Search Posts"
-                    />
-                </div>
+                <div id="portal-header-left"></div>
             </div>
             <div class="flex items-center space-x-2">
                 <button
-                    class="flex items-center justify-center w-4 h-4 text-gray-600 border border-gray-600 rounded-full "
+                    class="
+                        flex
+                        items-center
+                        justify-center
+                        w-4
+                        h-4
+                        text-gray-600
+                        border border-gray-600
+                        rounded-full
+                    "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +50,16 @@
             <div class="flex items-center space-x-8">
                 <div class="flex items-center space-x-2">
                     <button
-                        class="flex items-center h-6 px-2 text-gray-700 bg-transparent  rounded-xs hover:bg-gray-200"
+                        class="
+                            flex
+                            items-center
+                            h-6
+                            px-2
+                            text-gray-700
+                            bg-transparent
+                            rounded-xs
+                            hover:bg-gray-200
+                        "
                         @click="setIsOpen(!isOpen.value)"
                     >
                         <svg
@@ -90,7 +86,16 @@
                         </div>
                     </ui-sidebar>
                     <button
-                        class="flex items-center h-6 px-2 text-gray-700 bg-transparent  rounded-xs hover:bg-gray-200"
+                        class="
+                            flex
+                            items-center
+                            h-6
+                            px-2
+                            text-gray-700
+                            bg-transparent
+                            rounded-xs
+                            hover:bg-gray-200
+                        "
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +124,7 @@
         </template>
         <template v-slot:sidebar-secondary>Nested crud</template>
         <template v-slot:default>
-            <div class="p-6">
+            <div class="p-6" v-if="isMounted">
                 <component
                     v-for="(component, index) in components"
                     v-bind="component.props"
@@ -132,10 +137,9 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from 'vue';
+import { computed, defineComponent, PropType, ref, onMounted } from 'vue';
 import { Component } from '@macramejs/macrame';
 import Layout from '../layouts/Layout.vue';
-import { indexsearch } from '../ui/index.search';
 export default defineComponent({
     components: { Layout },
     name: 'BasePage',
@@ -147,9 +151,14 @@ export default defineComponent({
     },
     setup() {
         let isOpen = ref<boolean>(false);
+        let isMounted = ref<boolean>(false);
+
+        onMounted(() => {
+            isMounted.value = true;
+        });
 
         return {
-            indexsearch,
+            isMounted,
             isOpen,
             setIsOpen(value) {
                 isOpen.value = value;
