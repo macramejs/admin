@@ -1,21 +1,27 @@
 <template>
-    <div
-        class="w-full bg-white"
-        :class="{
-            'py-6 rounded-md shadow': rounded,
-        }"
-    >
+    <div>
         <teleport v-if="isRoot" to="#portal-header-left">
             <Search :table="table" v-bind="$attrs" />
         </teleport>
         <Search v-else :table="table" v-bind="$attrs" />
 
-        <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
-        <index-pagination
-            as="ui-pagination"
-            v-bind="{ ...$attrs }"
-            :table="table"
-        />
+        <div class="py-6 rounded-md shadow w-full bg-white">
+            <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
+            <index-pagination
+                as="ui-pagination"
+                v-bind="{ ...$attrs }"
+                :table="table"
+                class="pt-6"
+            />
+            <div class="flex justify-between mx-10">
+                <span></span>
+                <span class="text-gray">
+                    {{ table.fromItem }}-{{ table.toItem }}/{{
+                        table.totalItems
+                    }}
+                </span>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -77,7 +83,7 @@ export default defineComponent({
         },
         isRoot: {
             type: Boolean,
-            default: false,
+            default: true,
         },
     },
     setup({}, { attrs }) {
