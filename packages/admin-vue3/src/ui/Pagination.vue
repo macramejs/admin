@@ -57,7 +57,10 @@
                 <span class="text-lg" v-if="table.currentPage > 2"> ... </span>
                 <span
                     class="text-lg cursor-pointer"
-                    v-if="table.currentPage == table.getLastPage()"
+                    v-if="
+                        table.currentPage == table.getLastPage() &&
+                        table.currentPage > 2
+                    "
                     @click="table.setPage(table.currentPage - 2)"
                 >
                     {{ table.currentPage - 2 }}
@@ -81,7 +84,7 @@
                 </span>
                 <span
                     class="text-lg cursor-pointer"
-                    v-if="table.currentPage == 1"
+                    v-if="table.currentPage == 1 && table.getLastPage() > 2"
                     @click="table.setPage(table.currentPage + 2)"
                 >
                     {{ table.currentPage + 2 }}
