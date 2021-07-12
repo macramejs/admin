@@ -97,6 +97,7 @@
                 outline
                 gray
                 square
+                :disabled="table.currentPage == table.getLastPage()"
                 @click="table.setPage(table.currentPage + 1)"
             >
                 <svg
@@ -117,7 +118,6 @@
                 gray
                 square
                 class="relative"
-                :disabled="table.currentPage == table.getLastPage()"
                 @click="table.lastPage()"
             >
                 <svg
