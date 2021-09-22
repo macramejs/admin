@@ -1,5 +1,5 @@
 <template>
-    <base-input v-bind="$attrs" />
+    <BaseInput v-bind="$attrs" class="py-2 px-4" />
 </template>
 
 <script lang="ts">

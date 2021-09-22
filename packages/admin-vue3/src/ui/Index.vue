@@ -1,37 +1,40 @@
 <template>
     <div>
-        <index-search as="ui-input" v-bind="{ ...$attrs }" :table="table" />
-        <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
-        <index-pagination
-            as="ui-pagination"
-            v-bind="{ ...$attrs }"
-            :table="table"
-        />
+        <slot name="search">
+            <Input v-model.debounce="table.search" />
+        </slot>
+        <slot />
+        <slot name="pagination">
+            <Pagination :table="table" />
+        </slot>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { UseIndexAttrs } from '@macramejs/macrame';
-import {
-    useIndex,
-    IndexTable,
-    IndexSearch,
-    IndexPagination,
-} from '@macramejs/macrame-vue3';
+import { defineComponent, PropType } from 'vue';
+import { Index } from '@macramejs/macrame-vue3';
+import Input from './Input.vue';
+import Pagination from './Pagination.vue';
+
+type IndexProps = {
+    table: Index;
+};
 
 export default defineComponent({
     components: {
-        IndexSearch,
-        IndexTable,
-        IndexPagination,
+        Input,
+        Pagination,
     },
-    setup(props, { attrs }) {
-        const table = useIndex(<UseIndexAttrs>attrs);
+    props: {
+        table: {
+            type: Object as PropType<Index>,
+            required: true,
+        },
+    },
+    setup({}: IndexProps, {}) {
+        //
 
-        table.loadItems();
-
-        return { table };
+        return {};
     },
 });
 </script>

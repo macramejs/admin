@@ -1,23 +1,27 @@
 <template>
-    <table>
-        <thead>
-            <tr>
-                <base-th
-                    v-for="(column, thKey) in schema"
-                    :key="`th-${thKey}`"
-                    :column="column"
-                />
-            </tr>
+    <table class="table w-full">
+        <thead class="sticky top-0 text-left text-gray-700 bg-white thead">
+            <slot name="thead">
+                <tr>
+                    <base-th
+                        v-for="(column, thKey) in schema"
+                        :key="`th-${thKey}`"
+                        :column="column"
+                    />
+                </tr>
+            </slot>
         </thead>
         <tbody>
-            <tr v-for="(item, trKey) in table.items" :key="`th-${trKey}`">
-                <base-td
-                    v-for="(column, tdKey) in schema"
-                    :key="`td-${tdKey}`"
-                    :column="column"
-                    :item="item"
-                />
-            </tr>
+            <slot name="tbody" :items="table.items">
+                <tr v-for="(item, trKey) in table.items" :key="`th-${trKey}`">
+                    <base-td
+                        v-for="(column, tdKey) in schema"
+                        :key="`td-${tdKey}`"
+                        :column="column"
+                        :item="item"
+                    />
+                </tr>
+            </slot>
         </tbody>
     </table>
 </template>
@@ -36,7 +40,7 @@ export default defineComponent({
         },
         schema: {
             type: Array as PropType<Component[]>,
-            required: true,
+            required: false,
         },
     },
 });
