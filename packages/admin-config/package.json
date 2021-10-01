@@ -1,8 +1,8 @@
 {
-    "name": "@macramejs/admin-config",
-    "version": "0.0.1",
-    "description": "",
-    "main": "tailwind.config.js",
-    "author": "",
-    "license": "MIT"
+  "name": "@macramejs/admin-config",
+  "version": "0.0.8",
+  "description": "",
+  "main": "tailwind.config.js",
+  "author": "",
+  "license": "MIT"
 }
