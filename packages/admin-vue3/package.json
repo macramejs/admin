@@ -1,28 +1,28 @@
 {
-    "name": "@macramejs/admin-vue3",
-    "version": "0.0.8",
-    "description": "",
-    "typings": "index.d.ts",
-    "main": "index.js",
-    "module": "dist/admin-vue3.esm-bundler.js",
-    "files": [
-        "tailwind.config.js",
-        "index.d.ts",
-        "index.js",
-        "dist"
-    ],
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "@macramejs/macrame": "^0.0.1",
-        "@macramejs/macrame-vue3": "^0.0.1",
-        "@vue/compiler-sfc": "^3.1.0",
-        "vue": "^3.0.0"
-    },
-    "dependencies": {
-        "@macramejs/admin-config": "^0.0.1"
-    }
+  "name": "@macramejs/admin-vue3",
+  "version": "0.0.9",
+  "description": "",
+  "typings": "index.d.ts",
+  "main": "index.js",
+  "module": "dist/admin-vue3.esm-bundler.js",
+  "files": [
+    "tailwind.config.js",
+    "index.d.ts",
+    "index.js",
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@macramejs/macrame": "^0.0.1",
+    "@macramejs/macrame-vue3": "^0.0.1",
+    "@vue/compiler-sfc": "^3.1.0",
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@macramejs/admin-config": "^0.0.1"
+  }
 }
