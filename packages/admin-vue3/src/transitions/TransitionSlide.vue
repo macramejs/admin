@@ -19,6 +19,7 @@ export default defineComponent({
     },
 });
 </script>
+
 <style>
 .slide-up-enter-active,
 .slide-down-enter-active,
