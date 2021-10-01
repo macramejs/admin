@@ -3,6 +3,7 @@ import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
 import Badge from './ui/Badge.vue';
 import Form from './ui/Form.vue';
+import Modal from './ui/Modal.vue';
 import Checkbox from './ui/Checkbox.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
 import FormInput from './ui/FormInput.vue';
@@ -17,6 +18,10 @@ import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
 import BasePage from './pages/BasePage';
+import Layout from './layouts/Layout';
+import Tr from './ui/Tr';
+import Th from './ui/Th';
+import Td from './ui/Td';
 
 const plugin = {
     install(app) {
@@ -25,6 +30,7 @@ const plugin = {
         app.component('UiButton', Button);
         app.component('UiBadge', Badge);
         app.component('UiForm', Form);
+        app.component('UiModal', Modal);
         app.component('UiCheckbox', Checkbox);
         app.component('UiFormCheckboxes', FormCheckboxes);
         app.component('UiFormInput', FormInput);
@@ -43,4 +49,6 @@ const plugin = {
 
 const pages = { BasePage };
 
-export { plugin, pages };
+export { plugin, pages, Layout };
+
+export { Index, Table, Tr, Th, Td };

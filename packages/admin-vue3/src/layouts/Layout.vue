@@ -37,13 +37,7 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import TransitionSlide from '../transitions/TransitionSlide.vue';
-
-type TSidebar = {
-    isOpen: boolean;
-    show: () => void;
-    close: () => void;
-    toggle: () => void;
-};
+import { TSidebar } from '../..';
 
 export default defineComponent({
     components: { TransitionSlide },

@@ -4,9 +4,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Select as BaseSelect } from '@macramejs/macrame-vue3';
+// import { Select as BaseSelect } from '@macramejs/macrame-vue3';
 
 export default defineComponent({
-    components: { BaseSelect },
+    // components: { BaseSelect },
 });
 </script>

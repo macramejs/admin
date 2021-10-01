@@ -1,97 +1,49 @@
 <template>
     <div>
-        <teleport v-if="isRoot" to="#portal-header-left">
-            <Search :table="table" v-bind="$attrs" />
-        </teleport>
-        <Search v-else :table="table" v-bind="$attrs" />
-
+        <slot name="search">
+            <Search :table="table" />
+        </slot>
         <div class="py-6 rounded-md shadow w-full bg-white">
-            <index-table as="ui-table" v-bind="{ ...$attrs }" :table="table" />
-            <index-pagination
-                as="ui-pagination"
-                v-bind="{ ...$attrs }"
-                :table="table"
-                class="pt-6"
-            />
-            <div class="flex justify-between mx-10">
-                <span></span>
+            <slot />
+            <slot name="footer">
                 <span class="text-gray">
                     {{ table.fromItem }}-{{ table.toItem }}/{{
                         table.totalItems
                     }}
                 </span>
-            </div>
+            </slot>
         </div>
+        <slot name="pagination">
+            <Pagination :table="table" />
+        </slot>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch, watchEffect } from 'vue';
-import { UseIndexAttrs } from '@macramejs/macrame';
-import { Portal, PortalGroup } from '@headlessui/vue';
-import {
-    useIndex,
-    IndexTable,
-    IndexSearch,
-    IndexPagination,
-} from '@macramejs/macrame-vue3';
+import { defineComponent, PropType } from 'vue';
+import { Index } from '@macramejs/macrame-vue3';
+import Pagination from './Pagination.vue';
+import Search from './Search.vue';
 
-const Search = defineComponent({
-    props: {
-        table: {
-            type: Object,
-            required: true,
-        },
-    },
-    components: { IndexSearch },
-    template: `
-        <div class="flex items-center h-full pl-6 text-gray-700 focus-within:text-blue">
-            <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    class="absolute w-4 h-4 pointer-events-none fill-current"
-                >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                    d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
-                />
-            </svg>
-            <index-search
-                as="ui-input"
-                v-bind="$attrs"
-                :table="table"
-                class="h-full pl-6 text-gray-900 outline-none"
-            />
-        </div>
-    `,
-});
+type IndexProps = {
+    table: Index;
+};
 
 export default defineComponent({
     components: {
-        IndexTable,
-        IndexPagination,
-        Portal,
-        PortalGroup,
+        Pagination,
         Search,
     },
     props: {
-        rounded: {
-            type: Boolean,
-            default: true,
-        },
-        isRoot: {
-            type: Boolean,
-            default: true,
+        table: {
+            type: Object as PropType<Index>,
+            required: true,
         },
     },
-    setup({}, { attrs }) {
-        const table = useIndex(<UseIndexAttrs>attrs);
+    setup({}: IndexProps, {}) {
+        //
 
-        table.loadItems();
-
-        return { table };
+        return {};
     },
 });
 </script>
