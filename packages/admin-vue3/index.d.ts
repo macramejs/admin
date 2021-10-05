@@ -17,6 +17,7 @@ export const Index : Component;
 export const Table : Component;
 export const Tr : Component;
 export const Th : Component;
+export const Td : Component;
 export const Card : Component;
 export const Toggle : Component;
 export const Button : Component;
