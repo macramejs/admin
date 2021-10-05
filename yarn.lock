@@ -48,6 +48,11 @@
   resolved "https://registry.npmjs.org/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
 
+"@macramejs/admin-config@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@macramejs/admin-config/-/admin-config-0.0.1.tgz#2917132da97aefebe8b6690c7d55419bf1483a34"
+  integrity sha512-zDTVy3o/9oRNG0/CI/BIhXXR+PwBAoWRnlapRpmQMht/WCheB0sYhN7B4jWgIRWSvz57GUsqICPCGrtkLPrY+w==
+
 "@macramejs/macrame-react@^0.0.1":
   version "0.0.1"
   resolved "https://registry.npmjs.org/@macramejs/macrame-react/-/macrame-react-0.0.1.tgz"
