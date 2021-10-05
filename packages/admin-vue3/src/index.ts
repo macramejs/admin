@@ -52,4 +52,19 @@ const pages = { BasePage };
 export { plugin, pages, Layout };
 
 // Components
-export { Index, Table, Tr, Th, Td };
+export {
+    Card,
+    Toggle,
+    Button,
+    Badge,
+    Form,
+    Modal,
+    Checkbox,
+    Index, 
+    Input,
+    Select,
+    Sidebar,
+    Pagination,
+    Textarea,
+    Table, Tr, Th, Td,
+};
