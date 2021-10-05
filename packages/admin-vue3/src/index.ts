@@ -51,4 +51,5 @@ const pages = { BasePage };
 
 export { plugin, pages, Layout };
 
+// Components
 export { Index, Table, Tr, Th, Td };
