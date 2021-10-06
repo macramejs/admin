@@ -3,7 +3,7 @@
         <thead class="sticky top-0 text-left text-gray-700 bg-white thead">
             <slot name="thead">
                 <tr>
-                    <base-th
+                    <Th
                         v-for="(column, thKey) in schema"
                         :key="`th-${thKey}`"
                         :column="column"
@@ -19,7 +19,7 @@
                     :key="`th-${trKey}`"
                     class="bg-gray-100 odd:bg-white"
                 >
-                    <base-td
+                    <Td
                         v-for="(column, tdKey) in schema"
                         :key="`td-${tdKey}`"
                         :column="column"
@@ -34,11 +34,13 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { Th as BaseTh, Td as BaseTd, Index } from '@macramejs/macrame-vue3';
+import { Index } from '@macramejs/macrame-vue3';
 import { Component } from '@macramejs/macrame';
+import Th from './Th.vue';
+import Td from './Td.vue';
 
 export default defineComponent({
-    components: { BaseTh, BaseTd },
+    components: { Th, Td },
     props: {
         selectable: {
             type: Boolean,

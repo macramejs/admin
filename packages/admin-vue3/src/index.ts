@@ -17,11 +17,11 @@ import Sidebar from './ui/Sidebar.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
-import BasePage from './pages/BasePage';
-import Layout from './layouts/Layout';
-import Tr from './ui/Tr';
-import Th from './ui/Th';
-import Td from './ui/Td';
+import BasePage from './pages/BasePage.vue';
+import Layout from './layouts/Layout.vue';
+import Tr from './ui/Tr.vue';
+import Th from './ui/Th.vue';
+import Td from './ui/Td.vue';
 
 const plugin = {
     install(app) {
@@ -51,4 +51,20 @@ const pages = { BasePage };
 
 export { plugin, pages, Layout };
 
-export { Index, Table, Tr, Th, Td };
+// Components
+export {
+    Card,
+    Toggle,
+    Button,
+    Badge,
+    Form,
+    Modal,
+    Checkbox,
+    Index, 
+    Input,
+    Select,
+    Sidebar,
+    Pagination,
+    Textarea,
+    Table, Tr, Th, Td,
+};
