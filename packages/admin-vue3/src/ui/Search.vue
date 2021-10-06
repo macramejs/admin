@@ -1,26 +1,23 @@
 <template>
     <div
-        class="
-            flex
-            items-center
-            h-full
-            pl-6
-            text-gray-700
-            focus-within:text-blue
-        "
+        class="flex items-center h-full mb-6 overflow-hidden text-gray-700 border border-gray-700 rounded-md  w-max focus-within:text-blue"
     >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            class="absolute w-4 h-4 pointer-events-none fill-current"
+        <div
+            class="flex items-center justify-center w-10 h-10 text-white bg-gray-700 "
         >
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path
-                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"
-            />
-        </svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2.5 -2.5 24 24"
+                width="16"
+                height="16"
+                preserveAspectRatio="xMinYMin"
+                class="fill-current icon__icon"
+            >
+                <path
+                    d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                ></path>
+            </svg>
+        </div>
         <Input
             v-model.debounce="table.search"
             class="h-full pl-6 text-gray-900 outline-none"

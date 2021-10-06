@@ -2,8 +2,9 @@ module.exports = {
     // mode: 'jit',
     variants: {
         extend: {
-            backgroundColor: ['active', 'odd'],
-            textColor: ['active'],
+            backgroundColor: ['active', 'odd', 'even'],
+            textColor: ['active', 'odd'],
+            padding: ['last'],
         },
         padding: ['last'],
     },

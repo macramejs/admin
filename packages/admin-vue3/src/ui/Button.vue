@@ -21,7 +21,9 @@
             'px-5': size_ == 'md' && !square && !text,
             'px-4': size_ == 'sm' && !square && !text,
 
-            'bg-gray-300 text-gray-600 cursor-default':
+            'border-gray-500 border text-gray-500 cursor-not-allowed':
+                disabled && outline,
+            'bg-gray-300 text-gray-600 cursor-not-allowed':
                 disabled && !outline && !text,
 
             'bg-blue hover:bg-blue-700 active:bg-blue-800 text-white focus:ring-blue-400 shadow':
@@ -33,7 +35,7 @@
 
             'bg-gray-700 hover:bg-gray-800 active:bg-gray-900 focus:ring-gray-400 text-white':
                 variant_ == 'gray' && !outline && !text && !disabled,
-            'bg-white hover:bg-gray-300 active:bg-gray-500 border border-gray-700 text-gray-700 focus:ring-gray-400':
+            'bg-white hover:bg-gray-700 hover:text-white active:text-white active:bg-gray-700 border border-gray-700 text-gray-700 focus:ring-gray-400':
                 variant_ == 'gray' && outline && !text && !disabled,
             'text-gray hover:text-gray-700 active:text-gray-900 border-b border-gray':
                 variant_ == 'gray' && text && !disabled,

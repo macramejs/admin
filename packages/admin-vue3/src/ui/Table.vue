@@ -7,18 +7,14 @@
                         v-for="(column, thKey) in schema"
                         :key="`th-${thKey}`"
                         :column="column"
-                        class="pr-4 text-xs font-normal h-7"
+                        class="pr-4 text-xs font-normal bg-white h-7"
                     />
                 </tr>
             </slot>
         </thead>
         <tbody>
             <slot name="tbody" :items="table.items">
-                <tr
-                    v-for="(item, trKey) in table.items"
-                    :key="`th-${trKey}`"
-                    class="bg-gray-100 odd:bg-white"
-                >
+                <Tr v-for="(item, trKey) in table.items" :key="`th-${trKey}`">
                     <Td
                         v-for="(column, tdKey) in schema"
                         :key="`td-${tdKey}`"
@@ -26,7 +22,7 @@
                         :item="item"
                         class="py-4 pr-4"
                     />
-                </tr>
+                </Tr>
             </slot>
         </tbody>
     </table>

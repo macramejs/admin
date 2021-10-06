@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-around">
-        <div class="flex space-x-2 items-stretch">
+        <div class="flex items-stretch space-x-2">
             <Button
                 outline
                 gray
@@ -10,7 +10,7 @@
                 :disabled="table.currentPage == 1"
             >
                 <svg
-                    class="fill-current absolute left-1"
+                    class="absolute fill-current left-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width="24"
@@ -22,7 +22,7 @@
                     />
                 </svg>
                 <svg
-                    class="fill-current absolute right-1"
+                    class="absolute fill-current right-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width="24"
@@ -54,7 +54,7 @@
                     />
                 </svg>
             </Button>
-            <div class="text-gray items-center flex space-x-6 px-4">
+            <div class="flex items-center px-4 space-x-6 text-gray">
                 <span class="text-lg" v-if="table.currentPage > 2"> ... </span>
                 <span
                     class="text-lg cursor-pointer"
@@ -73,7 +73,7 @@
                 >
                     {{ table.currentPage - 1 }}
                 </span>
-                <span class="text-blue font-bold text-lg">
+                <span class="text-lg font-bold text-blue">
                     {{ table.currentPage }}
                 </span>
                 <span
@@ -126,7 +126,7 @@
                 :disabled="!(table.currentPage < table.getLastPage())"
             >
                 <svg
-                    class="fill-current absolute right-1"
+                    class="absolute fill-current right-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width="24"
@@ -138,7 +138,7 @@
                     />
                 </svg>
                 <svg
-                    class="fill-current absolute left-1"
+                    class="absolute fill-current left-1"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width="24"
