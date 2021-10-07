@@ -1,9 +1,28 @@
 <template>
     <div
-        class="flex items-center h-full mb-6 overflow-hidden text-gray-700 border border-gray-700 rounded-md  w-max focus-within:text-blue"
+        class="
+            flex
+            items-center
+            h-full
+            mb-6
+            overflow-hidden
+            text-gray-700
+            border border-gray-700
+            rounded-md
+            max-w-sm
+            focus-within:text-blue
+        "
     >
         <div
-            class="flex items-center justify-center w-10 h-10 text-white bg-gray-700 "
+            class="
+                flex
+                items-center
+                justify-center
+                w-10
+                h-10
+                text-white
+                bg-gray-700
+            "
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +39,7 @@
         </div>
         <Input
             v-model.debounce="table.search"
-            class="h-full pl-6 text-gray-900 outline-none"
+            class="h-full w-full bg-gray-100 pl-6 text-gray-900 outline-none"
         />
     </div>
 </template>

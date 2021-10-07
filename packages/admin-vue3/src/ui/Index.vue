@@ -1,17 +1,22 @@
 <template>
     <div>
+        <slot name="search">
+            <Search :table="table" />
+        </slot>
         <div class="w-full bg-white rounded-md shadow pt-9">
-            <slot name="search">
-                <div class="px-6">
-                    <Search :table="table" />
-                </div>
-            </slot>
             <slot />
             <slot name="footer">
                 <div class="w-full pt-8 pb-4 border-t border-gray-300">
                     <Pagination :table="table" />
                     <div
-                        class="inline-flex justify-end w-full pt-4 pr-6  text-gray"
+                        class="
+                            inline-flex
+                            justify-end
+                            w-full
+                            pt-4
+                            pr-6
+                            text-gray
+                        "
                     >
                         {{ table.fromItem }}-{{ table.toItem }}/{{
                             table.totalItems
