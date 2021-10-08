@@ -1,6 +1,15 @@
 <template>
     <th
-        class="pb-2 pl-6 font-semibold bg-white border-b  text-gray border-gray slim"
+        class="
+            pb-2
+            pl-6
+            font-light
+            bg-white
+            border-b
+            text-gray
+            border-gray
+            slim
+        "
     >
         <slot />
     </th>
