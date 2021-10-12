@@ -34,11 +34,13 @@
                         viewBox="0 0 512 512"
                         class="w-2 h-2 fill-current"
                     >
-                        <path
-                            d="M315.1 452.9c0 32.6-26.5 59.1-59.1 59.1s-59.1-26.5-59.1-59.1 26.5-59.1 59.1-59.1 59.1 26.5 59.1 59.1zm0-196.9c0 32.6-26.5 59.1-59.1 59.1s-59.1-26.5-59.1-59.1 26.5-59.1 59.1-59.1 59.1 26.5 59.1 59.1zm0-196.9c0 32.6-26.5 59.1-59.1 59.1s-59.1-26.5-59.1-59.1S223.4 0 256 0s59.1 26.5 59.1 59.1z"
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                        />
+                        ../layouts/default/Layout.vue d="M315.1 452.9c0
+                        32.6-26.5 59.1-59.1 59.1s-59.1-26.5-59.1-59.1 26.5-59.1
+                        59.1-59.1 59.1 26.5 59.1 59.1zm0-196.9c0 32.6-26.5
+                        59.1-59.1 59.1s-59.1-26.5-59.1-59.1 26.5-59.1 59.1-59.1
+                        59.1 26.5 59.1 59.1zm0-196.9c0 32.6-26.5 59.1-59.1
+                        59.1s-59.1-26.5-59.1-59.1S223.4 0 256 0s59.1 26.5 59.1
+                        59.1z" fill-rule="evenodd" clip-rule="evenodd" />
                     </svg>
                 </button>
 
@@ -139,7 +141,8 @@
 <script lang="ts">
 import { computed, defineComponent, PropType, ref, onMounted } from 'vue';
 import { Component } from '@macramejs/macrame';
-import Layout from '../layouts/Layout.vue';
+import Layout from '../layouts/default/DefaultLayout.vue';
+
 export default defineComponent({
     components: { Layout },
     name: 'BasePage',

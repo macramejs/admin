@@ -11,28 +11,9 @@
                 bg-blue-900
             "
         >
-            <header>
-                <div class="flex items-center pt-2 pb-20 justify-between">
-                    <Logo />
-                    <div class="flex items-center gap-4">
-                        <button class="text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="-2.5 -2.5 24 24"
-                                width="24"
-                                height="24"
-                                preserveAspectRatio="xMinYMin"
-                                class="fill-current"
-                            >
-                                <path
-                                    d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
-                                ></path>
-                            </svg>
-                        </button>
-                        <Burger />
-                    </div>
-                </div>
-            </header>
+            <slot name="header">
+                <DefaultLayoutHeader />
+            </slot>
             <nav>
                 <slot name="sidebar" :sidebar="sidebar" />
             </nav>
@@ -80,12 +61,12 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
-import TransitionSlide from '../transitions/TransitionSlide.vue';
-import { TSidebar } from '../..';
-import { Logo, Burger } from './components';
+import TransitionSlide from '../../transitions/TransitionSlide.vue';
+import DefaultLayoutHeader from './DefaultLayoutHeader.vue';
+import { TSidebar } from '../../..';
 
 export default defineComponent({
-    components: { TransitionSlide, Logo, Burger },
+    components: { TransitionSlide, DefaultLayoutHeader },
     name: 'Layout',
     setup() {
         const sidebar = reactive<TSidebar>({
