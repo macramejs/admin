@@ -60,9 +60,9 @@ export {
     GuestLayoutInput
 };
 
-import LoginPage from './pages/LoginPage.vue';
-import ForgotPasswordPage from './pages/ForgotPasswordPage.vue';
-import ResetPasswordPage from './pages/ResetPasswordPage.vue';
+import LoginPage from './pages/Login.vue';
+import ForgotPasswordPage from './pages/ForgotPassword.vue';
+import ResetPasswordPage from './pages/ResetPassword.vue';
 
 const AuthPages = {
     "Auth/Login": LoginPage,

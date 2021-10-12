@@ -47,10 +47,10 @@ import { defineComponent, PropType } from 'vue';
 
 import { useForm } from '@macramejs/macrame-vue3';
 
-import GuestLayout from './../layouts/guest/GuestLayout.vue';
-import Input from './../layouts/guest/GuestLayoutInput.vue';
-import Checkbox from './../ui/Checkbox.vue';
-import Button from './../ui/Button.vue';
+import GuestLayout from '../layouts/guest/GuestLayout.vue';
+import Input from '../layouts/guest/GuestLayoutInput.vue';
+import Checkbox from '../ui/Checkbox.vue';
+import Button from '../ui/Button.vue';
 
 interface Lang {
     login: string;
