@@ -2,9 +2,11 @@ module.exports = {
     // mode: 'jit',
     variants: {
         extend: {
-            backgroundColor: ['active'],
-            textColor: ['active'],
+            backgroundColor: ['active', 'odd', 'even'],
+            textColor: ['active', 'odd'],
+            padding: ['last'],
         },
+        padding: ['last'],
     },
     theme: {
         borderRadius: {
@@ -89,6 +91,7 @@ module.exports = {
         },
         boxShadow: {
             DEFAULT: '0px 0px 19px 0px rgba(0,0,0,0.08)',
+            sm: '0px 2px 4px 0px rgba(0,0,0,0.05)',
         },
         extend: {
             gridTemplateColumns: {

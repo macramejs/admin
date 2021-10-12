@@ -7,20 +7,22 @@
                         v-for="(column, thKey) in schema"
                         :key="`th-${thKey}`"
                         :column="column"
+                        class="pr-4 text-xs font-normal bg-white h-7"
                     />
                 </tr>
             </slot>
         </thead>
         <tbody>
             <slot name="tbody" :items="table.items">
-                <tr v-for="(item, trKey) in table.items" :key="`th-${trKey}`">
+                <Tr v-for="(item, trKey) in table.items" :key="`th-${trKey}`">
                     <Td
                         v-for="(column, tdKey) in schema"
                         :key="`td-${tdKey}`"
                         :column="column"
                         :item="item"
+                        class="py-4 pr-4"
                     />
-                </tr>
+                </Tr>
             </slot>
         </tbody>
     </table>
@@ -36,6 +38,10 @@ import Td from './Td.vue';
 export default defineComponent({
     components: { Th, Td },
     props: {
+        selectable: {
+            type: Boolean,
+            default: false,
+        },
         table: {
             type: Object as PropType<Index>,
             required: true,
@@ -47,3 +53,13 @@ export default defineComponent({
     },
 });
 </script>
+
+<style>
+.table .slim {
+    width: 1%;
+    white-space: nowrap;
+}
+.table .thead {
+    box-shadow: inset 0px -1px 0px #e5eaef;
+}
+</style>

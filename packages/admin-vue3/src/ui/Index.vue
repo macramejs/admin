@@ -1,20 +1,39 @@
 <template>
     <div>
         <slot name="search">
-            <Input v-model.debounce="table.search" />
+            <Search :table="table" />
         </slot>
-        <slot />
-        <slot name="pagination">
-            <Pagination :table="table" />
-        </slot>
+        <div class="w-full bg-white rounded-md shadow pt-9">
+            <slot />
+            <slot name="footer">
+                <div class="w-full pt-8 pb-4 border-t border-gray-300">
+                    <Pagination :table="table" />
+                    <div
+                        class="
+                            inline-flex
+                            justify-end
+                            w-full
+                            pt-4
+                            pr-6
+                            text-gray
+                        "
+                    >
+                        {{ table.fromItem }}-{{ table.toItem }}/{{
+                            table.totalItems
+                        }}
+                    </div>
+                </div>
+            </slot>
+        </div>
+        <slot name="pagination"> </slot>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { Index } from '@macramejs/macrame-vue3';
-import Input from './Input.vue';
 import Pagination from './Pagination.vue';
+import Search from './Search.vue';
 
 type IndexProps = {
     table: Index;
@@ -22,8 +41,8 @@ type IndexProps = {
 
 export default defineComponent({
     components: {
-        Input,
         Pagination,
+        Search,
     },
     props: {
         table: {

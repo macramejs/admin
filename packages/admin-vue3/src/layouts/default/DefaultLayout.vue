@@ -11,7 +11,9 @@
                 bg-blue-900
             "
         >
-            <header>Admin</header>
+            <slot name="header">
+                <DefaultLayoutHeader />
+            </slot>
             <nav>
                 <slot name="sidebar" :sidebar="sidebar" />
             </nav>
@@ -22,7 +24,7 @@
         >
             <slot name="sidebar-secondary" />
         </aside>
-        <div class="flex-1 h-screen overflow-y-scroll">
+        <div class="flex flex-col flex-1 h-screen overflow-y-scroll">
             <header class="sticky top-0 z-20 w-full bg-white">
                 <nav
                     class="
@@ -30,7 +32,7 @@
                         items-center
                         justify-between
                         h-12
-                        px-4
+                        px-6
                         border-b border-gray-300
                     "
                 >
@@ -41,9 +43,8 @@
                         flex
                         items-center
                         justify-between
-                        h-6
-                        px-4
-                        text-sm
+                        px-6
+                        text-xs
                         border-b border-gray-300
                         text-gray
                     "
@@ -51,7 +52,7 @@
                     <slot name="header-secondary" :sidebar="sidebar" />
                 </nav>
             </header>
-            <main class="relative">
+            <main class="relative flex-1 overflow-y-scroll">
                 <slot :sidebar="sidebar" />
             </main>
         </div>
@@ -60,11 +61,12 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
-import TransitionSlide from '../transitions/TransitionSlide.vue';
-import { TSidebar } from '../..';
+import TransitionSlide from '../../transitions/TransitionSlide.vue';
+import DefaultLayoutHeader from './DefaultLayoutHeader.vue';
+import { TSidebar } from '../../..';
 
 export default defineComponent({
-    components: { TransitionSlide },
+    components: { TransitionSlide, DefaultLayoutHeader },
     name: 'Layout',
     setup() {
         const sidebar = reactive<TSidebar>({
