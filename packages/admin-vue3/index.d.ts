@@ -30,3 +30,5 @@ export const Select : Component;
 export const Sidebar : Component;
 export const Pagination : Component;
 export const Textarea : Component;
+export const AuthPages : { [k: string]: Component };
+export const Pages : { [k: string]: Component };

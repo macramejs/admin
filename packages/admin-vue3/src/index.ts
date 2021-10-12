@@ -52,6 +52,28 @@ export {
     DefaultLayout
 };
 
+import GuestLayout from './layouts/guest/GuestLayout.vue';
+import GuestLayoutInput from './layouts/guest/GuestLayoutInput.vue';
+
+export {
+    GuestLayout,
+    GuestLayoutInput
+};
+
+import LoginPage from './pages/LoginPage.vue';
+import ForgotPasswordPage from './pages/ForgotPasswordPage.vue';
+import ResetPasswordPage from './pages/ResetPasswordPage.vue';
+
+const AuthPages = {
+    "Auth/Login": LoginPage,
+    "Auth/ForgotPassword": ForgotPasswordPage,
+    "Auth/ResetPassword": ResetPasswordPage,
+}
+
+const Pages = { ...AuthPages };
+
+export { Pages, AuthPages };
+
 // Components
 export {
     Card,
