@@ -61,6 +61,7 @@
             'text-yellow hover:text-yellow-700 active:text-yellow-900 border-b border-yellow':
                 variant_ == 'yellow' && text && !disabled,
         }"
+        v-bind="$attrs"
     >
         <slot />
     </component>
