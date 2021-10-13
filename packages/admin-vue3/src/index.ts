@@ -17,7 +17,6 @@ import Sidebar from './ui/Sidebar.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
-import DefaultLayout from './layouts/default/DefaultLayout.vue';
 import Tr from './ui/Tr.vue';
 import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
@@ -47,6 +46,10 @@ const plugin = {
 };
 
 export { plugin };
+
+import DefaultLayout from './layouts/default/DefaultLayout.vue';
+import DefaultLayoutHeader from './layouts/default/DefaultLayout.vue';
+import DefaultLayoutBurger from './layouts/default/DefaultLayout.vue';
 
 export {
     DefaultLayout

@@ -1,6 +1,10 @@
 import { DefineComponent, Component, Plugin } from "vue";
 
-export const Layout : DefineComponent;
+export const DefaultLayout : DefineComponent;
+export const DefaultLayoutBurger : DefineComponent;
+export const DefaultLayoutHeader : DefineComponent;
+export const GuestLayout : DefineComponent;
+export const GuestLayoutInput : DefineComponent;
 
 export const pages : { [k: string]: DefineComponent}; 
 
