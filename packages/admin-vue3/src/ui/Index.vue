@@ -1,7 +1,7 @@
 <template>
     <div>
         <slot name="search">
-            <Search :table="table" />
+            <Search :table="table" :placeholder="searchPlaceholder" />
         </slot>
         <div class="w-full bg-white rounded-md shadow pt-9">
             <slot />
@@ -48,6 +48,9 @@ export default defineComponent({
         table: {
             type: Object as PropType<Index>,
             required: true,
+        },
+        searchPlaceholder: {
+            type: String,
         },
     },
     setup({}: IndexProps, {}) {

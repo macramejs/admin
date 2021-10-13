@@ -40,6 +40,7 @@
         <Input
             v-model.debounce="table.search"
             class="h-full w-full bg-gray-100 pl-6 text-gray-900 outline-none"
+            :placeholder="placeholder"
         />
     </div>
 </template>
@@ -55,6 +56,9 @@ export default defineComponent({
         table: {
             type: Object as PropType<Index>,
             required: true,
+        },
+        placeholder: {
+            type: String,
         },
     },
     setup() {
