@@ -8,8 +8,6 @@ import FormFieldLabel from './ui/FormFieldLabel.vue';
 import Modal from './ui/Modal.vue';
 import Checkbox from './ui/Checkbox.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
-import FormSelect from './ui/FormSelect.vue';
-import FormTextarea from './ui/FormTextarea.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
 import Input from './ui/Input.vue';
