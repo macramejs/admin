@@ -30,6 +30,7 @@ export const Form : Component;
 export const Modal : Component;
 export const Checkbox : Component;
 export const Input : Component;
+export const Search : Component;
 export const Select : Component;
 export const Sidebar : Component;
 export const Pagination : Component;
