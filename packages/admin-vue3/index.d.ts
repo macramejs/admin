@@ -27,6 +27,8 @@ export const Toggle : Component;
 export const Button : Component;
 export const Badge : Component;
 export const Form : Component;
+export const FormField : Component;
+export const FormFieldLabel : Component;
 export const Modal : Component;
 export const Checkbox : Component;
 export const Input : Component;
