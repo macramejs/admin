@@ -1,10 +1,9 @@
 <template>
-    <div class="todo">
-        <slot name="label">
-            <FormFieldLabel :label="label" />
+    <span class="todo">
+        <slot>
+            {{ label }}
         </slot>
-        <slot />
-    </div>
+    </span>
 </template>
 
 <script lang="ts" setup>
