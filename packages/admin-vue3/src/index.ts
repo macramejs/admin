@@ -3,10 +3,11 @@ import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
 import Badge from './ui/Badge.vue';
 import Form from './ui/Form.vue';
+import FormField from './ui/FormField.vue';
+import FormFieldLabel from './ui/FormFieldLabel.vue';
 import Modal from './ui/Modal.vue';
 import Checkbox from './ui/Checkbox.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
-import FormInput from './ui/FormInput.vue';
 import FormSelect from './ui/FormSelect.vue';
 import FormTextarea from './ui/FormTextarea.vue';
 import RadioGroup from './ui/RadioGroup.vue';
@@ -31,7 +32,6 @@ const plugin = {
         app.component('UiModal', Modal);
         app.component('UiCheckbox', Checkbox);
         app.component('UiFormCheckboxes', FormCheckboxes);
-        app.component('UiFormInput', FormInput);
         app.component('UiFormSelect', FormSelect);
         app.component('UiFormTextarea', FormTextarea);
         app.component('UiRadioGroup', RadioGroup);
@@ -84,6 +84,8 @@ export {
     Button,
     Badge,
     Form,
+    FormField,
+    FormFieldLabel,
     Modal,
     Checkbox,
     Index, 
