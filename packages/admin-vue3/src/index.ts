@@ -47,8 +47,8 @@ const plugin = {
 export { plugin };
 
 import DefaultLayout from './layouts/default/DefaultLayout.vue';
-import DefaultLayoutHeader from './layouts/default/DefaultLayout.vue';
-import DefaultLayoutBurger from './layouts/default/DefaultLayout.vue';
+import DefaultLayoutHeader from './layouts/default/DefaultLayoutHeader.vue';
+import DefaultLayoutBurger from './layouts/default/DefaultLayoutBurger.vue';
 
 export {
     DefaultLayout,
