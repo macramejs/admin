@@ -50,7 +50,9 @@ import DefaultLayoutHeader from './layouts/default/DefaultLayout.vue';
 import DefaultLayoutBurger from './layouts/default/DefaultLayout.vue';
 
 export {
-    DefaultLayout
+    DefaultLayout,
+    DefaultLayoutHeader,
+    DefaultLayoutBurger
 };
 
 import GuestLayout from './layouts/guest/GuestLayout.vue';
