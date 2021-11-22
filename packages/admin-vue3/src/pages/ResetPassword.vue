@@ -1,7 +1,7 @@
 <template>
     <GuestLayout>
         <div class="mb-3 text-sm text-gray-600">{{ lang.message }}</div>
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
         <form @submit.prevent="form.submit">
@@ -102,9 +102,9 @@ export default defineComponent({
             },
             {
                 method: 'post',
-                onFinish() {
-                    console.log('foo');
-                },
+                // onFinish() {
+                //     console.log('foo');
+                // },
             }
         );
 

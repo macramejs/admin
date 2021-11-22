@@ -13,12 +13,7 @@
                         leave-to="opacity-0"
                     >
                         <DialogOverlay
-                            class="
-                                fixed
-                                inset-0
-                                bg-gray-900 bg-opacity-50
-                                backdrop-filter backdrop-blur-sm
-                            "
+                            class="fixed inset-0 bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm"
                         />
                     </TransitionChild>
 
@@ -39,23 +34,13 @@
                         leave-to="opacity-0 scale-95"
                     >
                         <div
-                            class="
-                                inline-block
-                                w-full
-                                max-w-full
-                                p-6
-                                my-8
-                                overflow-hidden
-                                text-left
-                                align-middle
-                                transition-all
-                                transform
-                                bg-white
-                                shadow-xl
-                                md:max-w-xl
-                                lg:max-w-2xl
-                                rounded-xs
-                            "
+                            class="inline-block w-full p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-xs" 
+                            :class="{
+                                'max-w-full': !size_,
+                                'max-w-3xl': size_ == 'lg',
+                                'max-w-2xl': size_ == 'md',
+                                'max-w-xl': size_ == 'sm',
+                            }"
                         >
                             <slot />
                         </div>
@@ -66,7 +51,8 @@
     </TransitionRoot>
 </template>
 
-<script>
+<script setup lang="ts">
+import {defineEmits} from 'vue'
 import {
     TransitionRoot,
     TransitionChild,
@@ -74,31 +60,21 @@ import {
     DialogOverlay,
     DialogTitle,
 } from '@headlessui/vue';
+import { getSize, sizes } from './props/size';
 
-export default {
-    emits: ['close'],
-    components: {
-        TransitionRoot,
-        TransitionChild,
-        Dialog,
-        DialogOverlay,
-        DialogTitle,
+const emit = defineEmits(['close', 'update:open'])
+const props = defineProps({
+    open: {
+        type: Boolean,
+        default: false,
     },
+    ...sizes
+});
 
-    props: {
-        open: {
-            type: Boolean,
-            default: false,
-        },
-    },
+const size_ = getSize(props, {DEFAULT: null});
 
-    setup({}, { emit }) {
-        function close(val) {
-            emit('close', val);
-            emit('update:open', val);
-        }
-
-        return { close };
-    },
-};
+const close = (val) => {
+    emit('close', val);
+    emit('update:open', val);
+}
 </script>
