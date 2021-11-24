@@ -11,7 +11,7 @@
                 bg-blue-900
             "
         >
-            <slot name="header">
+            <slot name="sidebar-header">
                 <DefaultLayoutHeader />
             </slot>
             <nav>
