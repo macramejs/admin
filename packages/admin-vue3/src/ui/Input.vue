@@ -23,20 +23,6 @@
             }"
         />
     </div>
-    <div
-        v-if="hint && errors.length == 0"
-        class="ml-[18px] mt-1 text-xs text-gray-500"
-    >
-        {{ hint }}
-    </div>
-    <div
-        v-if="errors.length > 0"
-        class="ml-[18px] mt-1 text-xs text-red-signal"
-    >
-        <div v-for="error in errors">
-            {{ error }}
-        </div>
-    </div>
 </template>
 
 <script lang="ts" setup>
