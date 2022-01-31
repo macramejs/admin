@@ -1,98 +1,82 @@
 <template>
-    <Switch
-        :modelValue="modelValue"
-        @update:modelValue="update"
-        as="template"
-        v-slot="{ checked }"
-    >
-        <div class="inline-flex items-center cursor-pointer">
-            <div
-                :class="{
-                    'bg-blue-500':
-                        (variant_ == null && checked) ||
-                        (variant_ == 'blue' && checked),
-                    'bg-green-500': variant_ == 'green' && checked,
-                    'bg-red-400': variant_ == 'red' && checked,
-                    'bg-yellow-400': variant_ == 'yellow' && checked,
-                    'bg-gray-700': variant_ == 'gray' && checked,
-                    'bg-white': !checked,
-
-                    'w-6 h-6': size_ == 'lg',
-                    'w-5 h-5': size_ == 'md',
-                    'w-4 h-4': size_ == 'sm',
-                }"
-                class="
-                    inline-flex
-                    items-center
-                    justify-center
-                    text-white
-                    border border-gray-700
-                    rounded-xs
-                "
+    <label class="flex items-center cursor-pointer max-w-max">
+        <input
+            @input="check()"
+            type="checkbox"
+            :checked="checked"
+            :id="fieldId"
+            class="absolute mr-2 opacity-0"
+            v-bind="$attrs"
+        />
+        <div
+            :class="
+                checked
+                    ? 'bg-orange border-orange'
+                    : 'bg-transparent border-indigo-900'
+            "
+            class="z-0 flex items-center justify-center flex-shrink-0 w-[18px] h-[18px] mr-2 border rounded-xs"
+        >
+            <svg
+                :class="checked ? 'block' : 'hidden'"
+                class="z-0 w-2.5 h-2.5 text-gray-500 pointer-events-none fill-gray-500"
+                viewBox="0 0 17 12"
+                xmlns="http://www.w3.org/2000/svg"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    class="fill-current"
-                    :class="{
-                        'w-4 h-4': size_ == 'lg',
-                        'w-3 h-3': size_ == 'md',
-                        'w-2.5 h-2.5': size_ == 'sm',
-                    }"
-                >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                        d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-                    />
-                </svg>
-            </div>
-            <label class="pt-1 pl-2">
-                <slot>
-                    {{ label }}
-                </slot>
-            </label>
+                <path
+                    d="M16.576.414a1.386 1.386 0 010 1.996l-9.404 9.176A1.461 1.461 0 016.149 12c-.37 0-.74-.139-1.023-.414L.424 6.998a1.386 1.386 0 010-1.996 1.47 1.47 0 012.046 0l3.68 3.59L14.53.414a1.47 1.47 0 012.046 0z"
+                    fill="#120F30"
+                    fill-rule="nonzero"
+                />
+            </svg>
         </div>
-    </Switch>
+        <div class="pl-1 cursor-pointer">
+            <slot>
+                {{ label ?? value }}
+            </slot>
+        </div>
+    </label>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { Switch } from '@headlessui/vue';
+<script lang="ts" setup>
+import { computed } from 'vue';
 
-import { getSize, sizes } from './props/size';
-import { getVariant, variants } from './props/variant';
-
-export default defineComponent({
-    components: { Switch },
-    props: {
-        label: {
-            type: String,
-            default: null,
-        },
-        disabled: {
-            type: Boolean,
-            default: false,
-        },
-        modelValue: {
-            type: Boolean,
-            default: false,
-        },
-        ...sizes,
-        ...variants,
+const props = defineProps({
+    value: {
+        type: String,
+        required: true,
     },
-    setup({ disabled, ...props }, { emit }) {
-        const size_ = getSize(props, {});
-        const variant_ = getVariant(props, {});
-
-        const update = value => {
-            if (disabled) {
-                return;
-            }
-
-            emit('update:modelValue', value);
-        };
-
-        return { update, size_, variant_ };
+    label: {
+        type: String,
+    },
+    fieldId: {
+        type: String,
+        required: true,
+    },
+    modelValue: {
+        type: Array,
+        required: true,
     },
 });
+
+const emit = defineEmits(['update:modelValue']);
+
+const checked = computed(() => props.modelValue.includes(props.value));
+
+const check = () => {
+    let updatedNames = [...props.modelValue];
+    // remove name if checked, else add name
+    if (checked.value) {
+        updatedNames.splice(updatedNames.indexOf(props.value), 1);
+    } else {
+        updatedNames.push(props.value);
+    }
+    // emit the updated names
+    emit('update:modelValue', updatedNames);
+};
 </script>
+
+<style scoped>
+input:focus + div {
+    box-shadow: 0px 0 0 4px #d6d8e2;
+}
+</style>
