@@ -1,65 +1,42 @@
 <template>
     <component
         :is="tag"
-        class="inline-flex items-center justify-center focus:outline-none"
+        class="relative inline-flex items-center justify-center text-sm uppercase transition-all duration-300 focus:ring focus:outline-none"
         :class="{
-            'focus:ring': !text && !disabled,
+            'focus:ring-transparent': disabled,
 
-            'text-lg': size_ == 'lg',
-            'text-base': size_ == 'md',
-            'text-xs': size_ == 'sm',
+            'w-[37px]': square && size_ == 'md',
+            'w-[30px]': square && size_ == 'sm',
 
-            'w-12': square && size_ == 'lg',
-            'w-10': square && size_ == 'md',
-            'w-7': square && size_ == 'sm',
+            'h-[37px]  rounded': size_ == 'md' && !text,
+            'h-[30px]  rounded': size_ == 'sm' && !text,
 
-            'h-12  rounded-lg': size_ == 'lg' && !text,
-            'h-10  rounded-md': size_ == 'md' && !text,
-            'h-7  rounded-sm': size_ == 'sm' && !text,
-
-            'px-6': size_ == 'lg' && !square && !text,
             'px-5': size_ == 'md' && !square && !text,
             'px-4': size_ == 'sm' && !square && !text,
 
-            'border-gray-500 border text-gray-500 cursor-not-allowed':
-                disabled && outline,
-            'bg-gray-300 text-gray-600 cursor-not-allowed':
-                disabled && !outline && !text,
+            'bg-gradient-to-r from-gradient-red-500 to-gradient-orange-500 hover:from-gradient-red-300 hover:to:gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-white focus:ring-orange-100 shadow-orange shadow-primary':
+                variant_ == 'primary' && !disabled,
+            'bg-gray text-white cursor-not-allowed':
+                variant_ == 'primary' && disabled,
 
-            'bg-blue hover:bg-blue-700 active:bg-blue-800 text-white focus:ring-blue-400 shadow':
-                variant_ == 'blue' && !outline && !text && !disabled,
-            'bg-white hover:bg-blue-100 active:bg-blue-300 text-blue hover:text-blue-600 active:text-blue-700 border border-blue focus:ring-blue-400':
-                variant_ == 'blue' && outline && !text && !disabled,
-            'text-blue hover:text-blue-700 active:text-blue-900 border-b border-blue':
-                variant_ == 'blue' && text && !disabled,
+            'bg-gradient-to-r w-[37px] h-[37px] rounded-full from-indigo-900 to-indigo-900 hover:from-gradient-red-500 hover:to-gradient-orange-500 hover:scale-95 active:from-indigo-500 active:to-indigo-500 text-white focus:ring-orange-100':
+                variant_ == 'round' && !disabled,
+            'bg-gray text-white rounded-full cursor-not-allowed':
+                variant_ == 'round' && disabled,
 
-            'bg-gray-700 hover:bg-gray-800 active:bg-gray-900 focus:ring-gray-400 text-white':
-                variant_ == 'gray' && !outline && !text && !disabled,
-            'bg-white hover:bg-gray-700 hover:text-white active:text-white active:bg-gray-700 border border-gray-700 text-gray-700 focus:ring-gray-400':
-                variant_ == 'gray' && outline && !text && !disabled,
-            'text-gray hover:text-gray-700 active:text-gray-900 border-b border-gray':
-                variant_ == 'gray' && text && !disabled,
+            'bg-orange-500 bg-opacity-0 border border-indigo-900 hover:bg-opacity-20 hover:scale-95 active:bg-opacity-50 text-black focus:ring-orange-100':
+                variant_ == 'secondary' && !disabled,
+            'opacity-40 border border-indigo-900 cursor-not-allowed':
+                variant_ == 'secondary' && disabled,
 
-            'bg-green hover:bg-green-700 active:bg-green-800 focus:ring-green-400 text-white':
-                variant_ == 'green' && !outline && !text && !disabled,
-            'bg-white hover:bg-green-100 active:bg-green-300 text-green hover:text-green-600 active:text-green-700 border border-green focus:ring-green-400':
-                variant_ == 'green' && outline && !text && !disabled,
-            'text-green hover:text-green-700 active:text-green-900 border-b border-green':
-                variant_ == 'green' && text && !disabled,
+            'bg-gray-200 hover:bg-gray-500 h-[30px] active:bg-indigo-900 active:text-white text-black focus:ring-gray-300':
+                variant_ == 'small' && !disabled,
+            'opacity-40 cursor-not-allowed': variant_ == 'small' && disabled,
 
-            'bg-red hover:bg-red-500 active:bg-red-600 focus:ring-red-400 text-white':
-                variant_ == 'red' && !outline && !text && !disabled,
-            'bg-white hover:bg-red-100 active:bg-red-300 text-red hover:text-red-600 active:text-red-700 border border-red focus:ring-red-400':
-                variant_ == 'red' && outline && !text && !disabled,
-            'text-red hover:text-red-700 active:text-red-900 border-b border-red':
-                variant_ == 'red' && text && !disabled,
-
-            'bg-yellow hover:bg-yellow-700 active:bg-yellow-800 focus:ring-yellow-400 text-white':
-                variant_ == 'yellow' && !outline && !text && !disabled,
-            'bg-white hover:bg-yellow-100 active:bg-yellow-300 text-yellow hover:text-yellow-600 active:text-yellow-700 border border-yellow focus:ring-yellow-400':
-                variant_ == 'yellow' && outline && !text && !disabled,
-            'text-yellow hover:text-yellow-700 active:text-yellow-900 border-b border-yellow':
-                variant_ == 'yellow' && text && !disabled,
+            'focus:rounded hover:border-indigo-500 h-[20px] py-3 px-2.5 after:absolute after:left-1/2 after:bottom-[3px] after:h-px after:w-[calc(100%-20px)] after:-translate-x-1/2 hover:after:bg-indigo-500 active:after:bg-indigo-500 text-black focus:ring-transparent focus:bg-orange-100':
+                variant_ == 'text' && !disabled,
+            'opacity-40 py-2 px-3 cursor-not-allowed':
+                variant_ == 'text' && disabled,
         }"
         :disabled="disabled"
         v-bind="$attrs"
@@ -68,7 +45,7 @@
     </component>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import { getVariant, variants } from './props/variant';
 import { getSize, sizes } from './props/size';
