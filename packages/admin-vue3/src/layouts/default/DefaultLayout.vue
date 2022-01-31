@@ -1,59 +1,22 @@
 <template>
-    <div class="flex w-screen">
-        <aside
-            class="
-                z-10
-                w-64
-                h-screen
-                p-4
-                overflow-y-scroll
-                text-white
-                bg-blue-900
-            "
-        >
-            <slot name="sidebar-header">
-                <DefaultLayoutHeader />
-            </slot>
-            <nav>
-                <slot name="sidebar" :sidebar="sidebar" />
-            </nav>
-        </aside>
-        <aside
-            class="w-64 h-screen p-4 bg-white border-r border-gray-300 shadow"
-            v-if="sidebar.isOpen"
-        >
+    <div class="flex w-screen h-screen max-h-screen">
+        <div id="sidebars" class="z-10 flex h-screen shadow">
+            <slot name="sidebar-primary" :sidebar="sidebar" />
             <slot name="sidebar-secondary" />
-        </aside>
-        <div class="flex flex-col flex-1 h-screen overflow-y-scroll">
-            <header class="sticky top-0 z-20 w-full bg-white">
-                <nav
-                    class="
-                        flex
-                        items-center
-                        justify-between
-                        h-12
-                        px-6
-                        border-b border-gray-300
-                    "
-                >
-                    <slot name="header" :sidebar="sidebar" />
-                </nav>
-                <nav
-                    class="
-                        flex
-                        items-center
-                        justify-between
-                        px-6
-                        text-xs
-                        border-b border-gray-300
-                        text-gray
-                    "
-                >
-                    <slot name="header-secondary" :sidebar="sidebar" />
-                </nav>
-            </header>
+        </div>
+        <div
+            class="relative flex flex-col flex-1 h-screen overflow-y-scroll bg-gray-50"
+        >
             <main class="relative flex-1 overflow-y-scroll">
-                <slot :sidebar="sidebar" />
+                <DefaultLayoutTopbar>
+                    <template v-slot:topbar-left>
+                        <slot name="topbar-left" />
+                    </template>
+                    <template v-slot:topbar-right>
+                        <slot name="topbar-right" />
+                    </template>
+                </DefaultLayoutTopbar>
+                <slot />
             </main>
         </div>
     </div>
@@ -63,10 +26,11 @@
 import { defineComponent, reactive } from 'vue';
 import TransitionSlide from '../../transitions/TransitionSlide.vue';
 import DefaultLayoutHeader from './DefaultLayoutHeader.vue';
+import DefaultLayoutTopbar from './DefaultLayoutTopbar.vue';
 import { TSidebar } from '../../..';
 
 export default defineComponent({
-    components: { TransitionSlide, DefaultLayoutHeader },
+    components: { TransitionSlide, DefaultLayoutHeader, DefaultLayoutTopbar },
     name: 'Layout',
     setup() {
         const sidebar = reactive<TSidebar>({
