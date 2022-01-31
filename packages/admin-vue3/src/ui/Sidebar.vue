@@ -11,7 +11,7 @@
     >
         <Dialog as="div" v-bind="$attrs" :open="open">
             <div
-                class="fixed top-0 right-0 z-10 w-64 h-full mt-6 bg-white border-l border-gray-300 shadow  pt-14"
+                class="fixed top-0 right-0 z-10 w-64 h-full mt-6 bg-white border-l border-gray-300 shadow pt-14"
             >
                 <aside class="min-h-screen text-center">
                     <TransitionChild
@@ -36,7 +36,7 @@
                         leave-to="opacity-0 scale-95"
                     >
                         <div
-                            class="inline-block w-full max-w-md overflow-y-scroll text-left transition-all transform "
+                            class="inline-block w-full max-w-md overflow-y-scroll text-left transition-all transform"
                         >
                             <button @click="$emit('close', false)">
                                 <svg
