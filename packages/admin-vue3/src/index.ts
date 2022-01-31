@@ -22,6 +22,7 @@ import Index from './ui/Index.vue';
 import Slider from './ui/Slider.vue';
 import Input from './ui/Input.vue';
 import Nested from './ui/Nested.vue';
+import List from './ui/List.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
 import Sidebar from './ui/Sidebar.vue';
@@ -118,6 +119,7 @@ export {
     Input,
     Slider,
     Nested,
+    List,
     Search,
     Select,
     Sidebar,
