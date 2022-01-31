@@ -9,61 +9,46 @@
                 @update:modelValue="update"
                 :class="{
                     'bg-gray-500': !modelValue,
-                    'bg-blue-500':
+                    'bg-green':
                         (variant_ == null && modelValue) ||
-                        (variant_ == 'blue' && modelValue),
-
-                    'bg-green-500': variant_ == 'green' && modelValue,
-
-                    'bg-red-500': variant_ == 'red' && modelValue,
-
-                    'bg-yellow-500': variant_ == 'yellow' && modelValue,
+                        (variant_ == 'primary' && modelValue),
 
                     'text-lg': size_ == 'lg',
                     'text-base': size_ == 'md' || size_ == null,
                     'text-xs': size_ == 'sm',
 
                     'w-16': size_ == 'lg',
-                    'w-10': size_ == 'md' || size_ == null,
+                    'w-[35px]': size_ == 'md' || size_ == null,
                     'w-8': size_ == 'sm',
 
                     'h-8 rounded-lg': size_ == 'lg',
                     'h-5 rounded-md': size_ == 'md' || size_ == null,
                     'h-4 rounded-sm': size_ == 'sm',
                 }"
-                class="relative inline-flex items-center transition-all rounded-full  focus:outline-none focus:ring-4 focus:ring-blue-300"
+                class="relative inline-flex items-center transition-all rounded-full focus:outline-none focus:ring-4 focus:ring-orange-100"
             >
                 <span
                     :class="{
-                        'w-8 h-8': size_ == 'lg',
-                        'w-5 h-5': size_ == 'md',
-                        'w-4 h-4': size_ == 'sm',
+                        'w-[26px] h-[26px]': size_ == 'lg',
+                        'w-3.5 h-3.5': size_ == 'md',
+                        'w-2.5 h-2.5': size_ == 'sm',
 
-                        'border-blue-500':
-                            (variant_ == 'blue' && modelValue) ||
-                            (variant_ == null && modelValue),
-                        'border-green-500': variant_ == 'green' && modelValue,
-                        'border-yellow-500': variant_ == 'yellow' && modelValue,
-                        'border-red-500': variant_ == 'red' && modelValue,
-                        'border-gray-500': !modelValue,
-
-                        'translate-x-0':
-                            (size_ == 'lg' && !modelValue) ||
+                        'translate-x-[34px]': size_ == 'lg' && modelValue,
+                        'translate-x-[4px]':
                             (size_ == 'md' && !modelValue) ||
-                            (size_ == 'sm' && !modelValue),
-
-                        'translate-x-8': size_ == 'lg' && modelValue,
-                        'translate-x-5': size_ == 'md' && modelValue,
-                        'translate-x-4': size_ == 'sm' && modelValue,
+                            ('lg' && !modelValue),
+                        'translate-x-[17px]': size_ == 'md' && modelValue,
+                        'translate-x-1': size_ == 'sm' && !modelValue,
+                        'translate-x-[18px]': size_ == 'sm' && modelValue,
                     }"
-                    class="inline-block transition-all transform bg-white border-2 rounded-full "
+                    class="inline-block transition-all transform bg-white rounded-full"
                 />
             </Switch>
         </div>
     </SwitchGroup>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 import { getSize, sizes } from './props/size';
