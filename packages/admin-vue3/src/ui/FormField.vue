@@ -1,10 +1,17 @@
 <template>
     <div class="todo">
-        <slot name="label">
-            <FormFieldLabel :label="label" />
-        </slot>
+        <template v-if="!noLabel">
+            <slot name="label">
+                <FormFieldLabel :label="label" />
+            </slot>
+        </template>
         <slot />
-
+        <div
+            v-if="hint && errors.length == 0"
+            class="ml-[18px] mt-1 text-xs text-gray-500"
+        >
+            {{ hint }}
+        </div>
         <div v-if="errors">
             <span v-for="(error, key) in errorList" :key="key" class="text-red">
                 {{ error }}
@@ -24,6 +31,13 @@ const props = defineProps({
     errors: {
         type: [Array, String],
         default: null,
+    },
+    hint: {
+        type: String,
+    },
+    noLable: {
+        type: Boolean,
+        default: false,
     },
 });
 
