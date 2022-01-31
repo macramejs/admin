@@ -3,18 +3,26 @@
         :is="tag"
         class="inline-flex items-center justify-center px-2 text-sm rounded-xs"
         :class="{
-            'bg-blue text-white ': variant_ == 'blue',
-            'bg-gray-700 text-white': variant_ == 'gray',
-            'bg-green text-green-700': variant_ == 'green',
-            'bg-red text-red-700': variant_ == 'red',
-            'bg-yellow text-yellow-700': variant_ == 'yellow',
+            'bg-gradient-to-r from-red-500 to-orange-500 text-white ':
+                variant_ == 'primary',
+            'bg-gray-800 text-white': variant_ == 'gray',
+            'bg-darkorange text-white':
+                variant_ == 'darkorange' || variant_ == 'orange',
+            'bg-lightorange text-white': variant_ == 'lightorange',
+            'bg-grasgreen text-white':
+                variant_ == 'grasgreen' || variant_ == 'green',
+            'bg-turkise text-white': variant_ == 'turkise',
+            'bg-lightblue text-gray-800': variant_ == 'lightblue',
+            'bg-blue text-white': variant_ == 'blue',
+            'bg-purple text-white': variant_ == 'purple',
+            'bg-pink text-gray-800': variant_ == 'pink',
         }"
     >
         <slot />
     </component>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import { getVariant, variants } from './props/variant';
 
