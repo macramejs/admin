@@ -2,8 +2,7 @@
     <div class="flex justify-around">
         <div class="flex items-stretch space-x-2">
             <Button
-                outline
-                gray
+                secondary
                 square
                 class="relative"
                 @click="table.setPage(1)"
@@ -35,8 +34,7 @@
                 </svg>
             </Button>
             <Button
-                outline
-                gray
+                secondary
                 square
                 :disabled="table.currentPage == 1"
                 @click="table.setPage(table.currentPage - 1)"
@@ -98,8 +96,7 @@
                 </span>
             </div>
             <Button
-                outline
-                gray
+                secondary
                 square
                 :disabled="!(table.currentPage < table.getLastPage())"
                 @click="table.setPage(table.currentPage + 1)"
@@ -118,8 +115,7 @@
                 </svg>
             </Button>
             <Button
-                outline
-                gray
+                secondary
                 square
                 class="relative"
                 @click="table.lastPage()"
