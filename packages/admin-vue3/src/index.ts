@@ -11,6 +11,7 @@ import FormCheckboxes from './ui/FormCheckboxes.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
 import Input from './ui/Input.vue';
+import List from './ui/List.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
 import Sidebar from './ui/Sidebar.vue';
@@ -91,6 +92,7 @@ export {
     Checkbox,
     Index, 
     Input,
+    List,
     Search,
     Select,
     Sidebar,
