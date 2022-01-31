@@ -1,6 +1,6 @@
 <template>
     <table class="table w-full">
-        <thead class="sticky top-0 text-left text-gray-700 bg-white thead">
+        <thead class="sticky top-0 text-left text-gray-800 bg-white thead">
             <slot name="thead">
                 <tr>
                     <Th
