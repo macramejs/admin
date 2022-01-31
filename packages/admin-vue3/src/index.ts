@@ -1,25 +1,41 @@
 import Button from './ui/Button.vue';
 import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
+import Chip from './ui/Chip.vue';
 import Badge from './ui/Badge.vue';
+import BaseDrawer from './ui/BaseDrawer.vue';
+import BaseDrawerSection from './ui/BaseDrawerSection.vue';
+import BaseTab from './ui/BaseTab.vue';
+import BaseTabPanel from './ui/BaseTabPanel.vue';
+import BaseTabGroup from './ui/BaseTabGroup.vue';
 import Form from './ui/Form.vue';
 import FormField from './ui/FormField.vue';
 import FormFieldLabel from './ui/FormFieldLabel.vue';
 import Modal from './ui/Modal.vue';
+import CheckboxSwitch from './ui/CheckboxSwitch.vue';
 import Checkbox from './ui/Checkbox.vue';
 import FormCheckboxes from './ui/FormCheckboxes.vue';
+import DatePicker from './ui/DatePicker.vue';
+import DateRange from './ui/DateRange.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
+import Slider from './ui/Slider.vue';
 import Input from './ui/Input.vue';
+import Nested from './ui/Nested.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
 import Sidebar from './ui/Sidebar.vue';
+import SidebarLink from './ui/SidebarLink.vue';
+import SidebarSection from './ui/SidebarSection.vue';
+import SidebarPrimary from './ui/SidebarPrimary.vue';
+import SidebarSecondary from './ui/SidebarSecondary.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
 import Tr from './ui/Tr.vue';
 import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
+import Wysiwyg from './ui/Wysiwyg.vue';
 
 const plugin = {
     install(app) {
@@ -31,8 +47,8 @@ const plugin = {
         app.component('UiModal', Modal);
         app.component('UiCheckbox', Checkbox);
         app.component('UiFormCheckboxes', FormCheckboxes);
-        app.component('UiFormSelect', FormSelect);
-        app.component('UiFormTextarea', FormTextarea);
+        // app.component('UiFormSelect', FormSelect);
+        // app.component('UiFormTextarea', FormTextarea);
         app.component('UiRadioGroup', RadioGroup);
         app.component('UiIndex', Index);
         app.component('UiInput', Input);
@@ -82,19 +98,36 @@ export { Pages, AuthPages };
 export {
     Card,
     Toggle,
+    Chip,
     Button,
     Badge,
+    BaseDrawer,
+    BaseDrawerSection,
+    BaseTab,
+    BaseTabPanel,
+    BaseTabGroup,
     Form,
     FormField,
     FormFieldLabel,
     Modal,
     Checkbox,
+    CheckboxSwitch,
+    DatePicker,
+    DateRange,
     Index, 
     Input,
+    Slider,
+    Nested,
     Search,
     Select,
     Sidebar,
+    SidebarLink,
+    SidebarSection,
+    SidebarPrimary,
+    SidebarSecondary,
+    RadioGroup,
     Pagination,
     Textarea,
     Table, Tr, Th, Td,
+    Wysiwyg
 };
