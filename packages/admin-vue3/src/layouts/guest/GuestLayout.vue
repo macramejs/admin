@@ -2,30 +2,14 @@
     <div class="flex w-screen h-screen">
         <div class="grid w-full h-full grid-cols-12">
             <div
-                class="
-                    flex flex-col
-                    items-center
-                    justify-center
-                    col-span-12
-                    gap-16
-                    bg-white
-                    md:col-span-6
-                "
+                class="flex flex-col items-center justify-center col-span-12 gap-16 bg-white md:col-span-6"
             >
-                <div class="w-full lg:w-1/2 px-12 lg:px-0">
+                <div class="w-full px-12 lg:w-1/2 lg:px-0">
                     <slot />
                 </div>
             </div>
             <div
-                class="
-                    flex
-                    items-center
-                    justify-center
-                    col-span-12
-                    text-white
-                    bg-blue-900
-                    md:col-span-6
-                "
+                class="flex items-center justify-center col-span-12 text-white bg-gray-300 md:col-span-6"
             >
                 <Logo />
             </div>
