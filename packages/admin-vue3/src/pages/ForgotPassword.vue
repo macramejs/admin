@@ -1,7 +1,7 @@
 <template>
     <GuestLayout>
         <div class="mb-3 text-sm text-gray-600">{{ lang.message }}</div>
-        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
         <form @submit.prevent="form.submit">
@@ -34,7 +34,7 @@ import { useForm } from '@macramejs/macrame-vue3';
 
 import GuestLayout from '../layouts/guest/GuestLayout.vue';
 import Input from '../layouts/guest/GuestLayoutInput.vue';
-import Checkbox from '../ui/Checkbox.vue';
+import Checkbox from '../ui/CheckboxSwitch.vue';
 import Button from '../ui/Button.vue';
 
 interface Lang {
