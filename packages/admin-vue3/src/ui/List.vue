@@ -84,9 +84,5 @@ const props = defineProps({
         required: true,
         type: Object as PropType<TList>,
     },
-    component: {
-        required: true,
-        type: Object,
-    },
 });
 </script>
