@@ -6,38 +6,36 @@
         <!-- <RadioGroupLabel>Plan</RadioGroupLabel> -->
         <RadioGroupOption
             as="template"
+            class="mb-3 rounded focus:outline-none max-w-max focus:ring-4 focus:ring-orange-100"
             v-for="option in options"
             :key="optionValue(option)"
             v-slot="{ checked, disabled }"
             :value="optionValue(option)"
             :disabled="isDisabled(option)"
         >
-            <div class="flex">
-                <div class="flex items-center w-6 h-6">
+            <div class="flex gap-2">
+                <div class="flex">
                     <div
-                        class="
-                            flex
-                            items-center
-                            justify-center
-                            w-3.5
-                            h-3.5
-                            border
-                            rounded-lg
-                        "
+                        class="flex items-center justify-center bg-white w-[18px] h-[18px] border rounded-lg"
                         :class="{
-                            'bg-blue': checked && !disabled,
-                            'bg-gray-700': checked && disabled,
-                            'border-gray-700': !disabled,
-                            'border-gray-600': disabled,
+                            'border-orange': checked && !disabled,
+                            'border-indigo-900': !checked && !disabled,
+                            'border-gray-500': disabled,
                         }"
                     >
-                        <div class="w-1 h-1 bg-white rounded-lg"></div>
+                        <div
+                            class="w-2.5 h-2.5 rounded-full"
+                            :class="{
+                                'bg-orange': checked,
+                                'bg-white': !checked,
+                            }"
+                        ></div>
                     </div>
                 </div>
                 <RadioGroupLabel
                     as="p"
-                    class="flex-1 cursor-pointer"
-                    :class="{ 'text-gray-600': disabled }"
+                    class="flex-1 mt-0.5 leading-none cursor-pointer"
+                    :class="{ 'text-gray-500': disabled }"
                 >
                     {{ optionLabel(option) }}
                 </RadioGroupLabel>
