@@ -1,5 +1,5 @@
 <template>
-    <tr class="hover:bg-gray-500 odd:bg-gray-100">
+    <tr class="hover:bg-gray-200 odd:bg-gray-50">
         <slot />
     </tr>
 </template>
