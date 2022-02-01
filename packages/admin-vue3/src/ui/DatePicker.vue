@@ -46,6 +46,7 @@
 
 <script lang="ts" setup>
 import { DatePicker } from 'v-calendar';
+import 'v-calendar/dist/style.css';
 import Input from './Input.vue';
 
 defineProps({
