@@ -19,7 +19,7 @@ import DatePicker from './ui/DatePicker.vue';
 import DateRange from './ui/DateRange.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
-// import Slider from './ui/Slider.vue';
+import Slider from './ui/Slider.vue';
 import Input from './ui/Input.vue';
 // import Nested from './ui/Nested.vue';
 import List from './ui/List.vue';
@@ -36,7 +36,7 @@ import Textarea from './ui/Textarea.vue';
 import Tr from './ui/Tr.vue';
 import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
-// import Wysiwyg from './ui/Wysiwyg.vue';
+import Wysiwyg from './ui/Wysiwyg.vue';
 
 const plugin = {
     install(app) {
@@ -117,7 +117,7 @@ export {
     DateRange,
     Index, 
     Input,
-    // Slider,
+    Slider,
     // Nested,
     List,
     Search,
@@ -131,5 +131,5 @@ export {
     Pagination,
     Textarea,
     Table, Tr, Th, Td,
-    // Wysiwyg
+    Wysiwyg
 };
