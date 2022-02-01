@@ -1,5 +1,5 @@
 <template>
-    <span class="todo">
+    <span class="inline-block mb-2">
         <slot>
             {{ label }}
         </slot>
