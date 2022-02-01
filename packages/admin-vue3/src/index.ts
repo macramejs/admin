@@ -8,6 +8,7 @@ import DrawerSection from './ui/DrawerSection.vue';
 import Tab from './ui/Tab.vue';
 import TabPanel from './ui/TabPanel.vue';
 import TabGroup from './ui/TabGroup.vue';
+import TabList from './ui/TabList.vue';
 import Form from './ui/Form.vue';
 import FormField from './ui/FormField.vue';
 import FormFieldLabel from './ui/FormFieldLabel.vue';
@@ -25,6 +26,7 @@ import Input from './ui/Input.vue';
 import List from './ui/List.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
+import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
 import SidebarLink from './ui/SidebarLink.vue';
 import SidebarSection from './ui/SidebarSection.vue';
@@ -107,6 +109,8 @@ export {
     Tab,
     TabPanel,
     TabGroup,
+    TabList,
+    Sections,
     Form,
     FormField,
     FormFieldLabel,
