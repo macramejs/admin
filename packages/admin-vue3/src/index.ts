@@ -2,6 +2,7 @@ import Button from './ui/Button.vue';
 import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
 import Chip from './ui/Chip.vue';
+import FileUpload from './ui/FileUpload.vue';
 import Badge from './ui/Badge.vue';
 // import Drawer from './ui/BaseDrawer.vue';
 // import DrawerSection from './ui/BaseDrawerSection.vue';
@@ -100,6 +101,7 @@ export {
     Card,
     Toggle,
     Chip,
+    FileUpload,
     Button,
     Badge,
     // BaseDrawer,
