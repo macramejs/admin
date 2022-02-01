@@ -1,21 +1,24 @@
 <template>
     <component
         :is="tag"
-        class="inline-flex items-center justify-center px-2 text-sm rounded-xs"
+        class="inline-flex items-center justify-center px-3 py-2 text-xs font-medium rounded-full"
         :class="{
             'bg-gradient-to-r from-red-500 to-orange-500 text-white ':
                 variant_ == 'primary',
-            'bg-gray-800 text-white': variant_ == 'gray',
-            'bg-darkorange text-white':
+            'bg-gray-800 text-gray': variant_ == 'gray',
+            'bg-darkorange text-darkorange bg-opacity-30':
                 variant_ == 'darkorange' || variant_ == 'orange',
-            'bg-lightorange text-white': variant_ == 'lightorange',
-            'bg-grasgreen text-white':
+            'bg-lightorange text-lightorange bg-opacity-30':
+                variant_ == 'lightorange',
+            'bg-grasgreen text-grasgreen bg-opacity-30':
                 variant_ == 'grasgreen' || variant_ == 'green',
-            'bg-turkise text-white': variant_ == 'turkise',
-            'bg-lightblue text-gray-800': variant_ == 'lightblue',
-            'bg-blue text-white': variant_ == 'blue',
-            'bg-purple text-white': variant_ == 'purple',
-            'bg-pink text-gray-800': variant_ == 'pink',
+            'bg-turkise text-turkise bg-opacity-30': variant_ == 'turkise',
+            'bg-lightblue text-lightblue bg-opacity-30':
+                variant_ == 'lightblue',
+            'bg-blue text-blue bg-opacity-30': variant_ == 'blue',
+            'bg-red-signal text-red-signal bg-opacity-30': variant_ == 'red',
+            'bg-purple text-purple bg-opacity-30': variant_ == 'purple',
+            'bg-pink text-pink bg-opacity-30': variant_ == 'pink',
         }"
     >
         <slot />
