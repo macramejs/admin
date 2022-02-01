@@ -2,11 +2,12 @@
     <div class="relative">
         <span
             v-if="label"
-            class="absolute inline-block text-gray-900 transition-all duration-200 -translate-y-1/2 bg-"
+            class="absolute inline-block transition-all duration-200 -translate-y-1/2 pointer-events-none bg-"
             :class="{
-                'top-1/2 left-[18px]': $attrs.modelValue.length == 0,
-                'top-px left-[16px] bg-gray-50 p-1 text-xs':
-                    $attrs.modelValue.length > 0,
+                'top-1/2 left-[18px] text-gray-500':
+                    $attrs.modelValue?.length == 0 || !$attrs.modelValue,
+                'top-px left-[16px] text-indigo-900 bg-white p-1 text-xs':
+                    $attrs.modelValue?.length > 0,
             }"
         >
             {{ label }}
@@ -16,8 +17,8 @@
             :disabled="disabled"
             class="px-[18px] border z-10 transition-colors duration-200 focus:outline-none rounded text-indigo-900 py-2.5"
             :class="{
-                'border-gray-500 cursor-not-allowed bg-gray-50': disabled,
-                'border-gray-900 bg-gray-50 focus:border-orange-700':
+                'border-gray-200 cursor-not-allowed bg-gray-50': disabled,
+                'border-gray-500 bg-white focus:border-orange-700':
                     errors.length == 0 && !disabled,
                 'border-red-signal bg-gray-50': errors.length > 0 && !disabled,
             }"
