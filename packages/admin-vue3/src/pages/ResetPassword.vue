@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <div class="mb-3 text-sm text-gray-600">{{ lang.message }}</div>
+        <div class="text-sm text-gray-600">{{ lang.message }}</div>
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
