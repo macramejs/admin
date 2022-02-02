@@ -7,7 +7,7 @@
         </template>
         <slot />
         <div
-            v-if="hint && errors.length == 0"
+            v-if="hint && !errors"
             class="ml-[18px] mt-1 text-xs text-gray-500"
         >
             {{ hint }}

@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <DisclosurePanel class="pl-6">
-                        <component :is="component" :list="element.children" />
+                        <slot name="disclosure" :item="element" />
                     </DisclosurePanel>
                 </Disclosure>
             </div>

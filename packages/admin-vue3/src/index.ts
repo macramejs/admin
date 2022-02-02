@@ -4,11 +4,12 @@ import Toggle from './ui/Toggle.vue';
 import Chip from './ui/Chip.vue';
 import FileUpload from './ui/FileUpload.vue';
 import Badge from './ui/Badge.vue';
-// import Drawer from './ui/BaseDrawer.vue';
-// import DrawerSection from './ui/BaseDrawerSection.vue';
+import Drawer from './ui/Drawer.vue';
+import DrawerSection from './ui/DrawerSection.vue';
 import Tab from './ui/Tab.vue';
 import TabPanel from './ui/TabPanel.vue';
 import TabGroup from './ui/TabGroup.vue';
+import TabList from './ui/TabList.vue';
 import Form from './ui/Form.vue';
 import FormField from './ui/FormField.vue';
 import FormFieldLabel from './ui/FormFieldLabel.vue';
@@ -26,11 +27,12 @@ import Input from './ui/Input.vue';
 import List from './ui/List.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
+import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
-// import SidebarLink from './ui/SidebarLink.vue';
-// import SidebarSection from './ui/SidebarSection.vue';
-// import SidebarPrimary from './ui/SidebarPrimary.vue';
-// import SidebarSecondary from './ui/SidebarSecondary.vue';
+import SidebarLink from './ui/SidebarLink.vue';
+import SidebarSection from './ui/SidebarSection.vue';
+import SidebarPrimary from './ui/SidebarPrimary.vue';
+import SidebarSecondary from './ui/SidebarSecondary.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
@@ -104,11 +106,13 @@ export {
     FileUpload,
     Button,
     Badge,
-    // BaseDrawer,
-    // BaseDrawerSection,
+    Drawer,
+    DrawerSection,
     Tab,
     TabPanel,
     TabGroup,
+    TabList,
+    Sections,
     Form,
     FormField,
     FormFieldLabel,
@@ -125,10 +129,10 @@ export {
     Search,
     Select,
     Sidebar,
-    // SidebarLink,
-    // SidebarSection,
-    // SidebarPrimary,
-    // SidebarSecondary,
+    SidebarLink,
+    SidebarSection,
+    SidebarPrimary,
+    SidebarSecondary,
     RadioGroup,
     Pagination,
     Textarea,
