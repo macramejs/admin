@@ -8,11 +8,11 @@
             <Input
                 autofocus
                 required
-                class="mb-3"
+                class=""
+                :label="lang.email"
                 type="email"
                 autocomplete="username"
                 v-model="form.email"
-                :placeholder="lang.email"
                 :errors="form.errors?.email"
             />
             <div class="flex justify-center mt-5">
