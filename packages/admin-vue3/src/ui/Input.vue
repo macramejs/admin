@@ -20,7 +20,7 @@
                 'border-gray-200 cursor-not-allowed bg-gray-50': disabled,
                 'border-gray-500 bg-white focus:border-orange-700':
                     errors.length == 0 && !disabled,
-                'border-red-signal bg-gray-50': errors.length > 0 && !disabled,
+                'border-red-signal bg-white': errors.length > 0 && !disabled,
             }"
         />
     </div>

@@ -1,29 +1,21 @@
 <template>
-    <div>
-        <Input
-            class="w-full py-2 text-gray-900 border-b outline-none border-gray"
-            v-bind="$attrs"
-        />
-        <div v-if="errors">
-            <div
-                v-for="(error, key) in typeof errors === 'string'
-                    ? [errors]
-                    : errors"
-                :key="key"
-                class="text-red"
-            >
-                {{ error }}
-            </div>
-        </div>
+    <div class="">
+        <FormField :errors="errors" no-label>
+            <Input
+                :errors="typeof errors === 'string' ? [errors] : errors"
+                class="w-full"
+                v-bind="$attrs"
+            />
+        </FormField>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Input } from '@macramejs/macrame-vue3';
+import { Input, FormField } from '@macramejs/admin-vue3';
 
 export default defineComponent({
-    components: { Input },
+    components: { Input, FormField },
     props: {
         errors: {
             type: [Array, String],
