@@ -203,13 +203,13 @@ watch(selectedItem, () => {
     border-top-color: #fead5e;
 }
 .mcr-select-button:focus > div > .input-section-2 > label {
-    color: #ff744e;
+    color: #fead5e;
 }
 .mcr-select-button:focus > div > .input-section-3 {
     border-color: #fead5e;
 }
 .mcr-select-button:focus .mcr-select-arrow {
-    color: #ff744e;
+    color: #fead5e;
 }
 
 .input-width {
