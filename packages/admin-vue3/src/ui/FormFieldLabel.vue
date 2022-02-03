@@ -1,5 +1,5 @@
 <template>
-    <span class="inline-block mb-2">
+    <span class="inline-block mb-[14px]">
         <slot>
             {{ label }}
         </slot>
