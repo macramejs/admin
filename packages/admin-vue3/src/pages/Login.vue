@@ -3,34 +3,38 @@
         <form @submit.prevent="form.submit">
             <Input
                 autofocus
+                :label="lang.email"
                 required
-                class="mb-3"
                 type="email"
                 autocomplete="username"
                 v-model="form.email"
-                :placeholder="lang.email"
                 :errors="form.errors?.email"
             />
             <Input
                 required
-                class="mb-3"
                 type="password"
+                :label="lang.password"
                 autocomplete="username"
                 v-model="form.password"
-                :placeholder="lang.password"
                 :errors="form.errors?.password"
             />
-            <div class="flex justify-between">
-                <Checkbox sm :label="lang.remember" v-model="form.remember" />
-                <a
+            <div class="flex items-center justify-between mt-5">
+                <CheckboxSwitch
+                    sm
+                    :label="lang.remember"
+                    v-model="form.remember"
+                    class="text-sm uppercase"
+                />
+                <Button
                     v-if="forgotPasswordRoute"
                     :href="forgotPasswordRoute"
-                    class="text-right"
+                    text
+                    class="mt-1 text-right"
                 >
                     {{ lang.forgot_password }}
-                </a>
+                </Button>
             </div>
-            <div class="flex justify-center mt-5">
+            <div class="flex items-center justify-center mt-5">
                 <Button
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
@@ -47,10 +51,10 @@ import { defineComponent, PropType } from 'vue';
 
 import { useForm } from '@macramejs/macrame-vue3';
 
+import { CheckboxSwitch, Button } from '@macramejs/admin-vue3';
+
 import GuestLayout from '../layouts/guest/GuestLayout.vue';
 import Input from '../layouts/guest/GuestLayoutInput.vue';
-import Checkbox from '../ui/CheckboxSwitch.vue';
-import Button from '../ui/Button.vue';
 
 interface Lang {
     login: string;
@@ -61,7 +65,7 @@ interface Lang {
 }
 
 export default defineComponent({
-    components: { GuestLayout, Input, Checkbox, Button },
+    components: { GuestLayout, Input, CheckboxSwitch, Button },
     props: {
         submitRoute: {
             type: String,
