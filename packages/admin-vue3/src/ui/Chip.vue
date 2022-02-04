@@ -1,16 +1,18 @@
 <template>
     <button
         @click="update(!modelValue)"
-        class="h-[30px] px-3 py-2 transition-colors focus:outline-none duration-200 rounded-full leading-none text-sm"
+        class="h-[30px] px-3 py-2 flex items-center gap-2 transition-colors focus:outline-none duration-200 rounded-full leading-none text-sm"
         :class="{
-            'bg-gray-200 hover:bg-gray-400 text-gray-900 focus:bg-gray-300 active:bg-orange-100':
+            'bg-gray-200 hover:bg-gray-300 text-gray-900 focus:bg-gray-300 active:bg-orange-100':
                 !modelValue && !disabled,
             'bg-orange-100 text-orange-700': modelValue && !disabled,
             'bg-gray-100 text-gray-500 cursor-not-allowed': disabled,
         }"
         :disabled="disabled"
     >
-        {{ label }}
+        <span class="inline-block">
+            {{ label }}
+        </span>
     </button>
 </template>
 
