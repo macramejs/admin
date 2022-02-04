@@ -1,11 +1,11 @@
 <template>
     <div
-        class="flex flex-col justify-between h-screen transition-all bg-white border-r border-gray-400"
+        class="flex flex-col justify-between h-screen transition-all duration-300 bg-white border-r border-gray-400"
         @mouseover="expanded = true"
         @mouseleave="expanded = false"
         :class="{
-            'w-[77px]': !expanded,
-            'w-[250px]': expanded,
+            'w-[77px]': !isExpanded,
+            'w-[250px]': isExpanded,
         }"
     >
         <header class="flex items-center justify-between h-20 px-4 py-7">
@@ -18,22 +18,30 @@
             </div>
         </header>
         <nav class="flex-1">
-            <slot v-bind:expanded="expanded" />
+            <slot v-bind:expanded="isExpanded" />
         </nav>
-        <footer class="flex px-5 py-6">
+        <footer class="flex px-4 py-6">
             <button
                 @click="globalSearchOpen = true"
-                class="flex items-center justify-center bg-gray-300 rounded w-9 h-9"
+                class="flex items-center transition-all focus:outline-none focus:ring-4 focus:ring-orange-100 duration-300 px-[13px] min-w-[44px] text-gray-500 border rounded h-[44px]"
+                :class="{
+                    '!min-w-full border-gray-500': isExpanded,
+                    'bg-gray-100 border-gray-100': !isExpanded,
+                }"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="-2.5 -2.5 24 24"
-                    class="w-4 h-4 fill-current"
-                >
-                    <path
-                        d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
-                    ></path>
-                </svg>
+                <div class="flex items-center gap-2">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="-2.5 -2.5 24 24"
+                        class="w-4 h-4 fill-current"
+                    >
+                        <path
+                            d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58a1 1 0 1 1-1.415 1.413l-3.58-3.58a8 8 0 1 1 1.414-1.414z"
+                        ></path>
+                    </svg>
+                    <span v-if="isExpanded">Suchen</span>
+                </div>
+                <div v-if="isExpanded" class="ml-auto text-gray-300">⌘K</div>
             </button>
             <Modal lg v-model:open="globalSearchOpen">
                 <div class="h-96">
@@ -82,8 +90,12 @@ import { usePage, Link } from '@inertiajs/inertia-vue3';
 import Modal from './Modal.vue';
 import { Input as BaseInput } from '@macramejs/macrame-vue3';
 
-defineProps({
+const props = defineProps({
     sidebar: Object as PropType<TSidebar>,
+    defaultExpanded: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const globalSearchOpen = ref(false);
@@ -93,5 +105,11 @@ const page = computed(() => {
     return usePage().url.value;
 });
 
+const isExpanded = computed(() => {
+    if (props.defaultExpanded) {
+        return true;
+    }
+    return expanded.value;
+});
 const expanded = ref(false);
 </script>
