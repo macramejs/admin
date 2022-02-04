@@ -1,11 +1,12 @@
 <template>
     <div class="w-full">
         <div
-            class="flex items-center justify-center w-full h-40 transition-colors duration-300 bg-white border rounded focus:outline-none focus:border-orange hover:bg-gray-100"
+            class="flex items-center justify-center w-full h-40 transition-colors duration-300 border rounded bg-gray-50 focus:outline-none focus:border-orange"
             :class="{
                 'border-red-signal': fileRejections.length > 0 || isDragReject,
                 'border-green': isDragAccept,
-                'border-gray-500':
+                'cursor-not-allowed': disabled,
+                'border-gray-100':
                     !isDragReject &&
                     !isDragAccept &&
                     fileRejections.length == 0,
@@ -13,17 +14,19 @@
             v-bind="getRootProps()"
         >
             <input v-bind="getInputProps()" />
-            <span class="px-5 text-sm text-center" v-if="busy"
+            <span class="px-5 text-sm text-center uppercase" v-if="busy"
                 >Loading ...</span
             >
-            <span class="px-5 text-sm text-center" v-if="!busy && isDragActive"
+            <span
+                class="px-5 text-sm text-center uppercase"
+                v-if="!busy && isDragActive"
                 >Drop the files here ...</span
             >
             <span
-                class="px-5 text-sm text-center"
+                class="px-5 text-sm text-center uppercase"
                 v-if="!busy && !isDragActive"
             >
-                Drag 'n' drop some files here, or click to select files
+                Drag & Drop or browse
             </span>
         </div>
     </div>
@@ -63,13 +66,16 @@ export default defineComponent({
             type: Number,
             default: 1,
         },
+        url: {
+            type: String,
+            required: true,
+        },
         multiple: {
             type: Boolean,
             default: false,
         },
     },
     setup(props: any, { emit }) {
-        // const accepted = ref([]);
         const busy = ref(false);
 
         const saveFiles = files => {
@@ -81,9 +87,8 @@ export default defineComponent({
             }
 
             // post the formData to your backend where storage is processed. In the backend, you will need to loop through the array and save each file through the loop.
-            // TODO: add right api routefor files
             axios
-                .post('/admin/files', formData, {
+                .post(props.url, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -99,22 +104,9 @@ export default defineComponent({
         };
 
         function onDrop(acceptFiles, rejectReasons) {
-            console.log(acceptFiles);
-            console.log(rejectReasons);
-            saveFiles(acceptFiles);
-            // if (
-            //     rejectReasons.length == 0 &&
-            //     accepted.value.length < props.maxFiles
-            // ) {
-            //     acceptFiles.forEach(element => {
-            //         accepted.value.push({
-            //             path: element.path,
-            //             size: element.size,
-            //             name: element.name,
-            //         });
-            //     });
-            // }
-            // emit('update:modelValue', accepted.value);
+            if (rejectReasons.length == 0) {
+                saveFiles(acceptFiles);
+            }
         }
 
         const maxSize = computed(() => {
@@ -124,6 +116,7 @@ export default defineComponent({
         const { getRootProps, getInputProps, ...rest } = useDropzone({
             onDrop,
             accept: props.accept,
+            disabled: props.disabled,
             maxSize: maxSize.value,
             multiple: props.multiple,
             maxFiles: props.maxFiles,
