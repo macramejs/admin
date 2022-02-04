@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <div class="mb-3 text-sm text-gray-600">{{ lang.message }}</div>
+        <div class="text-sm text-gray-600">{{ lang.message }}</div>
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
@@ -8,29 +8,26 @@
             <Input
                 autofocus
                 required
-                class="mb-3"
                 type="email"
                 autocomplete="username"
                 v-model="form.email"
-                :placeholder="lang.email"
+                :label="lang.email"
                 :errors="form.errors?.email"
             />
             <Input
                 required
-                class="mb-3"
                 type="password"
                 autocomplete="new-password"
                 v-model="form.password"
-                :placeholder="lang.password"
+                :label="lang.password"
                 :errors="form.errors?.password"
             />
             <Input
                 required
-                class="mb-3"
                 type="password"
                 autocomplete="new-password"
                 v-model="form.password_confirmation"
-                :placeholder="lang.password_confirmation"
+                :label="lang.password_confirmation"
                 :errors="form.errors?.password_confirmation"
             />
             <div v-if="form.errors?.token" class="mb-4 text-red">

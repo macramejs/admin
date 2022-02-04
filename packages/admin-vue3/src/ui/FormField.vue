@@ -13,7 +13,11 @@
             {{ hint }}
         </div>
         <div v-if="errors">
-            <span v-for="(error, key) in errorList" :key="key" class="text-red">
+            <span
+                v-for="(error, key) in errorList"
+                :key="key"
+                class="inline-block mt-1 text-xs text-red"
+            >
                 {{ error }}
             </span>
         </div>

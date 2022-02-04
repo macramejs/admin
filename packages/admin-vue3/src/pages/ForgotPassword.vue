@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <div class="mb-3 text-sm text-gray-600">{{ lang.message }}</div>
+        <div class="text-sm text-gray-600">{{ lang.message }}</div>
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
@@ -8,11 +8,11 @@
             <Input
                 autofocus
                 required
-                class="mb-3"
+                class=""
+                :label="lang.email"
                 type="email"
                 autocomplete="username"
                 v-model="form.email"
-                :placeholder="lang.email"
                 :errors="form.errors?.email"
             />
             <div class="flex justify-center mt-5">

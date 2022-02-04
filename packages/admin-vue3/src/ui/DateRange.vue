@@ -10,27 +10,11 @@
         <template v-slot="{ inputValue, inputEvents }">
             <div class="flex items-center justify-center w-full">
                 <div class="relative w-full">
-                    <span
-                        class="absolute inline-block text-gray-900 transition-all duration-200 -translate-y-1/2 pointer-events-none bg-"
-                        :class="{
-                            'top-1/2 left-[18px]': !inputValue.start,
-                            'top-px left-[16px] bg-white p-1 text-xs':
-                                inputValue.start,
-                        }"
-                    >
-                        Start
-                    </span>
-                    <input
-                        :value="inputValue.start"
+                    <Input
+                        :modelValue="inputValue.start"
+                        :errors="errors"
                         v-on="inputEvents.start"
-                        class="px-[18px] border z-10 transition-colors w-full duration-200 focus:outline-none rounded text-indigo-900 py-2.5"
-                        :class="{
-                            'border-gray-200 bg-white': disabled,
-                            'border-gray-500 bg-white focus:border-orange-700':
-                                errors.length == 0 && !disabled,
-                            'border-red-signal bg-white':
-                                errors.length > 0 && !disabled,
-                        }"
+                        label="Start"
                     />
                 </div>
                 <svg
@@ -47,27 +31,11 @@
                     />
                 </svg>
                 <div class="relative w-full">
-                    <span
-                        class="absolute inline-block text-gray-900 transition-all duration-200 -translate-y-1/2 pointer-events-none bg-"
-                        :class="{
-                            'top-1/2 left-[18px]': !inputValue.end,
-                            'top-px left-[16px] bg-white p-1 text-xs':
-                                inputValue.end,
-                        }"
-                    >
-                        Ende
-                    </span>
-                    <input
-                        :value="inputValue.end"
+                    <Input
+                        :modelValue="inputValue.end"
+                        :errors="errors"
                         v-on="inputEvents.end"
-                        class="px-[18px] border z-10 transition-colors w-full duration-200 focus:outline-none rounded text-indigo-900 py-2.5"
-                        :class="{
-                            'border-gray-200 bg-white': disabled,
-                            'border-gray-500 bg-white focus:border-orange-700':
-                                errors.length == 0 && !disabled,
-                            'border-red-signal bg-white':
-                                errors.length > 0 && !disabled,
-                        }"
+                        label="Ende"
                     />
                 </div>
             </div>

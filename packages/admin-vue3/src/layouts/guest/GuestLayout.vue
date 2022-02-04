@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div
-                class="flex items-center justify-center col-span-12 text-white bg-gray-300 md:col-span-6"
+                class="flex items-center justify-center col-span-12 text-white bg-gray-50 md:col-span-6"
             >
                 <Logo />
             </div>
