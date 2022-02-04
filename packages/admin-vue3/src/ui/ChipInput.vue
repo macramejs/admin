@@ -1,13 +1,13 @@
 <template>
     <div
-        class="relative flex flex-wrap gap-3 p-5 overflow-y-auto border rounded-sm max-h-56"
+        class="relative flex flex-wrap gap-2 py-2.5 px-[18px] overflow-y-auto border rounded-sm max-h-[126px]"
         :class="{
             'border-red-signal': errors?.length > 0 || !!errors,
             'border-gray-900': errors?.length == 0 || !errors,
         }"
     >
         <div
-            class="h-[30px] z-10 px-3 py-2 flex w-fit items-center gap-2 transition-colors bg-gray-200 focus:outline-none duration-200 rounded-full leading-none text-sm"
+            class="h-[30px] z-10 px-3 py-2 flex w-fit items-center gap-2 transition-colors bg-orange-100 focus:outline-none text-orange duration-200 rounded-full leading-none text-sm"
             v-for="(chip, i) in chips"
         >
             <span class="inline-block">
@@ -28,7 +28,7 @@
         </div>
         <input
             type="text"
-            class="w-full p-5 -m-5 bg-transparent placeholder:text-gray-900 focus:outline-none"
+            class="w-full py-2.5 px-[18px] -my-2.5 -mx-[18px] bg-transparent text-base placeholder:text-gray-900 focus:outline-none"
             :placeholder="placeholder"
             v-model="currentInput"
             @keypress.enter="saveChip()"
