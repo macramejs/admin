@@ -7,13 +7,17 @@
         </template>
         <slot />
         <div
-            v-if="hint && errors.length == 0"
+            v-if="hint && !errors"
             class="ml-[18px] mt-1 text-xs text-gray-500"
         >
             {{ hint }}
         </div>
         <div v-if="errors">
-            <span v-for="(error, key) in errorList" :key="key" class="text-red">
+            <span
+                v-for="(error, key) in errorList"
+                :key="key"
+                class="inline-block mt-1 text-xs text-red"
+            >
                 {{ error }}
             </span>
         </div>
