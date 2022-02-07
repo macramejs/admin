@@ -1,33 +1,61 @@
 <template>
     <div class="w-full">
         <div
-            class="flex items-center justify-center w-full h-40 transition-colors duration-300 border rounded bg-gray-50 focus:outline-none focus:border-orange"
+            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-50 focus:outline-none focus:border-orange"
             :class="{
                 'border-red-signal': fileRejections.length > 0 || isDragReject,
                 'border-green': isDragAccept,
-                'cursor-not-allowed': disabled,
-                'border-gray-100':
+                '!cursor-not-allowed': disabled,
+                'border-gray-200':
                     !isDragReject &&
                     !isDragAccept &&
                     fileRejections.length == 0,
+                '!h-[60px] !justify-start': inline,
             }"
             v-bind="getRootProps()"
         >
             <input v-bind="getInputProps()" />
-            <span class="px-5 text-sm text-center uppercase" v-if="busy"
-                >Loading ...</span
+            <div
+                class="flex gap-2.5 items-center"
+                :class="{ 'flex-col': !inline }"
             >
-            <span
-                class="px-5 text-sm text-center uppercase"
-                v-if="!busy && isDragActive"
-                >Drop the files here ...</span
-            >
-            <span
-                class="px-5 text-sm text-center uppercase"
-                v-if="!busy && !isDragActive"
-            >
-                Drag & Drop or browse
-            </span>
+                <div class="text-orange">
+                    <svg
+                        width="24"
+                        height="24"
+                        stroke-width="1.5"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M13 21H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h16.8a.6.6 0 0 1 .6.6V13"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="m3 16 7-3 5.5 2.5M16 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM16 19h3m3 0h-3m0 0v-3m0 3v3"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </div>
+                <span class="text-sm text-center uppercase" v-if="busy"
+                    >Loading ...</span
+                >
+                <span
+                    class="text-sm text-center uppercase"
+                    v-if="!busy && isDragActive"
+                    >Drop the files here ...</span
+                >
+                <span
+                    class="text-sm text-center uppercase"
+                    v-if="!busy && !isDragActive"
+                >
+                    Drag & Drop or browse
+                </span>
+            </div>
         </div>
     </div>
     <div class="ml-[18px]" v-if="fileRejections.length > 0">
@@ -55,6 +83,10 @@ export default defineComponent({
             default: null,
         },
         disabled: {
+            type: Boolean,
+            default: false,
+        },
+        inline: {
             type: Boolean,
             default: false,
         },
