@@ -98,7 +98,7 @@ input:focus + div > .input-section-2 {
     border-top-color: #fead5e;
 }
 input:focus + div > .input-section-2 > label {
-    color: #ff744e;
+    color: #fead5e;
 }
 input:focus + div > .input-section-3 {
     border-color: #fead5e;
