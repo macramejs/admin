@@ -7,7 +7,7 @@
         >
             <slot name="header" />
         </header>
-        <nav class="flex-1">
+        <nav class="flex-1 max-h-[calc(100vh - 80px)] overflow-y-auto">
             <slot />
         </nav>
     </div>
