@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <div
-            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-50 focus:outline-none focus:border-orange"
+            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-transparent focus:outline-none focus:border-orange"
             :class="{
                 'border-red-signal': fileRejections.length > 0 || isDragReject,
                 'border-green': isDragAccept,
