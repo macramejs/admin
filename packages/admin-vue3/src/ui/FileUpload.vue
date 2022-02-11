@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <div
-            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-50 focus:outline-none focus:border-orange"
+            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-transparent focus:outline-none focus:border-orange"
             :class="{
                 'border-red-signal': fileRejections.length > 0 || isDragReject,
                 'border-green': isDragAccept,
@@ -75,7 +75,7 @@ import axios from 'axios';
 
 export default defineComponent({
     name: 'FileUpload',
-    emits: ['update:modelValue'],
+    emits: ['success', 'failed'],
     props: {
         modelValue: Array,
         accept: {
@@ -115,7 +115,7 @@ export default defineComponent({
             const formData = new FormData(); // pass data as a form
             for (var x = 0; x < files.length; x++) {
                 // append files as array to the form, feel free to change the array name
-                formData.append('images[]', files[x]);
+                formData.append('files[]', files[x]);
             }
 
             // post the formData to your backend where storage is processed. In the backend, you will need to loop through the array and save each file through the loop.
@@ -128,10 +128,15 @@ export default defineComponent({
                 .then(response => {
                     console.info(response.data);
                     busy.value = false;
+                    if (response.status >= 200 && response.status < 300) {
+                        emit('success');
+                    }
                 })
                 .catch(err => {
-                    console.error(err);
+                    const error = new Error(err);
+                    console.error(error);
                     busy.value = false;
+                    emit('failed', error);
                 });
         };
 
