@@ -3,20 +3,20 @@
         <slot name="search">
             <Search :table="table" :placeholder="searchPlaceholder" />
         </slot>
-        <div class="w-full bg-white rounded-md shadow pt-9">
+        <div
+            class="w-full pt-9"
+            :class="{ 'bg-white shadow rounded-md': isTable }"
+        >
             <slot />
             <slot name="footer">
-                <div class="w-full pt-8 pb-4 border-t border-gray-300">
+                <div
+                    class="w-full pt-8 pb-4"
+                    :class="{ 'border-t border-gray-300': isTable }"
+                    v-if="isTable || table.totalItems >= table.perPage"
+                >
                     <Pagination :table="table" />
                     <div
-                        class="
-                            inline-flex
-                            justify-end
-                            w-full
-                            pt-4
-                            pr-6
-                            text-gray
-                        "
+                        class="inline-flex justify-end w-full pt-4 pr-6 text-gray"
                     >
                         {{ table.fromItem }}-{{ table.toItem }}/{{
                             table.totalItems
@@ -51,6 +51,10 @@ export default defineComponent({
         },
         searchPlaceholder: {
             type: String,
+        },
+        isTable: {
+            type: Boolean,
+            default: true,
         },
     },
     setup({}: IndexProps, {}) {
