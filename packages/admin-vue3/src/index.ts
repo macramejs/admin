@@ -28,6 +28,7 @@ import Input from './ui/Input.vue';
 import List from './ui/List.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
+import SelectMultiple from './ui/SelectMultiple.vue';
 import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
 import SidebarLink from './ui/SidebarLink.vue';
@@ -130,6 +131,7 @@ export {
     List,
     Search,
     Select,
+    SelectMultiple,
     Sidebar,
     SidebarLink,
     SidebarSection,

@@ -10,6 +10,7 @@
                 v-model="form.email"
                 :errors="form.errors?.email"
             />
+            <div class="mb-6"></div>
             <Input
                 required
                 type="password"

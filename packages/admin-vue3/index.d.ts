@@ -51,6 +51,7 @@ export const Slider : Component;
 export const Nested : Component;
 export const Search : Component;
 export const Select : Component;
+export const SelectMultiple : Component;
 export const Sections : Component;
 export const Sidebar : Component;
 export const SidebarLink : Component;

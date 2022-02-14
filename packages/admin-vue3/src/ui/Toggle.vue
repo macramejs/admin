@@ -1,7 +1,7 @@
 <template>
     <SwitchGroup>
         <div class="inline-flex flex-col">
-            <SwitchLabel class="mr-4">
+            <SwitchLabel v-if="!noLabel" class="mr-4">
                 <slot> {{ label }} </slot>
             </SwitchLabel>
             <Switch
@@ -61,6 +61,10 @@ export default {
             type: String,
             default: null,
         },
+        noLabel: {
+            type: Boolean,
+            default: false,
+        },
         disabled: {
             type: Boolean,
             default: false,
@@ -77,7 +81,7 @@ export default {
         const size_ = getSize(props, {});
         const variant_ = getVariant(props, {});
 
-        const update = (value) => {
+        const update = value => {
             if (disabled) {
                 return;
             }
