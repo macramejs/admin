@@ -7,7 +7,7 @@
         }"
     >
         <div
-            class="h-[30px] z-10 px-3 py-2 flex w-fit items-center gap-2 transition-colors bg-orange-100 focus:outline-none text-orange duration-200 rounded-full leading-none text-sm"
+            class="h-[30px] px-3 py-2 flex w-fit items-center gap-2 transition-colors bg-orange-100 focus:outline-none text-orange duration-200 rounded-full leading-none text-sm"
             v-for="(chip, i) in chips"
         >
             <span class="inline-block">

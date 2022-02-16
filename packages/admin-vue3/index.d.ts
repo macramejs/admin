@@ -28,6 +28,7 @@ export const Toggle : Component;
 export const Chip : Component;
 export const FileUpload : Component;
 export const ChipInput : Component;
+export const ContextMenu : Component;
 export const Button : Component;
 export const DatePicker : Component;
 export const DateRange : Component;
