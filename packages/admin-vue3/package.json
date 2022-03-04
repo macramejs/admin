@@ -1,6 +1,6 @@
 {
   "name": "@macramejs/admin-vue3",
-  "version": "0.0.31",
+  "version": "0.1.0",
   "description": "",
   "typings": "index.d.ts",
   "main": "index.js",
