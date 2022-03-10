@@ -18,7 +18,6 @@ import FormFieldLabel from './ui/FormFieldLabel.vue';
 import Modal from './ui/Modal.vue';
 import CheckboxSwitch from './ui/CheckboxSwitch.vue';
 import Checkbox from './ui/Checkbox.vue';
-import FormCheckboxes from './ui/FormCheckboxes.vue';
 import DatePicker from './ui/DatePicker.vue';
 import DateRange from './ui/DateRange.vue';
 import RadioGroup from './ui/RadioGroup.vue';
@@ -52,7 +51,6 @@ const plugin = {
         app.component('UiForm', Form);
         app.component('UiModal', Modal);
         app.component('UiCheckbox', Checkbox);
-        app.component('UiFormCheckboxes', FormCheckboxes);
         // app.component('UiFormSelect', FormSelect);
         // app.component('UiFormTextarea', FormTextarea);
         app.component('UiRadioGroup', RadioGroup);
@@ -86,9 +84,9 @@ export {
     GuestLayoutInput
 };
 
-import LoginPage from './pages/Login.vue';
-import ForgotPasswordPage from './pages/ForgotPassword.vue';
-import ResetPasswordPage from './pages/ResetPassword.vue';
+import LoginPage from './pages/Auth/Login.vue';
+import ForgotPasswordPage from './pages/Auth/ForgotPassword.vue';
+import ResetPasswordPage from './pages/Auth/ResetPassword.vue';
 
 const AuthPages = {
     "Auth/Login": LoginPage,
@@ -96,7 +94,9 @@ const AuthPages = {
     "Auth/ResetPassword": ResetPasswordPage,
 }
 
-const Pages = { ...AuthPages };
+const Pages = { 
+    auth: AuthPages 
+};
 
 export { Pages, AuthPages };
 

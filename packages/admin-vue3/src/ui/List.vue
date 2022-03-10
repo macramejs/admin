@@ -37,7 +37,10 @@
                             <div
                                 class="flex items-center justify-between flex-1 py-1"
                             >
-                                <slot :item="element" />
+                                <slot
+                                    :item="element.value"
+                                    :children="element.children"
+                                />
                             </div>
                         </div>
                         <div class="flex items-center w-8">
@@ -66,7 +69,11 @@
                         </div>
                     </div>
                     <DisclosurePanel class="pl-6">
-                        <slot name="disclosure" :item="element" />
+                        <slot
+                            name="disclosure"
+                            :item="element.value"
+                            :children="element.children"
+                        />
                     </DisclosurePanel>
                 </Disclosure>
             </div>

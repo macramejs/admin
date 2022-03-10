@@ -2,27 +2,31 @@
     <Link
         :href="href"
         :class="{
-            'bg-orange bg-opacity-20 hover:bg-opacity-50': page.includes(href),
-            'hover:bg-gray-300': !page.includes(href),
+            'bg-orange bg-opacity-20 hover:bg-opacity-50':
+                isActive && !secondary,
+            'hover:bg-gray-300': !isActive && !secondary,
+            'hover:bg-gray-100': secondary,
+            'bg-gray-100': isActive && secondary,
         }"
-        class="flex items-center rounded"
+        class="flex items-center rounded h-[44px]"
     >
         <div
+            v-if="$slots.icon"
             class="w-[44px] min-w-[44px] h-[44px] rounded flex items-center text-gray-800 justify-center"
             :class="{
-                ' text-red': page.includes(href),
+                ' text-red': isActive && !secondary,
             }"
         >
-            <slot />
+            <slot name="icon" />
         </div>
         <div
-            v-if="expanded"
+            v-if="!hideTitle"
             class="flex-1 pl-3 font-medium tracking-wider"
             :class="{
-                'text-red': page.includes(href),
+                'text-red': isActive && !secondary,
             }"
         >
-            {{ title }}
+            <slot>{{ title }}</slot>
         </div>
     </Link>
 </template>
@@ -31,20 +35,37 @@
 import { computed } from 'vue';
 import { Link, usePage } from '@inertiajs/inertia-vue3';
 
-const page = computed(() => {
-    return usePage().url.value;
-});
-
 const props = defineProps({
     title: {
         type: String,
+        required: true,
     },
     href: {
         type: String,
     },
-    expanded: {
+    hideTitle: {
         type: Boolean,
         default: false,
     },
+    secondary: {
+        type: Boolean,
+        default: false,
+    },
+    active: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const page = computed(() => {
+    return usePage().url.value;
+});
+
+const isActive = computed(() => {
+    if (props.active) {
+        return true;
+    }
+
+    return props.href ? page.value.includes(props.href) : false;
 });
 </script>

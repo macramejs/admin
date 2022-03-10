@@ -53,8 +53,8 @@ import { useForm } from '@macramejs/macrame-vue3';
 
 import { CheckboxSwitch, Button } from '@macramejs/admin-vue3';
 
-import GuestLayout from '../layouts/guest/GuestLayout.vue';
-import Input from '../layouts/guest/GuestLayoutInput.vue';
+import GuestLayout from '../../layouts/guest/GuestLayout.vue';
+import Input from '../../layouts/guest/GuestLayoutInput.vue';
 
 interface Lang {
     login: string;
