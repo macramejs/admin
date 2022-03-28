@@ -4,7 +4,7 @@
         <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
             {{ status }}
         </div>
-        <form @submit.prevent="form.submit">
+        <form @submit.prevent="form.submit" class="mt-4">
             <Input
                 autofocus
                 required

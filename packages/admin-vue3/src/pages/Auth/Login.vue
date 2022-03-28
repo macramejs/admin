@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <form @submit.prevent="form.submit">
+        <form @submit.prevent="form.submit" class="space-y-4">
             <Input
                 autofocus
                 :label="lang.email"
@@ -46,13 +46,10 @@
     </GuestLayout>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
-
+<script setup lang="ts">
+import { PropType } from 'vue';
 import { useForm } from '@macramejs/macrame-vue3';
-
 import { CheckboxSwitch, Button } from '@macramejs/admin-vue3';
-
 import GuestLayout from '../../layouts/guest/GuestLayout.vue';
 import Input from '../../layouts/guest/GuestLayoutInput.vue';
 
@@ -64,35 +61,28 @@ interface Lang {
     forgot_password: string;
 }
 
-export default defineComponent({
-    components: { GuestLayout, Input, CheckboxSwitch, Button },
-    props: {
-        submitRoute: {
-            type: String,
-            required: true,
-        },
-        forgotPasswordRoute: {
-            type: String,
-        },
-        lang: {
-            type: Object as PropType<Lang>,
-            default: {
-                login: 'Login',
-                email: 'Email',
-                password: 'Password',
-                remember: 'Remember Me',
-                forgot_password: 'Forgot your password?',
-            },
-        },
+const props = defineProps({
+    submitRoute: {
+        type: String,
+        required: true,
     },
-    setup({ submitRoute }) {
-        const form = useForm(
-            submitRoute,
-            { email: '', password: '', remember: false },
-            { method: 'post' }
-        );
-
-        return { form };
+    forgotPasswordRoute: {
+        type: String,
+    },
+    lang: {
+        type: Object as PropType<Lang>,
+        default: {
+            login: 'Login',
+            email: 'Email',
+            password: 'Password',
+            remember: 'Remember Me',
+            forgot_password: 'Forgot your password?',
+        },
     },
 });
+const form = useForm(
+    props.submitRoute,
+    { email: '', password: '', remember: false },
+    { method: 'post' }
+);
 </script>

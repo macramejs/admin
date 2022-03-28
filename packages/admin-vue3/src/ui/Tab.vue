@@ -5,7 +5,7 @@
         as="template"
         class="focus:outline-none"
         ><button
-            class="px-3 py-1.5 focus:outline-none transition-colors duration-200 text-base font-medium cursor-pointer"
+            class="px-3 py-1 text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer focus:outline-none"
             :class="{
                 'text-black bg-gray-200 border-b border-indigo-900':
                     selected && !disabled,

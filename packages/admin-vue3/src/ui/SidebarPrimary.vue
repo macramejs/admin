@@ -8,10 +8,10 @@
             'w-[250px]': expanded,
         }"
     >
-        <header class="flex items-center justify-between h-20 px-4 py-7">
+        <header class="flex items-center justify-between h-[80px] px-4 py-7">
             <div class="relative flex items-center w-full h-10 overflow-hidden">
                 <Link href="/admin">
-                    <div class="w-36">
+                    <div class="w-[154px]">
                         <slot name="logo" />
                     </div>
                 </Link>

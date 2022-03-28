@@ -98,7 +98,9 @@
                         >
                             <span
                                 :class="[
-                                    selected ? 'text-indigo-900' : 'text-gray',
+                                    selected
+                                        ? 'text-indigo-900'
+                                        : 'text-gray-500',
                                     'block truncate py-[5px] px-4',
                                 ]"
                             >
@@ -113,7 +115,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, computed, watch, ref, PropType } from 'vue';
+import { defineEmits, computed, watch, ref, PropType } from 'vue';
 import {
     Listbox,
     ListboxButton,
@@ -140,11 +142,11 @@ const props = defineProps({
     },
     labelKey: {
         type: String,
-        default: null,
+        default: 'label',
     },
     valueKey: {
         type: String,
-        default: null,
+        default: 'value',
     },
     errors: {
         type: [Array, String],
