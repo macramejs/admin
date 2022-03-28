@@ -1,6 +1,6 @@
 <template>
     <GuestLayout>
-        <form @submit.prevent="form.submit">
+        <form @submit.prevent="form.submit" class="space-y-2">
             <Input
                 autofocus
                 :label="lang.email"
