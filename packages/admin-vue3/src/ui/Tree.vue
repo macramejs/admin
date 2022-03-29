@@ -1,5 +1,5 @@
 <template>
-    <Draggable tag="div" :list="list.items" handle=".handle" item-key="uuid">
+    <Draggable tag="div" :list="tree.items" handle=".handle" item-key="uuid">
         <template #item="{ element }">
             <div class="px-2 py-1 bg-white draggable-wrapper">
                 <Disclosure v-slot="{ open }" defaultOpen>
@@ -83,13 +83,13 @@
 <script setup lang="ts">
 import Draggable from 'vuedraggable';
 import { defineProps, PropType } from 'vue';
-import { TList } from '@macramejs/macrame-vue3';
+import { Tree } from '@macramejs/macrame-vue3';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 
 const props = defineProps({
-    list: {
+    tree: {
         required: true,
-        type: Object as PropType<TList>,
+        type: Object as PropType<Tree>,
     },
 });
 </script>
