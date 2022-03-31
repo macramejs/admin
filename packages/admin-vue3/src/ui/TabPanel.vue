@@ -1,6 +1,6 @@
 <template>
     <TabPanel class="relative flex justify-between w-full">
-        <div class="flex-1">
+        <div class="flex-1 px-10">
             <slot />
         </div>
         <template v-if="hasSidebar">
@@ -24,7 +24,7 @@ defineProps({
     },
     sidebarTopPosition: {
         type: String,
-        default: '118',
+        default: '110',
     },
 });
 </script>

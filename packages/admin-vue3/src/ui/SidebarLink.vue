@@ -4,7 +4,7 @@
         :class="{
             'bg-orange bg-opacity-20 hover:bg-opacity-50':
                 isActive && !secondary,
-            'hover:bg-gray-300': !isActive && !secondary,
+            'hover:bg-gray-100': !isActive && !secondary,
             'hover:bg-gray-100': secondary,
             'bg-gray-100': isActive && secondary,
         }"
@@ -12,9 +12,10 @@
     >
         <div
             v-if="$slots.icon"
-            class="w-[44px] min-w-[44px] h-[44px] rounded flex items-center text-gray-800 justify-center"
+            class="w-[44px] min-w-[44px] h-[44px] rounded flex items-center justify-center"
             :class="{
                 ' text-red': isActive && !secondary,
+                ' text-gray-800': !isActive,
             }"
         >
             <slot name="icon" />

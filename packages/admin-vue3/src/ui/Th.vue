@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, PropType, computed } from 'vue';
+import { PropType, computed } from 'vue';
 import { Index } from '@macramejs/macrame-vue3';
 
 const props = defineProps({

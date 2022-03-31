@@ -11,7 +11,7 @@
                 <Disclosure v-slot="{ open }" defaultOpen>
                     <div class="flex items-center justify-between w-full">
                         <div
-                            class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-300"
+                            class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-100"
                         >
                             <div
                                 class="flex items-center pr-2 cursor-move text-gray handle"
@@ -88,7 +88,7 @@
 </template>
 <script setup lang="ts">
 import Draggable from 'vuedraggable';
-import { defineProps, PropType } from 'vue';
+import { PropType } from 'vue';
 import { Tree } from '@macramejs/macrame-vue3';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 

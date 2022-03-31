@@ -18,7 +18,5 @@
 </template>
 
 <script lang="ts" setup>
-import { TabGroup } from '@headlessui/vue';
 import { Sections } from '@macramejs/page-builder-vue3';
-import { defineProps, defineEmits } from 'vue';
 </script>
