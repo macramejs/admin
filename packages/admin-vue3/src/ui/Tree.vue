@@ -1,5 +1,11 @@
 <template>
-    <Draggable tag="div" :list="tree.items" handle=".handle" item-key="uuid">
+    <Draggable
+        tag="div"
+        :list="tree.items"
+        handle=".handle"
+        item-key="uuid"
+        v-if="tree"
+    >
         <template #item="{ element }">
             <div class="px-2 py-1 bg-white draggable-wrapper">
                 <Disclosure v-slot="{ open }" defaultOpen>
