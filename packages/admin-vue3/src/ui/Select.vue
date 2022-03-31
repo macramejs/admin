@@ -85,9 +85,10 @@
                 >
                     <ListboxOption
                         v-slot="{ active, selected }"
-                        v-for="item in options"
+                        v-for="(item, key) in options"
                         :value="getItemValue(item)"
                         as="template"
+                        :key="key"
                     >
                         <li
                             :class="[
