@@ -89,21 +89,16 @@ export default defineComponent({
         status: String,
     },
     setup({ submitRoute, token, email }) {
-        const form = useForm(
-            submitRoute,
-            {
+        const form = useForm({
+            route: submitRoute,
+            data: {
                 token: token,
                 email: email,
                 password: '',
                 password_confirmation: '',
             },
-            {
-                method: 'post',
-                // onFinish() {
-                //     console.log('foo');
-                // },
-            }
-        );
+            method: 'post',
+        });
 
         return { form };
     },

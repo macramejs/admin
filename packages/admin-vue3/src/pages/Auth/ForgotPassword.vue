@@ -62,11 +62,11 @@ export default defineComponent({
         status: String,
     },
     setup({ submitRoute }) {
-        const form = useForm(
-            submitRoute,
-            { email: '', password: '', remember: false },
-            { method: 'post' }
-        );
+        const form = useForm({
+            route: submitRoute,
+            data: { email: '', password: '', remember: false },
+            method: 'post',
+        });
 
         return { form };
     },
