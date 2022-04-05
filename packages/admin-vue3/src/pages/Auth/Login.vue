@@ -80,9 +80,9 @@ const props = defineProps({
         },
     },
 });
-const form = useForm(
-    props.submitRoute,
-    { email: '', password: '', remember: false },
-    { method: 'post' }
-);
+const form = useForm({
+    route: props.submitRoute,
+    data: { email: '', password: '', remember: false },
+    method: 'post',
+});
 </script>
