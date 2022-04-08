@@ -42,7 +42,17 @@
                                 'max-w-xl': size_ == 'sm',
                             }"
                         >
+                            <DialogTitle
+                                as="h3"
+                                class="mb-6 text-xl font-medium leading-6 text-gray-800"
+                                v-if="title"
+                            >
+                                {{ title }}
+                            </DialogTitle>
                             <slot />
+                            <div class="flex justify-end pt-4 space-x-3">
+                                <slot name="footer" />
+                            </div>
                         </div>
                     </TransitionChild>
                 </div>
@@ -67,6 +77,10 @@ const props = defineProps({
     open: {
         type: Boolean,
         default: false,
+    },
+    title: {
+        type: [String, Number],
+        default: null
     },
     ...sizes,
 });
