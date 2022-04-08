@@ -92,7 +92,7 @@ module.exports = {
             },
         },
         fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
         },
         fontSize: {
             xs: ['9px', '15px'],
