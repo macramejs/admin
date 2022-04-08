@@ -26,6 +26,7 @@ import Index from './ui/Index.vue';
 import Input from './ui/Input.vue';
 // import Nested from './ui/Nested.vue';
 import Tree from './ui/Tree.vue';
+import TreeItem from './ui/TreeItem.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
 import Sections from './ui/Sections.vue';
@@ -130,6 +131,7 @@ export {
     // Slider,
     // Nested,
     Tree,
+    TreeItem,
     Search,
     Select,
     Sidebar,

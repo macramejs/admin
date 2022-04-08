@@ -44,6 +44,7 @@ export const FormField : Component;
 export const FormFieldLabel : Component;
 export const RadioGroup : Component;
 export const Tree : Component;
+export const TreeItem : Component;
 export const Modal : Component;
 export const Checkbox : Component;
 export const CheckboxSwitch : Component;
