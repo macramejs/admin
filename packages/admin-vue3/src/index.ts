@@ -32,7 +32,7 @@ import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
 import SidebarLink from './ui/SidebarLink.vue';
 import SidebarSection from './ui/SidebarSection.vue';
-import SidebarPrimary from './ui/SidebarPrimary.vue';
+import SidebarPrimary from './ui/SidebarPrimary/SidebarPrimary.vue';
 import SidebarSecondary from './ui/SidebarSecondary.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';

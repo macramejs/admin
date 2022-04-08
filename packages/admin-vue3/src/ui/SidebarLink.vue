@@ -8,7 +8,7 @@
             'hover:bg-gray-100': secondary,
             'bg-gray-100': isActive && secondary,
         }"
-        class="flex items-center rounded h-[44px]"
+        class="flex items-center rounded h-[44px] text-base font-light"
     >
         <div
             v-if="$slots.icon"
@@ -22,7 +22,7 @@
         </div>
         <div
             v-if="!hideTitle"
-            class="flex-1 pl-3 font-medium tracking-wider"
+            class="flex-1 pl-3 tracking-wider"
             :class="{
                 'text-red': isActive && !secondary,
             }"
@@ -64,6 +64,10 @@ const page = computed(() => {
 
 const isActive = computed(() => {
     if (props.active) {
+        return true;
+    }
+
+    if(props.href == window.location.pathname){
         return true;
     }
 
