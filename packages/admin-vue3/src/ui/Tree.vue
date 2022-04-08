@@ -7,7 +7,7 @@
         v-if="tree"
     >
         <template #item="{ element }">
-            <div class="px-2 py-1 bg-white draggable-wrapper">
+            <div class="py-1 pl-2 bg-white draggable-wrapper">
                 <slot :item="element.value" :children="element.children" />
             </div>
         </template>
