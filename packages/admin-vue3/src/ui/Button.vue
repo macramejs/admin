@@ -8,8 +8,8 @@
             'w-[37px]': square && size_ == 'md',
             'w-[30px]': square && size_ == 'sm',
 
-            'h-[37px] rounded': size_ == 'md' && !text,
-            'h-[30px] rounded': size_ == 'sm' && !text,
+            'h-[37px] rounded': size_ == 'md' && !text && !round,
+            'h-[30px] rounded': size_ == 'sm' && !text && !round,
 
             'px-5': size_ == 'md' && !square && !text && !round,
             'px-4': size_ == 'sm' && !square && !text && !round,
