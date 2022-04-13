@@ -42,7 +42,7 @@ import Textarea from './ui/Textarea.vue';
 import Tr from './ui/Tr.vue';
 import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
-// import Wysiwyg from './ui/Wysiwyg.vue';
+import Wysiwyg from './ui/Wysiwyg.vue';
 
 const plugin = {
     install(app) {
@@ -145,5 +145,5 @@ export {
     Pagination,
     Textarea,
     Table, Tr, Th, Td,
-    // Wysiwyg
+    Wysiwyg
 };
