@@ -184,7 +184,9 @@ const itemLabel = computed(() => {
             (option: any) => option[props.valueKey] == props.modelValue
         );
 
-        return selectedOption[props.labelKey];
+        return selectedOption
+            ? selectedOption[props.labelKey]
+            : props.modelValue;
     }
     return props.modelValue;
 });

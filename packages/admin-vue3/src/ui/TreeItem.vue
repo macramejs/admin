@@ -3,12 +3,15 @@
         <div class="flex items-center justify-between w-full">
             <div
                 class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-100"
+                :class="{
+                    'bg-gray-100': isActive,
+                }"
             >
                 <div
                     class="flex items-center pr-3 cursor-move text-gray handle"
                 >
                     <svg
-                        class="w-3 h-3 fill-gray"
+                        class="w-2.5 h-2.5 fill-gray"
                         viewBox="0 0 18 9"
                         xmlns="http://www.w3.org/2000/svg"
                         xml:space="preserve"
@@ -62,6 +65,10 @@ const props = defineProps({
     },
     children: {
         required: true,
+    },
+    isActive: {
+        type: Boolean,
+        default: false,
     },
 });
 </script>

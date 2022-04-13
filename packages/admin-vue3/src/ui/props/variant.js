@@ -12,12 +12,6 @@ export function getVariant(props, { DEFAULT = 'primary' }) {
         if (props.secondary) {
             return 'secondary';
         }
-        if (props.small) {
-            return 'small';
-        }
-        if (props.text) {
-            return 'text';
-        }
         if (props.round) {
             return 'round';
         }
@@ -88,18 +82,6 @@ export const variants = {
         default: false,
     },
     secondary: {
-        type: Boolean,
-        default: false,
-    },
-    small: {
-        type: Boolean,
-        default: false,
-    },
-    text: {
-        type: Boolean,
-        default: false,
-    },
-    round: {
         type: Boolean,
         default: false,
     },

@@ -8,8 +8,8 @@
             'w-[37px]': square && size_ == 'md',
             'w-[30px]': square && size_ == 'sm',
 
-            'h-[37px]  rounded': size_ == 'md' && !text,
-            'h-[30px]  rounded': size_ == 'sm' && !text,
+            'h-[37px] rounded': size_ == 'md' && !text,
+            'h-[30px] rounded': size_ == 'sm' && !text,
 
             'px-5': size_ == 'md' && !square && !text && !round,
             'px-4': size_ == 'sm' && !square && !text && !round,
@@ -20,9 +20,9 @@
                 variant_ == 'primary' && disabled,
 
             'bg-gradient-to-r w-[37px] h-[37px] rounded-full from-indigo-900 to-indigo-900 hover:from-gradient-red-500 hover:to-gradient-orange-500 hover:scale-95 active:from-indigo-500 active:to-indigo-500 text-white focus:ring-orange-100':
-                variant_ == 'round' && !disabled,
+                round && !disabled,
             'bg-gray text-white rounded-full cursor-not-allowed':
-                variant_ == 'round' && disabled,
+                round && disabled,
 
             'bg-orange-500 bg-opacity-0 border border-indigo-900 hover:bg-opacity-20 hover:scale-95 active:bg-opacity-50 text-black focus:ring-orange-100':
                 variant_ == 'secondary' && !disabled,
@@ -30,18 +30,17 @@
                 variant_ == 'secondary' && disabled,
 
             'bg-gray-200 hover:bg-gray-500 h-[30px] active:bg-indigo-900 active:text-white text-black focus:ring-gray-300':
-                variant_ == 'small' && !disabled,
-            'opacity-40 cursor-not-allowed': variant_ == 'small' && disabled,
+                size_ == 'sm' && !disabled,
+            'opacity-40 cursor-not-allowed': size_ == 'sm' && disabled,
 
             'focus:rounded hover:border-indigo-500 h-[20px] py-3 px-2.5 after:absolute after:left-1/2 after:bottom-[3px] after:h-px after:w-[calc(100%-20px)] after:-translate-x-1/2 hover:after:bg-indigo-500 active:after:bg-indigo-500 text-black focus:ring-transparent focus:bg-orange-100':
-                variant_ == 'text' && !disabled,
-            'opacity-40 py-2 px-3 cursor-not-allowed':
-                variant_ == 'text' && disabled,
+                text && !disabled,
+            'opacity-40 py-2 px-3 cursor-not-allowed': text && disabled,
         }"
         :disabled="disabled"
         v-bind="$attrs"
     >
-        <slot /> 
+        <slot />
     </component>
 </template>
 
