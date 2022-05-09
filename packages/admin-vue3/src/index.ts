@@ -5,6 +5,8 @@ import Chip from './ui/Chip.vue';
 import FileUpload from './ui/FileUpload.vue';
 import ChipInput from './ui/ChipInput.vue';
 import ContextMenu from './ui/ContextMenu.vue';
+import ContextMenuDivider from './ui/ContextMenuDivider.vue';
+import ContextMenuItem from './ui/ContextMenuItem.vue';
 import ContextButton from './ui/ContextButton.vue';
 import Badge from './ui/Badge.vue';
 import Drawer from './ui/Drawer.vue';
@@ -110,6 +112,8 @@ export {
     FileUpload,
     ChipInput,
     ContextMenu,
+    ContextMenuDivider,
+    ContextMenuItem,
     ContextButton,
     Button,
     Badge,
