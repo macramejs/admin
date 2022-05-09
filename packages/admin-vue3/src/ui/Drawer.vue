@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex bg-white cursor-pointer hover:ring-2 rounded-xs"
+        class="flex mb-3 bg-white cursor-pointer hover:ring-2 rounded-xs"
         :class="{
             'hover:ring-purple ': color as any  == 'purple',
             'hover:ring-green ': color as any  == 'green',
