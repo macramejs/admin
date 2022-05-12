@@ -23,7 +23,7 @@
         </div>
         <template #content>
             <div
-                class="z-20 p-4 rounded-[8px] px-[14px] text-base py-[24px] min-w-[200px] text-white bg-indigo-900"
+                class="z-50 p-4 rounded-[8px] px-[14px] text-base py-[24px] min-w-[200px] text-white bg-indigo-900"
             >
                 <div class="flex flex-col">
                     <slot />
