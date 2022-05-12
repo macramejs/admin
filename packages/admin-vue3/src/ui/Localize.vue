@@ -4,64 +4,20 @@
         v-if="itemLabel"
         :disabled="disabled"
         v-model="selectedItem"
+        class="w-16"
     >
         <div class="relative">
             <ListboxButton
-                class="px-[18px] mcr-select-button z-10 w-full transition-colors duration-200 bg-transparent focus:outline-none focus:input-focused text-indigo-900 py-[22px]"
+                class="px-3.5 flex items-center justify-between rounded z-10 w-full transition-colors duration-200 bg-gray-200 focus:outline-none focus:input-focused text-indigo-900 py-3"
                 :class="{
                     'cursor-not-allowed': disabled,
                     'has-errors': errors?.length > 0 && !disabled,
                 }"
             >
-                <div
-                    class="absolute top-0 left-0 right-0 flex w-full h-full max-w-full pointer-events-none"
-                >
-                    <div
-                        class="border-l input-section-1 border-t border-b border-gray-900 w-[16px] h-full rounded-l-[8px]"
-                    ></div>
-                    <div
-                        class="relative h-full px-1 border-t border-b border-gray-900 input-width input-section-2"
-                        :class="{
-                            '!border-t-transparent':
-                                (selectedItem && label) || (focused && label),
-                            'border-t-gray-900': !selectedItem || !label,
-                        }"
-                    >
-                        <label
-                            v-if="label"
-                            class="relative inline-block text-sm transition duration-200 origin-left whitespace-nowrap will-change-auto h-fit top-1/2"
-                            ref="inputLabel"
-                            :class="{
-                                'text-ellipsis !-translate-y-[35px] !scale-100 text-indigo-900':
-                                    selectedItem || focused,
-                                'max-w-full -translate-y-[13px] scale-[1.34] text-gray-500':
-                                    !selectedItem,
-                                '!text-red-signal':
-                                    (selectedItem &&
-                                        errors?.length > 0 &&
-                                        !disabled) ||
-                                    (focused &&
-                                        errors?.length > 0 &&
-                                        !disabled),
-                            }"
-                            :for="id"
-                        >
-                            {{ label }}
-                        </label>
-                    </div>
-                    <div
-                        class="border-r border-t input-section-3 border-b focus:border-orange border-gray-900 flex-grow rounded-r-[8px] h-full"
-                    ></div>
-                </div>
-                <span
-                    v-if="selectedItem"
-                    class="absolute inline-block -translate-y-1/2 left-5"
-                >
+                <span v-if="selectedItem" class="inline-block text-sm">
                     {{ itemLabel }}
                 </span>
-                <span
-                    class="absolute inline-block -translate-y-1/2 mcr-select-arrow right-5"
-                >
+                <span class="inline-block mcr-select-arrow">
                     <svg
                         class="transition-transform duration-200"
                         :class="{ 'rotate-180': open }"
@@ -83,7 +39,7 @@
                 leave-to-class="opacity-0"
             >
                 <ListboxOptions
-                    class="absolute z-40 w-full mt-2 py-2.5 overflow-auto rounded-[8px] bg-white shadow max-h-48 focus:outline-none"
+                    class="absolute right-0 z-40 w-28 mt-2 py-2.5 overflow-auto rounded-[8px] bg-gray-200 shadow max-h-48 focus:outline-none"
                 >
                     <ListboxOption
                         v-slot="{ active, selected }"
@@ -92,11 +48,12 @@
                         as="template"
                         :key="key"
                     >
-                        <li
+                        <button
+                            @click="changeLanguageTo(getItemValue(item))"
                             :class="[
-                                selected ? 'bg-gray-100' : 'hover:bg-gray-100',
-                                active ? 'bg-gray-100' : 'hover:bg-gray-100',
-                                'cursor-pointer select-none relative',
+                                selected ? 'bg-gray-300' : 'hover:bg-gray-300',
+                                active ? 'bg-gray-300' : 'hover:bg-gray-300',
+                                'cursor-pointer w-full select-none relative',
                             ]"
                         >
                             <span
@@ -109,7 +66,7 @@
                             >
                                 {{ getItemLabel(item) }}
                             </span>
-                        </li>
+                        </button>
                     </ListboxOption>
                 </ListboxOptions>
             </transition>
@@ -122,8 +79,8 @@ import { defineEmits, computed, watch, ref, PropType } from 'vue';
 import {
     Listbox,
     ListboxButton,
-    ListboxOptions,
     ListboxOption,
+    ListboxOptions,
 } from '@headlessui/vue';
 
 interface Option {
@@ -193,6 +150,11 @@ const itemLabel = computed(() => {
     return props.modelValue;
 });
 
+const changeLanguageTo = (locale: string) => {
+    // TODO: Add language change
+    console.log(`should change language to ${locale}`);
+};
+
 const selectedItem = ref(props.modelValue);
 
 watch(selectedItem, () => {
@@ -202,23 +164,6 @@ watch(selectedItem, () => {
 </script>
 
 <style scoped>
-.mcr-select-button:focus > div > .input-section-1 {
-    border-color: #fead5e;
-}
-.mcr-select-button:focus > div > .input-section-2 {
-    border-bottom-color: #fead5e;
-    border-top-color: #fead5e;
-}
-.mcr-select-button:focus > div > .input-section-2 > label {
-    color: #fead5e;
-}
-.mcr-select-button:focus > div > .input-section-3 {
-    border-color: #fead5e;
-}
-.mcr-select-button:focus .mcr-select-arrow {
-    color: #fead5e;
-}
-
 .input-width {
     flex: 0 0 auto;
     max-width: calc(100% - 12px * 2);
