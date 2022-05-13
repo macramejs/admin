@@ -1,9 +1,7 @@
 <template>
-    <div class="w-full">
-        <TabGroup>
-            <slot />
-        </TabGroup>
-    </div>
+    <TabGroup v-bind="$attrs" class="w-full" as="div">
+        <slot />
+    </TabGroup>
 </template>
 
 <script lang="ts" setup>

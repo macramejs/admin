@@ -2,9 +2,12 @@
     <Tab
         :disabled="disabled"
         v-slot="{ selected, active }"
-        as="template"
-        class="focus:outline-none"
-        ><button
+        :as="href ? Link : 'template'"
+        class="focus:outline-none flex"
+        :href="href"
+        v-bind="$attrs"
+    >
+        <button
             class="px-3 py-1 text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer focus:outline-none"
             :class="{
                 'text-black bg-gray-200 border-b border-indigo-900':
@@ -22,11 +25,16 @@
 
 <script setup lang="ts">
 import { Tab } from '@headlessui/vue';
+import { Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
     disabled: {
         type: Boolean,
         default: false,
+    },
+    href: {
+        type: String,
+        required: false,
     },
 });
 </script>
