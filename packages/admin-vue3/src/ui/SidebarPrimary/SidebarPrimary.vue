@@ -20,10 +20,12 @@
         <nav class="flex-1">
             <slot v-bind:expanded="showSidebar" />
         </nav>
-        <footer class="flex flex-col items-start px-5 py-6 space-y-2">
-            <GlobalSearch />
-            <LockSidebar v-model="locked" />
-        </footer>
+        <slot name="footer">
+            <footer class="flex flex-col items-start px-5 py-6 space-y-2">
+                <GlobalSearch />
+                <LockSidebar v-model="locked" />
+            </footer>
+        </slot>
     </div>
 </template>
 
@@ -34,8 +36,15 @@ import { Link } from '@inertiajs/inertia-vue3';
 import GlobalSearch from './components/GlobalSearch.vue';
 import LockSidebar from './components/LockSidebar.vue';
 
+const props = defineProps({
+    locked: {
+        type: Boolean,
+        default: false
+    }
+})
+
 const expanded = ref(false);
-const locked = ref(false);
+const locked = ref(props.locked);
 
 const showSidebar = computed(() => {
     return expanded.value || locked.value;
