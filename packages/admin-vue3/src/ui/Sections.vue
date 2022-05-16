@@ -18,5 +18,5 @@
 </template>
 
 <script lang="ts" setup>
-import { Sections } from '@macramejs/page-builder-vue3';
+import { Sections } from '@macramejs/macrame-vue3';
 </script>
