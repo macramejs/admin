@@ -47,30 +47,6 @@ import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
 import Wysiwyg from './ui/Wysiwyg.vue';
 
-const plugin = {
-    install(app) {
-        app.component('UiCard', Card);
-        app.component('UiToggle', Toggle);
-        app.component('UiButton', Button);
-        app.component('UiBadge', Badge);
-        app.component('UiForm', Form);
-        app.component('UiModal', Modal);
-        app.component('UiCheckbox', Checkbox);
-        // app.component('UiFormSelect', FormSelect);
-        // app.component('UiFormTextarea', FormTextarea);
-        app.component('UiRadioGroup', RadioGroup);
-        app.component('UiIndex', Index);
-        app.component('UiInput', Input);
-        app.component('UiSelect', Select);
-        app.component('UiSidebar', Sidebar);
-        app.component('UiPagination', Pagination);
-        app.component('UiTable', Table);
-        app.component('UiTextarea', Textarea);
-    },
-};
-
-export { plugin };
-
 import DefaultLayout from './layouts/default/DefaultLayout.vue';
 import DefaultLayoutHeader from './layouts/default/DefaultLayoutHeader.vue';
 import DefaultLayoutBurger from './layouts/default/DefaultLayoutBurger.vue';
