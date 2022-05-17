@@ -32,6 +32,7 @@ import Tree from './ui/Tree.vue';
 import TreeItem from './ui/TreeItem.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
+import Section from './ui/Section.vue';
 import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
 import SidebarLink from './ui/SidebarLink.vue';
@@ -101,6 +102,7 @@ export { Pages, AuthPages };
 import IconDraggable from './icons/IconDraggable.vue';
 import IconTrash from './icons/IconTrash.vue';
 export { IconDraggable, IconTrash };
+
 // Components
 export {
     Card,
@@ -120,6 +122,7 @@ export {
     TabPanel,
     TabGroup,
     TabList,
+    Section,
     Sections,
     Form,
     FormField,
