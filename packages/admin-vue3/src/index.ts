@@ -74,32 +74,25 @@ import DefaultLayout from './layouts/default/DefaultLayout.vue';
 import DefaultLayoutHeader from './layouts/default/DefaultLayoutHeader.vue';
 import DefaultLayoutBurger from './layouts/default/DefaultLayoutBurger.vue';
 
-export {
-    DefaultLayout,
-    DefaultLayoutHeader,
-    DefaultLayoutBurger
-};
+export { DefaultLayout, DefaultLayoutHeader, DefaultLayoutBurger };
 
 import GuestLayout from './layouts/guest/GuestLayout.vue';
 import GuestLayoutInput from './layouts/guest/GuestLayoutInput.vue';
 
-export {
-    GuestLayout,
-    GuestLayoutInput
-};
+export { GuestLayout, GuestLayoutInput };
 
 import LoginPage from './pages/Auth/Login.vue';
 import ForgotPasswordPage from './pages/Auth/ForgotPassword.vue';
 import ResetPasswordPage from './pages/Auth/ResetPassword.vue';
 
 const AuthPages = {
-    "Auth/Login": LoginPage,
-    "Auth/ForgotPassword": ForgotPasswordPage,
-    "Auth/ResetPassword": ResetPasswordPage,
-}
+    'Auth/Login': LoginPage,
+    'Auth/ForgotPassword': ForgotPasswordPage,
+    'Auth/ResetPassword': ResetPasswordPage,
+};
 
-const Pages = { 
-    auth: AuthPages 
+const Pages = {
+    auth: AuthPages,
 };
 
 export { Pages, AuthPages };
@@ -132,7 +125,7 @@ export {
     CheckboxSwitch,
     DatePicker,
     DateRange,
-    Index, 
+    Index,
     Input,
     // Slider,
     // Nested,
@@ -148,6 +141,9 @@ export {
     RadioGroup,
     Pagination,
     Textarea,
-    Table, Tr, Th, Td,
-    Wysiwyg
+    Table,
+    Tr,
+    Th,
+    Td,
+    Wysiwyg,
 };
