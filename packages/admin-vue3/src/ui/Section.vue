@@ -25,8 +25,8 @@ import Card from './Card.vue';
 import ContextButton from './ContextButton.vue';
 import ContextMenu from './ContextMenu.vue';
 import ContextMenuItem from './ContextMenuItem.vue';
-import IconDraggable from './IconDraggable.vue';
-import IconTrash from './IconTrash.vue';
+import IconDraggable from '../icons/IconDraggable.vue';
+import IconTrash from '../icons/IconTrash.vue';
 
 const emit = defineEmits(['destroy']);
 </script>
