@@ -97,6 +97,10 @@ const Pages = {
 
 export { Pages, AuthPages };
 
+// Icons
+import IconDraggable from './icons/IconDraggable.vue';
+import IconTrash from './icons/IconTrash.vue';
+export { IconDraggable, IconTrash };
 // Components
 export {
     Card,
