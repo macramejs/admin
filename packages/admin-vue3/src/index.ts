@@ -1,4 +1,5 @@
 import Button from './ui/Button.vue';
+import ButtonRound from './ui/ButtonRound.vue';
 import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
 import Chip from './ui/Chip.vue';
@@ -89,6 +90,7 @@ export {
     ContextMenuItem,
     ContextButton,
     Button,
+    ButtonRound,
     Badge,
     Drawer,
     DrawerSection,
