@@ -2,16 +2,12 @@
     <svg
         width="24"
         height="24"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        viewBox="-4.5 -4.5 24 24"
+        fill="currentColor"
     >
         <path
-            d="M6 12H12M18 12H12M12 12V6M12 12V18"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-        />
+            d="M8.9 6.9v-5a1 1 0 1 0-2 0v5h-5a1 1 0 1 0 0 2h5v5a1 1 0 1 0 2 0v-5h5a1 1 0 1 0 0-2h-5z"
+        ></path>
     </svg>
 </template>
