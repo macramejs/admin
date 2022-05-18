@@ -2,11 +2,11 @@
     <Link
         :href="href"
         :class="{
-            'bg-white bg-opacity-10 hover:bg-orange hover:bg-opacity-50':
+            'bg-gray-50 bg-opacity-10 hover:bg-orange hover:bg-opacity-50':
                 isActive && !secondary,
-            'hover:bg-gray-100': !isActive && !secondary,
-            'hover:bg-gray-100': secondary,
-            'bg-gray-100': isActive && secondary,
+            'hover:bg-gray-100 hover:bg-opacity-20': !isActive && !secondary,
+            'hover:bg-gray-50 hover:bg-opacity-20': secondary,
+            'bg-gray-50 bg-opacity-10': isActive && secondary,
         }"
         class="flex items-center rounded h-[44px] text-base font-light"
     >
