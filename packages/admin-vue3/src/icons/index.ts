@@ -2,3 +2,8 @@ export { default as IconDraggable } from './IconDraggable.vue';
 export { default as IconTrash } from './IconTrash.vue';
 export { default as IconMoreHorizontal } from './IconMoreHorizontal.vue';
 export { default as IconEditPencil } from './IconEditPencil.vue';
+export { default as IconCaret } from './IconCaret.vue';
+export { default as IconAddImage } from './IconAddImage.vue';
+export { default as IconBookStack } from './IconBookStack.vue';
+export { default as IconMediaImageFolder } from './IconMediaImageFolder.vue';
+export { default as IconPlus } from './IconPlus.vue';
