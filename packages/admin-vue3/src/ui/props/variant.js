@@ -63,6 +63,12 @@ export function getVariant(props, { DEFAULT = 'primary' }) {
         if (props.pink) {
             return 'pink';
         }
+        if (props.white) {
+            return 'white';
+        }
+        if (props.black) {
+            return 'black';
+        }
 
         return DEFAULT;
     });
@@ -142,6 +148,14 @@ export const variants = {
         default: false,
     },
     pink: {
+        type: Boolean,
+        default: false,
+    },
+    white: {
+        type: Boolean,
+        default: false,
+    },
+    black: {
         type: Boolean,
         default: false,
     },

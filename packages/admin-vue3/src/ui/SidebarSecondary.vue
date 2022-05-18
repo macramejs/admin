@@ -1,9 +1,9 @@
 <template>
     <div
-        class="flex flex-col justify-between h-screen bg-white w-[320px] border-r border-gray-400"
+        class="flex flex-col justify-between h-screen bg-gray-800 w-[320px] border-r border-gray-700"
     >
         <header
-            class="flex items-center justify-between h-[80px] px-5 border-b border-gray-400"
+            class="flex items-center justify-between h-[80px] px-5 text-gray-100"
         >
             <slot name="header" />
         </header>

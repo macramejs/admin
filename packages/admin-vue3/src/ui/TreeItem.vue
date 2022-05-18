@@ -1,14 +1,14 @@
 <template>
     <Disclosure v-slot="{ open }" defaultOpen>
-        <div class="flex items-center justify-between w-full">
+        <div class="flex items-center justify-between w-full group">
             <div
-                class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-100"
+                class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-500 hover:bg-opacity-20 bg-opacity-10"
                 :class="{
-                    'bg-gray-100': isActive,
+                    'bg-gray-500': isActive,
                 }"
             >
                 <div
-                    class="flex items-center pr-3 cursor-move text-gray handle"
+                    class="flex items-center pr-3 text-gray-100 cursor-move handle"
                 >
                     <svg
                         class="w-2.5 h-2.5 fill-gray"
@@ -21,13 +21,15 @@
                         />
                     </svg>
                 </div>
-                <div class="flex items-center justify-between flex-1 py-1">
+                <div
+                    class="flex items-center justify-between flex-1 text-gray-100"
+                >
                     <slot />
                 </div>
             </div>
             <div class="flex items-center w-8">
                 <DisclosureButton
-                    class="p-1 hover:bg-gray-400 rounded-xs"
+                    class="p-1 text-gray-100 hover:bg-black rounded-xs"
                     :class="{ 'rotate-180': !open }"
                     v-if="children?.items.length > 0"
                 >
@@ -50,7 +52,7 @@
                 </DisclosureButton>
             </div>
         </div>
-        <DisclosurePanel class="pl-6">
+        <DisclosurePanel class="pl-2">
             <slot name="disclosure" />
         </DisclosurePanel>
     </Disclosure>

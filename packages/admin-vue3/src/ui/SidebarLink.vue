@@ -2,7 +2,7 @@
     <Link
         :href="href"
         :class="{
-            'bg-orange bg-opacity-20 hover:bg-opacity-50':
+            'bg-white bg-opacity-10 hover:bg-orange hover:bg-opacity-50':
                 isActive && !secondary,
             'hover:bg-gray-100': !isActive && !secondary,
             'hover:bg-gray-100': secondary,
@@ -15,18 +15,12 @@
             class="w-[44px] min-w-[44px] h-[44px] rounded flex items-center justify-center"
             :class="{
                 ' text-red': isActive && !secondary,
-                ' text-gray-800': !isActive,
+                ' text-gray-100': !isActive,
             }"
         >
             <slot name="icon" />
         </div>
-        <div
-            v-if="!hideTitle"
-            class="flex-1 pl-3 tracking-wider"
-            :class="{
-                'text-red': isActive && !secondary,
-            }"
-        >
+        <div v-if="!hideTitle" class="flex-1 pl-3 tracking-wider text-gray-100">
             <slot>{{ title }}</slot>
         </div>
     </Link>
@@ -67,7 +61,7 @@ const isActive = computed(() => {
         return true;
     }
 
-    if(props.href == window.location.pathname){
+    if (props.href == window.location.pathname) {
         return true;
     }
 

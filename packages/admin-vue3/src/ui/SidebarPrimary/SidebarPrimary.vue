@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col justify-between h-screen transition-all bg-white border-r border-gray-400"
+        class="flex flex-col justify-between h-screen transition-all bg-gray-900 border-r border-gray-700"
         @mouseover="expanded = true"
         @mouseleave="expanded = false"
         :class="{
@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import {  computed } from 'vue';
+import { computed } from 'vue';
 import { Link } from '@inertiajs/inertia-vue3';
 import GlobalSearch from './components/GlobalSearch.vue';
 import LockSidebar from './components/LockSidebar.vue';
@@ -39,14 +39,14 @@ import LockSidebar from './components/LockSidebar.vue';
 const props = defineProps({
     locked: {
         type: Boolean,
-        default: false
-    }
-})
+        default: false,
+    },
+});
 
 const expanded = ref(false);
 const locked = ref(props.locked);
 
 const showSidebar = computed(() => {
-    return expanded.value || locked.value;
+    return expanded.value || locked.value;
 });
 </script>
