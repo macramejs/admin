@@ -15,7 +15,7 @@
                     'w-[60px]': !sidebarActive,
                 }"
             >
-                <div class="w-full overflow-y-auto h-4/5">
+                <div class="flex-1 w-full overflow-y-auto">
                     <slot v-if="sidebarActive" name="sidebar" />
                     <div class="w-full p-4 mt-4" v-if="!sidebarActive">
                         <div class="flex items-center w-full gap-4 rotate-90">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center w-full px-4 mt-auto border-t border-gray-400 h-1/5"
+                    class="flex items-center w-full px-4 py-2 mt-auto border-t border-gray-400"
                 >
                     <button
                         @click="toggleSidebar()"

@@ -1,5 +1,5 @@
 <template>
-    <Card class="p-4 px-8 cursor-move mb-4">
+    <div class="px-8 py-5 mb-4 bg-white rounded cursor-move">
         <div class="flex">
             <IconDraggable class="w-2.5 h-2.5 fill-gray mt-2 mb-4 mr-auto" />
             <ContextMenu>
@@ -18,7 +18,7 @@
             </ContextMenu>
         </div>
         <slot />
-    </Card>
+    </div>
 </template>
 <script setup lang="ts">
 import Card from './Card.vue';
