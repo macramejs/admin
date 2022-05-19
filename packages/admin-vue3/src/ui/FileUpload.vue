@@ -20,26 +20,7 @@
                 :class="{ 'flex-col': !inline }"
             >
                 <div class="text-orange">
-                    <svg
-                        width="24"
-                        height="24"
-                        stroke-width="1"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M13 21H3.6a.6.6 0 0 1-.6-.6V3.6a.6.6 0 0 1 .6-.6h16.8a.6.6 0 0 1 .6.6V13"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                        <path
-                            d="m3 16 7-3 5.5 2.5M16 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM16 19h3m3 0h-3m0 0v-3m0 3v3"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <IconAddImage />
                 </div>
                 <span class="text-sm text-center uppercase" v-if="busy"
                     >Loading ...</span
@@ -69,6 +50,7 @@
 </template>
 
 <script lang="ts">
+import { IconAddImage } from '../icons/';
 import { ref, defineComponent, computed } from 'vue';
 import { useDropzone } from 'vue3-dropzone';
 import axios from 'axios';
