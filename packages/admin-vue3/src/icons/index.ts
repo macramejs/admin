@@ -9,3 +9,6 @@ export { default as IconMediaImageFolder } from './IconMediaImageFolder.vue';
 export { default as IconPlus } from './IconPlus.vue';
 export { default as IconLocked } from './IconLocked.vue';
 export { default as IconUnlocked } from './IconUnlocked.vue';
+export { default as IconPages } from './IconPages.vue';
+export { default as IconDashboard } from './IconDashboard.vue';
+export { default as IconList } from './IconList.vue';
