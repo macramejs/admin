@@ -7,3 +7,5 @@ export { default as IconAddImage } from './IconAddImage.vue';
 export { default as IconBookStack } from './IconBookStack.vue';
 export { default as IconMediaImageFolder } from './IconMediaImageFolder.vue';
 export { default as IconPlus } from './IconPlus.vue';
+export { default as IconLocked } from './IconLocked.vue';
+export { default as IconUnlocked } from './IconUnlocked.vue';
