@@ -2,13 +2,19 @@
     <Disclosure v-slot="{ open }" defaultOpen>
         <div class="flex items-center justify-between w-full group">
             <div
-                class="flex justify-between flex-1 pl-3 pr-2 rounded hover:bg-gray-500 hover:bg-opacity-20 bg-opacity-10"
+                class="flex justify-between flex-1 pl-3 pr-2 rounded"
                 :class="{
-                    'bg-gray-500': isActive,
+                    'bg-gray-500': isActive && background,
+                    'border-gray border': outline,
+                    'hover:bg-gray-500 hover:bg-opacity-20 bg-opacity-10':
+                        background,
                 }"
             >
                 <div
-                    class="flex items-center pr-3 text-gray-100 cursor-move handle"
+                    class="flex items-center pr-3 cursor-move handle"
+                    :class="{
+                        'text-gray-100': background,
+                    }"
                 >
                     <svg
                         class="w-2.5 h-2.5 fill-gray"
@@ -22,15 +28,21 @@
                     </svg>
                 </div>
                 <div
-                    class="flex items-center justify-between flex-1 text-gray-100"
+                    class="flex items-center justify-between flex-1"
+                    :class="{
+                        'text-gray-100': background,
+                    }"
                 >
                     <slot />
                 </div>
             </div>
             <div class="flex items-center w-8">
                 <DisclosureButton
-                    class="p-1 text-gray-100 hover:bg-black rounded-xs"
-                    :class="{ 'rotate-180': !open }"
+                    class="p-1 hover:bg-black rounded-xs"
+                    :class="{
+                        'text-gray-100': background,
+                        'rotate-180': !open,
+                    }"
                     v-if="children?.items.length > 0"
                 >
                     <svg
@@ -69,6 +81,14 @@ const props = defineProps({
         required: true,
     },
     isActive: {
+        type: Boolean,
+        default: false,
+    },
+    background: {
+        type: Boolean,
+        default: false,
+    },
+    outline: {
         type: Boolean,
         default: false,
     },
