@@ -5,7 +5,7 @@
         @mouseleave="expanded = false"
         :class="{
             'w-[77px]': !showSidebar,
-            'w-[250px]': showSidebar,
+            'w-[250px] show-sidebar': showSidebar,
         }"
     >
         <header class="flex items-center justify-between h-[80px] px-4 py-7">
