@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { Link, usePage } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/inertia-vue3';
 
 const props = defineProps({
     title: {
@@ -52,19 +52,15 @@ const props = defineProps({
     },
 });
 
-const page = computed(() => {
-    return usePage().url.value;
-});
-
 const isActive = computed(() => {
     if (props.active) {
         return true;
     }
 
-    if (props.href == window.location.pathname) {
-        return true;
+    if (props.href?.split('/').length > 2) {
+        return window.location.pathname.includes(props.href);
     }
 
-    return props.href ? page.value.includes(props.href) : false;
+    return window.location.pathname == props.href;
 });
 </script>
