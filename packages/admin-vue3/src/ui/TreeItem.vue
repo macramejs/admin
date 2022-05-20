@@ -16,16 +16,12 @@
                         'text-gray-100': background,
                     }"
                 >
-                    <svg
-                        class="w-2.5 h-2.5 fill-gray"
-                        viewBox="0 0 18 9"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xml:space="preserve"
-                    >
-                        <path
-                            d="M18 7.597a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h16a1 1 0 0 0 1-1ZM18 1a1 1 0 0 0-1-1H1a1 1 0 0 0 0 2h16a1 1 0 0 0 1-1Z"
-                        />
-                    </svg>
+                    <IconDraggable
+                        class="w-2.5 h-2.5"
+                        :class="{
+                            'fill-gray': background,
+                        }"
+                    />
                 </div>
                 <div
                     class="flex items-center justify-between flex-1"
@@ -45,22 +41,7 @@
                     }"
                     v-if="children?.items.length > 0"
                 >
-                    <svg
-                        width="24"
-                        height="24"
-                        stroke-width="1.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-3 h-3"
-                    >
-                        <path
-                            d="M6 9L12 15L18 9"
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <IconCaret />
                 </DisclosureButton>
             </div>
         </div>
@@ -72,6 +53,7 @@
 
 <script lang="ts" setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { IconDraggable, IconCaret } from '../icons/';
 
 const props = defineProps({
     item: {
