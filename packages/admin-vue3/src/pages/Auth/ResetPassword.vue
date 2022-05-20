@@ -13,6 +13,7 @@
                 v-model="form.email"
                 :label="lang.email"
                 :errors="form.errors?.email"
+                readonly
             />
             <Input
                 required
