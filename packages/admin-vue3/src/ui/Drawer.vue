@@ -1,13 +1,14 @@
 <template>
     <div
-        v-if="!preview"
-        class="flex mb-3 bg-white cursor-pointer hover:ring-2 rounded-xs"
+        class="flex bg-white cursor-pointer hover:ring-2"
         :class="{
             'hover:ring-purple ': color as any  == 'purple',
             'hover:ring-green ': color as any  == 'green',
             'hover:ring-orange ': color as any  == 'orange',
             'hover:ring-red ': color as any  == 'red',
             'hover:ring-blue ': color as any  == 'blue',
+            'pointer-events-none p-2 rounded': preview,
+            'mb-3 rounded-xs': !preview
         }"
     >
         <div
@@ -25,36 +26,10 @@
         <div class="text-sm font-medium">
             {{ title }}
             <div
-                class="text-xs font-normal text-gray"
+                class="-mt-[2px] text-sm font-normal text-gray"
                 v-if="hint"
                 v-html="hint"
             ></div>
-        </div>
-    </div>
-    <div
-        v-if="preview"
-        class="flex rounded-xs items-center justify-center mr-3 bg-opacity-10 px-4 py-2 space-x-2"
-        :class="{
-            'bg-purple ': color as any  == 'purple',
-            'bg-green ': color as any  == 'green',
-            'bg-orange ': color as any  == 'orange',
-            'bg-red ': color as any  == 'red',
-            'bg-blue ': color as any  == 'blue',
-        }"
-    >
-        <div
-            :class="{
-                'text-purple ': color as any  == 'purple',
-                'text-green ': color as any  == 'green',
-                'text-orange ': color as any  == 'orange',
-                'text-red ': color as any  == 'red',
-                'text-blue ': color as any == 'blue',
-            }"
-        >
-            <slot />
-        </div>
-        <div class="text-sm font-medium">
-            {{ title }}
         </div>
     </div>
 </template>
