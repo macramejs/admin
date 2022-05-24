@@ -12,3 +12,4 @@ export { default as IconUnlocked } from './IconUnlocked.vue';
 export { default as IconPages } from './IconPages.vue';
 export { default as IconDashboard } from './IconDashboard.vue';
 export { default as IconList } from './IconList.vue';
+export { default as IconDuplicatePage } from './IconDuplicatePage.vue';
