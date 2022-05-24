@@ -60,7 +60,13 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue']);
 
-const checked = computed(() => props.modelValue.includes(props.value));
+const checked = computed(() => {
+    if (Array.isArray(props.modelValue)) {
+        return props.modelValue.includes(props.value);
+    }
+
+    return props.modelValue;
+});
 
 const check = () => {
     let updatedNames = [...props.modelValue];
