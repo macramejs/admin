@@ -1,6 +1,6 @@
 <template>
     <button
-        class="w-full py-2.5 px-[14px] text-left hover:bg-white hover:bg-opacity-20 rounded-[8px]"
+        class="w-full py-2.5 px-[14px] text-left hover:bg-gray-100 rounded-[8px]"
         :class="{
             'flex items-center gap-2': $slots.icon,
         }"

@@ -41,7 +41,7 @@
                     }"
                     v-if="children?.items.length > 0"
                 >
-                    <IconCaret />
+                    <IconCaret class="w-3 h-3" />
                 </DisclosureButton>
             </div>
         </div>
