@@ -42,7 +42,6 @@
                                         errors?.length > 0 &&
                                         !disabled),
                             }"
-                            :for="id"
                         >
                             {{ label }}
                         </label>

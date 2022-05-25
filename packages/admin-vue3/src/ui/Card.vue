@@ -1,9 +1,9 @@
 <template>
     <component
         :is="as"
-        class="rounded-sm p-6"
+        class="p-6 rounded-sm"
         :class="{
-            'bg-white shadow': variant_ == 'white',
+            'bg-white': variant_ == 'white',
             'bg-gray-300': variant_ == 'gray',
             'p-12': size_ == 'md',
             'p-8': size_ == 'sm',

@@ -1,9 +1,9 @@
 <template>
-    <span class="inline-block mb-[14px]">
+    <div class="inline-block mb-[14px] font-semibold">
         <slot>
             {{ label }}
         </slot>
-    </span>
+    </div>
 </template>
 
 <script lang="ts" setup>

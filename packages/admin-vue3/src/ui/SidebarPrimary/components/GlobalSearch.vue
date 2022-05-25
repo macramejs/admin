@@ -48,6 +48,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Modal from '../../Modal.vue';
+import BaseInput from '../../BaseInput.vue';
 
 const globalSearchOpen = ref<boolean>(false);
 const globalSearchTerm = ref<string | number>('');

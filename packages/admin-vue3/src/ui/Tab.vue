@@ -2,12 +2,13 @@
     <Tab
         :disabled="disabled"
         v-slot="{ selected, active }"
-        :as="href ? Link : 'template'"
-        class="focus:outline-none flex"
-        :href="href"
+        :as="'template'"
+        class="flex focus:outline-none"
         v-bind="$attrs"
     >
-        <button
+        <component
+            :is="href ? Link : 'button'"
+            :href="href"
             class="px-3 py-1 text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer focus:outline-none"
             :class="{
                 'text-black bg-gray-200 border-b border-indigo-900':
@@ -19,7 +20,7 @@
             }"
         >
             <slot />
-        </button>
+        </component>
     </Tab>
 </template>
 
