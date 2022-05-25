@@ -1,20 +1,26 @@
 <template>
-    <div
-        class="flex items-center justify-center w-5 h-5 rounded-xs"
+    <SidebarLink
+        :expanded="expanded"
+        :hideTitle="!expanded"
+        class="mt-auto"
         @click="toggle"
-        :class="{
-            'text-white bg-gray-800': modelValue,
-            'text-gray-800 bg-gray-100': !modelValue,
-        }"
     >
-        <IconLocked v-if="modelValue" class="w-3 h-3" />
-        <IconUnlocked v-if="!modelValue" class="w-3 h-3" />
-    </div>
+        <template #icon>
+            <IconLocked v-if="modelValue" class="w-4 h-4" />
+            <IconUnlocked v-if="!modelValue" class="w-4 h-4" />
+        </template>
+        {{ modelValue ? 'Unlock' : 'Lock' }}&nbsp;Sidebar
+    </SidebarLink>
 </template>
 
 <script setup lang="ts">
 import { IconLocked, IconUnlocked } from '../../../icons';
+import SidebarLink from '../../SidebarLink.vue';
 const props = defineProps({
+    expanded: {
+        type: Boolean,
+        requried: true,
+    },
     modelValue: {
         type: Boolean,
         required: true,

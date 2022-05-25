@@ -21,8 +21,8 @@
             <slot v-bind:expanded="showSidebar" />
         </nav>
         <slot name="footer">
-            <footer class="flex flex-col items-start px-5 py-6 space-y-2">
-                <LockSidebar v-model="locked" />
+            <footer class="p-4 space-y-2">
+                <LockSidebar v-model="locked" :expanded="showSidebar" />
             </footer>
         </slot>
     </div>
