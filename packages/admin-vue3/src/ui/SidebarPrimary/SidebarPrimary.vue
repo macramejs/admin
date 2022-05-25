@@ -17,7 +17,7 @@
                 </Link>
             </div>
         </header>
-        <nav class="flex-1">
+        <nav class="flex-1 flex flex-col">
             <slot v-bind:expanded="showSidebar" />
         </nav>
         <slot name="footer">
