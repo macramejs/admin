@@ -1,4 +1,5 @@
 import Button from './ui/Button.vue';
+import Header from './ui/Header.vue';
 import ButtonRound from './ui/ButtonRound.vue';
 import Card from './ui/Card.vue';
 import Toggle from './ui/Toggle.vue';
@@ -43,6 +44,7 @@ import SidebarLink from './ui/SidebarLink.vue';
 import SidebarSection from './ui/SidebarSection.vue';
 import SidebarPrimary from './ui/SidebarPrimary/SidebarPrimary.vue';
 import SidebarSecondary from './ui/SidebarSecondary.vue';
+import SidebarSecondarySection from './ui/SidebarSecondarySection.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
 import Textarea from './ui/Textarea.vue';
@@ -122,11 +124,13 @@ export {
     TreeItem,
     Search,
     Select,
+    Header,
     Sidebar,
     SidebarLink,
     SidebarSection,
     SidebarPrimary,
     SidebarSecondary,
+    SidebarSecondarySection,
     RadioGroup,
     Pagination,
     Textarea,

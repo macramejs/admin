@@ -65,6 +65,8 @@ export const SidebarLink : Component;
 export const SidebarSection : Component;
 export const SidebarPrimary : Component;
 export const SidebarSecondary : Component;
+export const SidebarSecondarySection : Component;
+export const Header : Component;
 export const Pagination : Component;
 export const Textarea : Component;
 export const AuthPages : { [k: string]: Component };
