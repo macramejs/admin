@@ -29,6 +29,7 @@ import DatePicker from './ui/DatePicker.vue';
 import DateRange from './ui/DateRange.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
+import InteractionButton from './ui/InteractionButton.vue';
 // import Slider from './ui/Slider.vue';
 import Input from './ui/Input.vue';
 // import Nested from './ui/Nested.vue';
@@ -116,6 +117,7 @@ export {
     DateRange,
     Index,
     Input,
+    InteractionButton,
     // Slider,
     // Nested,
     Tree,
