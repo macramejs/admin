@@ -54,12 +54,20 @@ const props = defineProps({
     },
     active: {
         type: Boolean,
+        default: false,
     },
 });
 
 const isActive = computed(() => {
-    if (props.active !== undefined) {
-        return props.active;
+    if (props.active) {
+        return true;
+    }
+
+    if (
+        props.href?.split('/').length ==
+        window.location.pathname.split('/').length
+    ) {
+        return window.location.pathname == props.href;
     }
 
     if (props.href?.split('/').length > 2) {
