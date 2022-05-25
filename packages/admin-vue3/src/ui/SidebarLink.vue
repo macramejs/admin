@@ -63,6 +63,13 @@ const isActive = computed(() => {
         return true;
     }
 
+    if (
+        props.href?.split('/').length ==
+        window.location.pathname.split('/').length
+    ) {
+        return window.location.pathname == props.href;
+    }
+
     if (props.href?.split('/').length > 2) {
         return window.location.pathname.includes(props.href);
     }
