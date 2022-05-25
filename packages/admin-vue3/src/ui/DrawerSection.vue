@@ -10,7 +10,7 @@
                         'rotate-180': !open,
                     }"
                 >
-                    <IconCaret />
+                    <IconCaret class="w-3 h-3" />
                 </div>
             </DisclosureButton>
 

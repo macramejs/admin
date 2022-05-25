@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-screen h-screen max-h-screen">
-        <div id="sidebars" class="z-10 flex h-screen shadow">
+        <div id="sidebars" class="flex h-screen shadow">
             <slot name="sidebar-primary" :sidebar="sidebar" />
             <slot name="sidebar-secondary" />
         </div>
