@@ -7,7 +7,7 @@ import Chip from './ui/Chip.vue';
 import FileUpload from './ui/FileUpload.vue';
 import ChipInput from './ui/ChipInput.vue';
 import Content from './ui/Content.vue';
-import ContentBody from './ui/Content.vue';
+import ContentBody from './ui/ContentBody.vue';
 import ContentSidebar from './ui/ContentSidebar.vue';
 import ContextMenu from './ui/ContextMenu.vue';
 import ContextMenuDivider from './ui/ContextMenuDivider.vue';
