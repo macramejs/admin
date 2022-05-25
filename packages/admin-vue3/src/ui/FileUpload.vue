@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <div
-            class="flex items-center px-[18px] justify-center w-full h-40 transition-colors duration-300 border rounded cursor-pointer bg-gray-transparent focus:outline-none focus:border-orange"
+            class="flex items-center justify-center w-full transition-colors duration-300 border rounded cursor-pointer bg-gray-transparent focus:outline-none focus:border-orange aspect-square max-h-96"
             :class="{
                 'border-red-signal': fileRejections.length > 0 || isDragReject,
                 'border-green': isDragAccept,
@@ -10,32 +10,29 @@
                     !isDragReject &&
                     !isDragAccept &&
                     fileRejections.length == 0,
-                '!h-[60px] !justify-start': inline,
             }"
             v-bind="getRootProps()"
         >
             <input v-bind="getInputProps()" />
-            <div
-                class="flex gap-2.5 items-center"
-                :class="{ 'flex-col': !inline }"
-            >
+            <div class="flex items-center flex-col justify-center">
                 <div class="text-orange">
                     <IconAddImage />
                 </div>
-                <span class="text-sm text-center uppercase" v-if="busy"
-                    >Loading ...</span
-                >
-                <span
+                <div class="text-sm text-center uppercase" v-if="busy">
+                    Loading ...
+                </div>
+                <div
                     class="text-sm text-center uppercase"
                     v-if="!busy && isDragActive"
-                    >Drop the files here ...</span
                 >
-                <span
+                    Drop the files here ...
+                </div>
+                <div
                     class="text-sm text-center uppercase"
                     v-if="!busy && !isDragActive"
                 >
-                    Drag & Drop or browse
-                </span>
+                    Drag & Drop<br />or <span class="underline">browse</span>
+                </div>
             </div>
         </div>
     </div>
@@ -62,10 +59,6 @@ const props = defineProps({
         default: null,
     },
     disabled: {
-        type: Boolean,
-        default: false,
-    },
-    inline: {
         type: Boolean,
         default: false,
     },

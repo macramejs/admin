@@ -1,6 +1,6 @@
 <template>
     <div
-        class="sticky top-0 h-[80px] transition-all border-b border-gray-400 bg-gray-50"
+        class="relative top-0 h-[80px] transition-all border-b border-gray-400 bg-gray-50 z-30"
     >
         <div class="flex items-center justify-between h-full px-10">
             <div
