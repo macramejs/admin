@@ -54,13 +54,13 @@ const props = defineProps({
     },
     active: {
         type: Boolean,
-        default: false,
+        default: undefined,
     },
 });
 
 const isActive = computed(() => {
-    if (props.active) {
-        return true;
+    if (props.active !== undefined) {
+        return props.active;
     }
 
     if (
