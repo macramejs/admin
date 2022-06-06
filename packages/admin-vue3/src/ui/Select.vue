@@ -22,7 +22,7 @@
                     <div
                         class="relative h-full px-1 border-t border-b border-gray-900 input-width input-section-2"
                         :class="{
-                            '!border-t-transparent': selectedItem || focused,
+                            '!border-t-transparent': selectedItem,
                             'border-t-gray-900': !selectedItem,
                         }"
                     >
@@ -31,16 +31,13 @@
                             ref="inputLabel"
                             :class="{
                                 'text-ellipsis !-translate-y-[35px] !scale-100 text-indigo-900':
-                                    selectedItem || focused,
+                                    selectedItem,
                                 'max-w-full -translate-y-[13px] scale-[1.34] text-gray-500':
                                     !selectedItem,
                                 '!text-red-signal':
-                                    (selectedItem &&
-                                        errors?.length > 0 &&
-                                        !disabled) ||
-                                    (focused &&
-                                        errors?.length > 0 &&
-                                        !disabled),
+                                    selectedItem &&
+                                    errors?.length > 0 &&
+                                    !disabled,
                             }"
                         >
                             {{ label }}
