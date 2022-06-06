@@ -3,6 +3,7 @@ import vue from 'rollup-plugin-vue';
 import styles from 'rollup-plugin-styles';
 import replace from '@rollup/plugin-replace';
 import path from 'path';
+const fs = require('fs');
 
 const packagesDir = path.resolve(__dirname, 'packages');
 const packageDir = path.resolve(packagesDir, process.env.TARGET);
@@ -59,6 +60,51 @@ function createConfig(format, output, plugins = []) {
         },
     });
 
+    
+    const extractClassesPlugin = () => {
+        let candidates = {};
+
+        let ignore = ['import', 'vue', 'props'];
+        let illegalChars = ['.', ';', '/', '_', ',', '=', '*'];
+
+        const isCandidate = (str) => {
+            return !illegalChars.some((m) => str.includes(m))
+                && !ignore.includes(str)
+                // no upper case letters
+                && !/^[A-Z]*$/.test(str);
+        }
+
+        return {
+            name: 'extract-classes',
+            async transform(code, id) {
+                let broadMatches = code.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+                let innerMatches = code.match(/[^<>"'`\s.(){}[\]#=%]*[^<>"'`\s.(){}[\]#=%:]/g) || []
+                for (let match of [...broadMatches, ...innerMatches]) {
+                    if(isCandidate(match)) {
+                        // console.log(match);
+                        candidates[match] = true;
+                    }
+                }
+
+                
+            },
+            writeBundle(options, bundle) {
+                if(!options.file.includes('admin-vue3')) {
+                    return;
+                }
+
+                console.log(JSON.stringify(Object.keys(candidates)));
+
+                fs.writeFile('./packages/admin-vue3/dist/classes.js', `exports.classes = ${JSON.stringify(Object.keys(candidates))};`, err => {
+                    if (err) {
+                        console.error(err);
+                    }
+                // file written successfully
+                });
+            }
+        }
+    };
+
     if (isVuePackage) {
         plugins.push(
             vue({
@@ -70,7 +116,7 @@ function createConfig(format, output, plugins = []) {
 
     return {
         input: resolve(entryFile),
-        plugins: [tsPlugin, createReplacePlugin(isProductionBuild), ...plugins],
+        plugins: [extractClassesPlugin(), tsPlugin, createReplacePlugin(isProductionBuild), ...plugins],
         output,
     };
 }
