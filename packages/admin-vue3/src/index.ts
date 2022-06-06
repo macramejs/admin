@@ -31,9 +31,7 @@ import DateRange from './ui/DateRange.vue';
 import RadioGroup from './ui/RadioGroup.vue';
 import Index from './ui/Index.vue';
 import InteractionButton from './ui/InteractionButton.vue';
-// import Slider from './ui/Slider.vue';
 import Input from './ui/Input.vue';
-// import Nested from './ui/Nested.vue';
 import Tree from './ui/Tree.vue';
 import TreeItem from './ui/TreeItem.vue';
 import Search from './ui/Search.vue';
@@ -53,36 +51,6 @@ import Tr from './ui/Tr.vue';
 import Th from './ui/Th.vue';
 import Td from './ui/Td.vue';
 import Wysiwyg from './ui/Wysiwyg.vue';
-
-import DefaultLayout from './layouts/default/DefaultLayout.vue';
-import DefaultLayoutHeader from './layouts/default/DefaultLayoutHeader.vue';
-import DefaultLayoutBurger from './layouts/default/DefaultLayoutBurger.vue';
-
-export { DefaultLayout, DefaultLayoutHeader, DefaultLayoutBurger };
-
-import GuestLayout from './layouts/guest/GuestLayout.vue';
-import GuestLayoutInput from './layouts/guest/GuestLayoutInput.vue';
-
-export { GuestLayout, GuestLayoutInput };
-
-import LoginPage from './pages/Auth/Login.vue';
-import ForgotPasswordPage from './pages/Auth/ForgotPassword.vue';
-import ResetPasswordPage from './pages/Auth/ResetPassword.vue';
-
-const AuthPages = {
-    'Auth/Login': LoginPage,
-    'Auth/ForgotPassword': ForgotPasswordPage,
-    'Auth/ResetPassword': ResetPasswordPage,
-};
-
-const Pages = {
-    auth: AuthPages,
-};
-
-export { Pages, AuthPages };
-
-// Icons
-export * from './icons';
 
 // Components
 export {
@@ -120,8 +88,6 @@ export {
     Index,
     Input,
     InteractionButton,
-    // Slider,
-    // Nested,
     Tree,
     TreeItem,
     Search,
@@ -142,3 +108,75 @@ export {
     Td,
     Wysiwyg,
 };
+
+
+import DefaultLayout from './layouts/default/DefaultLayout.vue';
+import DefaultLayoutHeader from './layouts/default/DefaultLayoutHeader.vue';
+import DefaultLayoutBurger from './layouts/default/DefaultLayoutBurger.vue';
+
+export { DefaultLayout, DefaultLayoutHeader, DefaultLayoutBurger };
+
+import GuestLayout from './layouts/guest/GuestLayout.vue';
+import GuestLayoutInput from './layouts/guest/GuestLayoutInput.vue';
+
+export { GuestLayout, GuestLayoutInput };
+
+import LoginPage from './pages/Auth/Login.vue';
+import ForgotPasswordPage from './pages/Auth/ForgotPassword.vue';
+import ResetPasswordPage from './pages/Auth/ResetPassword.vue';
+
+const AuthPages = {
+    'Auth/Login': LoginPage,
+    'Auth/ForgotPassword': ForgotPasswordPage,
+    'Auth/ResetPassword': ResetPasswordPage,
+};
+
+const Pages = {
+    auth: AuthPages,
+};
+
+export { Pages, AuthPages };
+
+// Icons
+import IconDraggable from './icons/IconDraggable.vue';
+import IconTrash from './icons/IconTrash.vue';
+import IconMoreHorizontal from './icons/IconMoreHorizontal.vue';
+import IconEditPencil from './icons/IconEditPencil.vue';
+import IconCaret from './icons/IconCaret.vue';
+import IconAddImage from './icons/IconAddImage.vue';
+import IconBookStack from './icons/IconBookStack.vue';
+import IconMediaImageFolder from './icons/IconMediaImageFolder.vue';
+import IconPlus from './icons/IconPlus.vue';
+import IconLocked from './icons/IconLocked.vue';
+import IconUnlocked from './icons/IconUnlocked.vue';
+import IconPages from './icons/IconPages.vue';
+import IconDashboard from './icons/IconDashboard.vue';
+import IconList from './icons/IconList.vue';
+import IconDuplicatePage from './icons/IconDuplicatePage.vue';
+import IconSettings from './icons/IconSettings.vue';
+import IconLogout from './icons/IconLogout.vue';
+import IconPartials from './icons/IconPartials.vue';
+import IconBlocks from './icons/IconBlocks.vue';
+
+export {
+    IconDraggable,
+    IconTrash,
+    IconMoreHorizontal,
+    IconEditPencil,
+    IconCaret,
+    IconAddImage,
+    IconBookStack,
+    IconMediaImageFolder,
+    IconPlus,
+    IconLocked,
+    IconUnlocked,
+    IconPages,
+    IconDashboard,
+    IconList,
+    IconDuplicatePage,
+    IconSettings,
+    IconLogout,
+    IconPartials,
+    IconBlocks,
+}
+
