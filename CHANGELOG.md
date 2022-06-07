@@ -1,3 +1,7 @@
+## [0.2.18](https://github.com/macramejs/admin/compare/v0.2.17...v0.2.18) (2022-06-07)
+
+
+
 ## [0.2.17](https://github.com/macramejs/admin/compare/v0.2.16...v0.2.17) (2022-06-07)
 
 
