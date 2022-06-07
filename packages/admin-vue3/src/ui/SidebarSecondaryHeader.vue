@@ -1,5 +1,5 @@
 <template>
-    <Header class="sidebar-secondary-header">
+    <Header>
         <span class="inline-block text-xl font-medium">
             {{ title }}
         </span>
@@ -17,10 +17,3 @@ defineProps({
     },
 });
 </script>
-
-<style>
-.sidebar-secondary-header {
-    border-bottom: 1px solid hsl(0deg 0% 100% / 10%);
-    margin-bottom: 20px;
-}
-</style>

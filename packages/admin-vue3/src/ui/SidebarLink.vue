@@ -2,14 +2,14 @@
     <Link
         :href="href"
         :class="{
+            // primary
             'bg-white bg-opacity-10 hover:text-orange': isActive && !secondary,
-            'hover:bg-white hover:bg-opacity-10': !isActive && !secondary,
-            'hover:bg-bg-white hover:bg-opacity-10 items-center h-[36px] flex-auto':
-                secondary,
             'h-[44px]': !secondary,
+            // secondary
+            'items-center h-[36px] flex-auto': secondary,
             'bg-gray-50 bg-opacity-10': isActive && secondary,
         }"
-        class="flex items-center text-base font-light rounded group"
+        class="flex items-center text-base font-light rounded group hover:bg-white hover:bg-opacity-10"
     >
         <div
             v-if="$slots.icon"
