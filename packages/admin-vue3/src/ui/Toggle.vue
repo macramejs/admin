@@ -22,7 +22,7 @@
                     'w-8': size_ == 'sm',
 
                     'h-8 rounded-lg': size_ == 'lg',
-                    'h-5 rounded-md': size_ == 'md' || size_ == null,
+                    'h-[18px] rounded-md': size_ == 'md' || size_ == null,
                     'h-4 rounded-sm': size_ == 'sm',
                 }"
                 class="relative inline-flex items-center transition-all rounded-full focus:outline-none focus:ring-4 focus:ring-orange-100"
@@ -37,7 +37,7 @@
                         'translate-x-[4px]':
                             (size_ == 'md' && !modelValue) ||
                             ('lg' && !modelValue),
-                        'translate-x-[17px]': size_ == 'md' && modelValue,
+                        'translate-x-[19px]': size_ == 'md' && modelValue,
                         'translate-x-1': size_ == 'sm' && !modelValue,
                         'translate-x-[18px]': size_ == 'sm' && modelValue,
                     }"
@@ -77,7 +77,7 @@ export default {
         const size_ = getSize(props, {});
         const variant_ = getVariant(props, {});
 
-        const update = (value) => {
+        const update = value => {
             if (disabled) {
                 return;
             }
