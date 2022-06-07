@@ -37,6 +37,7 @@ import TreeItem from './ui/TreeItem.vue';
 import Search from './ui/Search.vue';
 import Select from './ui/Select.vue';
 import Section from './ui/Section.vue';
+import {hideSections} from './ui/sections';
 import Sections from './ui/Sections.vue';
 import Sidebar from './ui/Sidebar.vue';
 import SidebarLink from './ui/SidebarLink.vue';
@@ -78,6 +79,7 @@ export {
     TabList,
     Section,
     Sections,
+    hideSections,
     Form,
     FormField,
     FormFieldLabel,

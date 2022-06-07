@@ -74,14 +74,22 @@ export const Slider : Component;
 export const Nested : Component;
 export const Search : Component;
 export const Select : Component;
-export const Section : Component;
-export const Sections : Component;
+
+// Section
+export type TSection = DefineComponent<{
+    title: string
+}>;
+export declare const Section : TSection;
+
+// Sections
+export type TSections = DefineComponent;
+export declare const Sections : TSections;
 
 // Sidebar
-export type TSidebar = DefineComponent<{
+export type TSidebarComp = DefineComponent<{
     open: boolean
 }>;
-export declare const Sidebar : TSidebar;
+export declare const Sidebar : TSidebarComp;
 
 // SidebarLink
 export type TSidebarLink = DefineComponent<{
