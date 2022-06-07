@@ -60,29 +60,18 @@
     </TransitionRoot>
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import {
     TransitionRoot,
     TransitionChild,
     Dialog,
     DialogOverlay,
-    DialogTitle,
 } from '@headlessui/vue';
 
-export default defineComponent({
-    components: {
-        TransitionRoot,
-        TransitionChild,
-        Dialog,
-        DialogOverlay,
-        DialogTitle,
-    },
-    props: {
-        open: {
-            type: Boolean,
-            required: true,
-        },
+defineProps({
+    open: {
+        type: Boolean,
+        required: true,
     },
 });
 </script>

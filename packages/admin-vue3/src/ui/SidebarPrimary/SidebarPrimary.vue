@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col justify-between h-screen transition-all bg-gray-900 border-r border-gray-700"
+        class="flex flex-col justify-between h-screen transition-all bg-gray-900 border-r border-gray-800"
         @mouseover="expanded = true"
         @mouseleave="expanded = false"
         :class="{
@@ -17,7 +17,7 @@
                 </Link>
             </div>
         </header>
-        <nav class="flex-1 flex flex-col">
+        <nav class="flex flex-col flex-1">
             <slot v-bind:expanded="showSidebar" />
         </nav>
         <slot name="footer">
