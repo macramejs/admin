@@ -68,9 +68,12 @@ export const SidebarLink : Component;
 export const SidebarSection : Component;
 export const SidebarPrimary : Component;
 export const SidebarSecondary : Component;
-export type SidebarSecondaryHeader = DefineComponent<{
+
+export type TSidebarSecondaryHeader = DefineComponent<{
     title: string
 }>;
+export declare const SidebarSecondaryHeader: TSidebarSecondaryHeader
+
 export const SidebarSecondarySection : Component;
 export const Header : Component;
 export const Pagination : Component;
