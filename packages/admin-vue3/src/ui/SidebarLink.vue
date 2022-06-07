@@ -5,10 +5,12 @@
             'bg-black bg-opacity-75 hover:bg-opacity-100 hover:text-orange':
                 isActive && !secondary,
             'hover:bg-gray-100 hover:bg-opacity-10': !isActive && !secondary,
-            'hover:bg-gray-50 hover:bg-opacity-20': secondary,
+            'hover:bg-gray-50 hover:bg-opacity-20 items-center h-[36px] flex-auto':
+                secondary,
+            'h-[44px]': !secondary,
             'bg-gray-50 bg-opacity-10': isActive && secondary,
         }"
-        class="flex items-center rounded h-[44px] text-base font-light group"
+        class="flex items-center text-base font-light rounded group"
     >
         <div
             v-if="$slots.icon"

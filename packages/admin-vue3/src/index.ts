@@ -43,6 +43,7 @@ import SidebarLink from './ui/SidebarLink.vue';
 import SidebarSection from './ui/SidebarSection.vue';
 import SidebarPrimary from './ui/SidebarPrimary/SidebarPrimary.vue';
 import SidebarSecondary from './ui/SidebarSecondary.vue';
+import SidebarSecondaryHeader from './ui/SidebarSecondaryHeader.vue';
 import SidebarSecondarySection from './ui/SidebarSecondarySection.vue';
 import Pagination from './ui/Pagination.vue';
 import Table from './ui/Table.vue';
@@ -98,6 +99,7 @@ export {
     SidebarSection,
     SidebarPrimary,
     SidebarSecondary,
+    SidebarSecondaryHeader,
     SidebarSecondarySection,
     RadioGroup,
     Pagination,
