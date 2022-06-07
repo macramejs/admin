@@ -6,7 +6,7 @@
                 :class="{
                     'bg-gray-500': isActive && background,
                     'border-gray border': outline,
-                    'hover:bg-gray-500 hover:bg-opacity-20 bg-opacity-10':
+                    'hover:bg-gray-500 hover:bg-opacity-20 bg-opacity-10 h-[36px]':
                         background,
                 }"
             >
