@@ -112,7 +112,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineEmits, computed, watch, ref, PropType } from 'vue';
+import { computed, watch, ref, PropType } from 'vue';
 import {
     Listbox,
     ListboxButton,

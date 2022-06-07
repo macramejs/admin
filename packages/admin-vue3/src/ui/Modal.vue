@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import {
     TransitionRoot,
     TransitionChild,
