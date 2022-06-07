@@ -65,13 +65,15 @@ function createConfig(format, output, plugins = []) {
         let candidates = {};
 
         let ignore = ['import', 'vue', 'props'];
-        let illegalChars = ['.', ';', '/', '_', ',', '=', '*'];
+        let illegalChars = ['.', ';', '/', '_', ',', '=', '*', '{', '}', '?', '!','\\', '(', ')', '||', '&', '$'];
 
         const isCandidate = (str) => {
             return !illegalChars.some((m) => str.includes(m))
                 && !ignore.includes(str)
+                && isNaN(str)
                 // no upper case letters
-                && !/^[A-Z]*$/.test(str);
+                && ![...str].some((c) => c != c.toLowerCase())
+                && str != '';
         }
 
         return {
@@ -93,13 +95,8 @@ function createConfig(format, output, plugins = []) {
                     return;
                 }
 
-                console.log(JSON.stringify(Object.keys(candidates)));
-
                 fs.writeFile('./packages/admin-vue3/dist/classes.js', `exports.classes = ${JSON.stringify(Object.keys(candidates))};`, err => {
-                    if (err) {
-                        console.error(err);
-                    }
-                // file written successfully
+                    if (err) console.error(err);
                 });
             }
         }
