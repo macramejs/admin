@@ -13,7 +13,7 @@
                 <div class="w-full h-full bg-white rounded-sm"></div>
             </div>
             <div class="relative z-10 flex items-center">
-                <InteractionButton class="cursor-move handle mr-3">
+                <InteractionButton class="mr-3 cursor-move handle">
                     <IconDraggable class="w-2.5 h-2.5 fill-gray-700" />
                 </InteractionButton>
 
@@ -66,7 +66,7 @@
     </section>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import ContextMenu from './ContextMenu.vue';
 import InteractionButton from './InteractionButton.vue';
 import ContextMenuItem from './ContextMenuItem.vue';
@@ -74,6 +74,7 @@ import IconDraggable from '../icons/IconDraggable.vue';
 import IconTrash from '../icons/IconTrash.vue';
 import IconCaret from '../icons/IconCaret.vue';
 import IconMoreHorizontal from '../icons/IconMoreHorizontal.vue';
+import { hideSections } from './sections';
 
 const props = defineProps({
     title: {
@@ -85,4 +86,11 @@ const props = defineProps({
 const emit = defineEmits(['destroy']);
 
 const collapsed = ref(false);
+
+watch(
+    () => hideSections.value,
+    val => {
+        collapsed.value = val;
+    }
+);
 </script>
