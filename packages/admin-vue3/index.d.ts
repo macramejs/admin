@@ -63,12 +63,42 @@ export const Search : Component;
 export const Select : Component;
 export const Section : Component;
 export const Sections : Component;
-export const Sidebar : Component;
-export const SidebarLink : Component;
-export const SidebarSection : Component;
-export const SidebarPrimary : Component;
-export const SidebarSecondary : Component;
 
+// Sidebar
+export type TSidebar = DefineComponent<{
+    open: boolean
+}>;
+export declare const Sidebar : TSidebar;
+
+// SidebarLink
+export type TSidebarLink = DefineComponent<{
+    title: string,
+    href?: string,
+    hideTitle?: boolean,
+    secondray?: boolean,
+    active?: boolean,
+}>;
+export declare const SidebarLink : TSidebarLink;
+
+// SidebarSection
+export type TSidebarSection =  DefineComponent<{
+    title?: string,
+    expanded?: boolean,
+    expandable?: boolean,
+}>;
+export declare const SidebarSection : TSidebarSection;
+
+// SidebarPrimary
+export type TSidebarPrimary = DefineComponent<{
+    locked: boolean
+}>;
+export declare const SidebarPrimary: TSidebarPrimary;
+
+// SidebarSecondary
+export type TSidebarSecondary = DefineComponent<{}>;
+export declare const SidebarSecondary: TSidebarSecondary;
+
+// SidebarSecondaryHeader
 export type TSidebarSecondaryHeader = DefineComponent<{
     title: string
 }>;
