@@ -1,3 +1,3 @@
 import {ref} from 'vue'
 
-export const hideSections = ref(false)
+export const hideSections = ref<boolean>(false)

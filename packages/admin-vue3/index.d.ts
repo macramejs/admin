@@ -1,4 +1,4 @@
-import { DefineComponent, Component, Plugin } from "vue";
+import { DefineComponent, Component, Plugin, Ref } from "vue";
 
 export const DefaultLayout : DefineComponent;
 export const DefaultLayoutBurger : DefineComponent;
@@ -85,6 +85,8 @@ export declare const Section : TSection;
 export type TSections = DefineComponent;
 export declare const Sections : TSections;
 
+export declare const hideSections : Ref<boolean>;
+
 // Sidebar
 export type TSidebarComp = DefineComponent<{
     open: boolean
@@ -132,22 +134,60 @@ export const Textarea : Component;
 export const AuthPages : { [k: string]: Component };
 export const Pages : { [k: string]: Component };
 
-export const IconDraggable: Component;
-export const IconTrash: Component;
-export const IconMoreHorizontal: Component;
-export const IconEditPencil: Component;
-export const IconCaret: Component;
-export const IconAddImage: Component;
-export const IconBookStack: Component;
-export const IconMediaImageFolder: Component;
-export const IconPlus: Component;
-export const IconLocked: Component;
-export const IconUnlocked: Component;
-export const IconPages: Component;
-export const IconDashboard: Component;
-export const IconList: Component;
-export const IconDuplicatePage: Component;
-export const IconSettings: Component;
-export const IconLogout: Component;
-export const IconPartials: Component;
-export const IconBlocks: Component;
+
+export type TIconDraggable = DefineComponent;
+export declare const IconDraggable: TIconDraggable;
+
+export type TIconTrash = DefineComponent;
+export declare const IconTrash: TIconTrash;
+
+export type TIconMoreHorizontal = DefineComponent;
+export declare const IconMoreHorizontal: TIconMoreHorizontal;
+
+export type TIconEditPencil = DefineComponent;
+export declare const IconEditPencil: TIconEditPencil;
+
+export type TIconCaret = DefineComponent;
+export declare const IconCaret: TIconCaret;
+
+export type TIconAddImage = DefineComponent;
+export declare const IconAddImage: TIconAddImage;
+
+export type TIconBookStack = DefineComponent;
+export declare const IconBookStack: TIconBookStack;
+
+export type TIconMediaImageFolder = DefineComponent;
+export declare const IconMediaImageFolder: TIconMediaImageFolder;
+
+export type TIconPlus = DefineComponent;
+export declare const IconPlus: TIconPlus;
+
+export type TIconLocked = DefineComponent;
+export declare const IconLocked: TIconLocked;
+
+export type TIconUnlocked = DefineComponent;
+export declare const IconUnlocked: TIconUnlocked;
+
+export type TIconPages = DefineComponent;
+export declare const IconPages: TIconPages;
+
+export type TIconDashboard = DefineComponent;
+export declare const IconDashboard: TIconDashboard;
+
+export type TIconList = DefineComponent;
+export declare const IconList: TIconList;
+
+export type TIconDuplicatePage = DefineComponent;
+export declare const IconDuplicatePage: TIconDuplicatePage;
+
+export type TIconSettings = DefineComponent;
+export declare const IconSettings: TIconSettings;
+
+export type TIconLogout = DefineComponent;
+export declare const IconLogout: TIconLogout;
+
+export type TIconPartials = DefineComponent;
+export declare const IconPartials: TIconPartials;
+
+export type TIconBlocks = DefineComponent;
+export declare const IconBlocks: TIconBlocks;
