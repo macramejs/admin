@@ -191,3 +191,6 @@ export declare const IconPartials: TIconPartials;
 
 export type TIconBlocks = DefineComponent;
 export declare const IconBlocks: TIconBlocks;
+
+export type TIconGrid = DefineComponent;
+export declare const IconGrid: TIconGrid;

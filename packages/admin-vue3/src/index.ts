@@ -161,6 +161,7 @@ import IconSettings from './icons/IconSettings.vue';
 import IconLogout from './icons/IconLogout.vue';
 import IconPartials from './icons/IconPartials.vue';
 import IconBlocks from './icons/IconBlocks.vue';
+import IconGrid from './icons/IconGrid.vue';
 
 export {
     IconDraggable,
@@ -182,5 +183,6 @@ export {
     IconLogout,
     IconPartials,
     IconBlocks,
+    IconGrid
 }
 

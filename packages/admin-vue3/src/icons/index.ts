@@ -17,3 +17,4 @@ export { default as IconSettings } from './IconSettings.vue';
 export { default as IconLogout } from './IconLogout.vue';
 export { default as IconPartials } from './IconPartials.vue';
 export { default as IconBlocks } from './IconBlocks.vue';
+export { default as IconGrid } from './IconGrid.vue';
