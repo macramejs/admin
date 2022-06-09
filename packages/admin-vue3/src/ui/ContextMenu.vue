@@ -5,12 +5,12 @@
                 <IconMoreHorizontal class="w-4 h-4" />
             </button>
         </slot>
-        <template #content>
+        <template #content="{ close }">
             <div
                 class="p-4 rounded-[8px] px-[14px] text-base py-[14px] min-w-[200px] bg-white shadow text-black"
             >
                 <div class="flex flex-col">
-                    <slot />
+                    <slot :close="close" />
                 </div>
             </div>
         </template>
