@@ -8,13 +8,13 @@
 
             'bg-gray text-white cursor-not-allowed': disabled,
 
-            'bg-gradient-to-r from-gradient-red-500 to-gradient-orange-500 hover:from-gradient-red-300 hover:to:gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-white focus:ring-orange-100 shadow-orange shadow-primary':
+            'bg-gradient-to-r from-gradient-red-500 to-gradient-orange-500 hover:from-gradient-red-300 hover:to-gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-white focus:ring-orange-100 shadow-orange shadow-primary':
                 variant_ == 'primary' && !disabled,
 
-            'bg-white hover:from-gradient-red-300 hover:to:gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-gray-900 focus:ring-orange-100 ':
+            'bg-white hover:from-gradient-red-300 hover:to-gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-gray-900 focus:ring-orange-100 ':
                 variant_ == 'white' && !disabled,
 
-            'bg-black hover:from-gradient-red-300 hover:to:gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-white focus:ring-orange-100 ':
+            'bg-black hover:from-gradient-red-300 hover:to-gradient-orange-300 hover:scale-95 active:from-gradient-red-700 active:to-gradient-orange-700 text-white focus:ring-orange-100 ':
                 variant_ == 'black' && !disabled,
         }"
         :disabled="disabled"
