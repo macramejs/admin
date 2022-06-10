@@ -1,5 +1,7 @@
 <template>
-    <Link
+    <component
+        :is="isRouterLink ? 'router-link' : 'a'"
+        :to="to"
         :href="href"
         :class="{
             // primary
@@ -28,22 +30,25 @@
                 'group-hover:text-orange': isActive && !secondary,
             }"
         >
-            <slot>{{ title }}</slot>
+            <slot>{{ title }} {{ to }} {{ isRouterLink }}</slot>
         </div>
-    </Link>
+    </component>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { Link } from '@inertiajs/inertia-vue3';
+import { RouterLink, useLink } from "vue-router";
 
 const props = defineProps({
+    // @ts-ignore
+    ...RouterLink.props,
+    href: {
+        type: String,
+        required: false,
+    },
     title: {
         type: String,
         required: true,
-    },
-    href: {
-        type: String,
     },
     hideTitle: {
         type: Boolean,
@@ -59,22 +64,16 @@ const props = defineProps({
     },
 });
 
-const isActive = computed(() => {
-    if (props.active !== undefined) {
-        return props.active;
-    }
+const isRouterLink = computed(
+    () => props.to && !props.to.startsWith('http')
+);
 
-    if (
-        props.href?.split('/').length ==
-        window.location.pathname.split('/').length
-    ) {
-        return window.location.pathname == props.href;
-    }
+const routerLink = computed(
+    // @ts-ignore
+    () => isRouterLink.value ? useLink(props) : null
+);
 
-    if (props.href?.split('/').length > 2) {
-        return window.location.pathname.includes(props.href);
-    }
-
-    return window.location.pathname == props.href;
-});
+const isActive = computed(
+    () => routerLink ? routerLink.value?.isActive.value : false
+);
 </script>
